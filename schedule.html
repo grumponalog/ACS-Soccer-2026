@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Schedule | ACS Lions Soccer 2026</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  .wrapwide{max-width:1600px;margin:0 auto;padding:0 16px}
+  .calwrap{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#fff;box-shadow:0 4px 16px rgba(20,40,80,.08)}
+  .calwrap iframe{display:block;width:100%;height:840px;border:0;background:#fff}
+  .subrow{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:14px}
+  .subrow a{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:700;font-size:14px;padding:11px 18px;border-radius:999px}
+  .subrow a.primary{background:var(--blue);color:#fff}
+  .subrow a.ghost{background:#eef3fb;color:var(--blue)}
+
+  .filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+  .chip{display:inline-flex;align-items:center;gap:7px;cursor:pointer;border:1px solid var(--line);background:#fff;color:var(--muted);font-weight:700;font-size:13px;padding:8px 14px;border-radius:999px;transition:all .12s}
+  .chip:hover{border-color:#c3d0e6}
+  .chip i{width:11px;height:11px;border-radius:3px;display:inline-block}
+  .chip.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+  .chip .ct{opacity:.6;font-weight:800}
+
+  .month{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:800;margin:18px 0 8px}
+  .month:first-of-type{margin-top:0}
+  .row{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--blue);border-radius:12px;display:flex;align-items:center;gap:14px;padding:11px 14px;margin-bottom:7px}
+  .row .dt{text-align:center;min-width:46px;line-height:1.05}
+  .row .dn{font-size:19px;font-weight:800;color:var(--navy);display:block}
+  .row .mn{font-size:10px;font-weight:700;text-transform:uppercase;color:var(--muted);letter-spacing:.05em}
+  .row .rc{flex:1}
+  .row .tl{font-weight:700;font-size:15px}
+  .row .sub{font-size:13px;color:var(--muted)}
+  .row .tp{font-size:10px;font-weight:800;color:#fff;padding:4px 9px;border-radius:999px;text-transform:uppercase;letter-spacing:.04em}
+  .hidden{display:none!important}
+  .calnote{font-size:13px;color:var(--muted);margin-bottom:12px}
+  .disclaimer{font-size:13px;color:var(--muted);text-align:center;margin-top:12px;font-style:italic}
+  @media(max-width:900px){.calwrap iframe{height:640px}}
+  @media(max-width:520px){.calwrap iframe{height:520px}}
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="wrap">
+  <div class="badge"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" fill="#fff" stroke="#1B4F9C" stroke-width="1.4"/><path d="M12 6.6l3.2 2.3-1.2 3.7h-4L8.8 8.9 12 6.6z" fill="#0f2f5e"/><path d="M12 6.6V3.2M15.2 8.9l3.1-1.1M13.8 12.6l2 3M10 12.6l-2 3M8.8 8.9L5.7 7.8" stroke="#1B4F9C" stroke-width="1.1" stroke-linecap="round"/></svg></div>
+  <div class="brand"><b>ACS Lions Soccer</b><span>2026 Season</span></div>
+</div></div>
+
+<nav><div class="wrap">
+  <a href="index.html">Home</a>
+  <a href="schedule.html" class="active">Schedule</a>
+  <a href="conditioning.html">Conditioning</a>
+  <a href="practices.html">Practices</a>
+  <a href="contact.html">Contact</a>
+  <a href="about.html">About</a>
+</div></nav>
+
+<div class="pagehead wrap">
+  <div class="kicker">2026 Season</div>
+  <h1>Schedule</h1>
+  <p class="lede">The full season below. Filter by type, or subscribe to the team calendar so everything lands on your phone automatically.</p>
+</div>
+
+<div class="wrap">
+
+  <div class="subrow">
+    <a class="primary" href="https://calendar.google.com/calendar/u/0?cid=YTU5OWYxYWRkMzMwZjQxNzI2NzkyYTRlODM2ZDQwY2VjNjU2YTc0NzNlOGM2YTZhYjQyZGM3MTQ2OWFiZTkyMkBn">＋ Add to Google Calendar</a>
+    <a class="ghost" href="#calendar">View calendar</a>
+  </div>
+
+  <section>
+    <div class="filters" id="filters">
+      <button class="chip active" data-filter="all">All <span class="ct">36</span></button>
+      <button class="chip" data-filter="game"><i style="background:#F5B417"></i> Games <span class="ct">12</span></button>
+      <button class="chip" data-filter="practice"><i style="background:#1B4F9C"></i> Practice <span class="ct">18</span></button>
+      <button class="chip" data-filter="conditioning"><i style="background:#1B4F9C"></i> Conditioning <span class="ct">5</span></button>
+      <button class="chip" data-filter="meeting"><i style="background:#d63a2f"></i> Meeting <span class="ct">1</span></button>
+    </div>
+
+    <div id="agenda">
+      <h3 class="month" data-month="August">August</h3>
+      <div class="row" data-type="conditioning" style="border-left-color:#1B4F9C"><div class="dt"><span class="dn">3</span><span class="mn">Aug</span></div><div class="rc"><div class="tl">Conditioning (optional)</div><div class="sub">Mon &middot; 5:30 PM</div></div><span class="tp" style="background:#1B4F9C">Conditioning</span></div>
+      <div class="row" data-type="conditioning" style="border-left-color:#1B4F9C"><div class="dt"><span class="dn">5</span><span class="mn">Aug</span></div><div class="rc"><div class="tl">Conditioning (optional)</div><div class="sub">Wed &middot; 5:30 PM</div></div><span class="tp" style="background:#1B4F9C">Conditioning</span></div>
+      <div class="row" data-type="meeting" style="border-left-color:#d63a2f"><div class="dt"><span class="dn">7</span><span class="mn">Aug</span></div><div class="rc"><div class="tl">Fall Sports Meeting</div><div class="sub">Fri &middot; 4:00 PM</div></div><span class="tp" style="background:#d63a2f">Meeting</span></div>
+      <div class="row" data-type="conditioning" style="border-left-color:#1B4F9C"><div class="dt"><span class="dn">10</span><span class="mn">Aug</span></div><div class="rc"><div class="tl">Conditioning (optional)</div><div class="sub">Mon &middot; 5:30 PM</div></div><span class="tp" style="background:#1B4F9C">Conditioning</span></div>
+      <div class="row" data-type="conditioning" style="border-left-color:#1B4F9C"><div class="dt"><span class="dn">12</span><span class="mn">Aug</span></div><div class="rc"><div class="tl">Conditioning (optional)</div><div class="sub">Wed &middot; 5:30 PM</div></div><span class="tp" style="background:#1B4F9C">Conditioning</span></div>
+      <div class="row" data-type="conditioning" style="border-left-color:#1B4F9C"><div class="dt"><span class="dn">14</span><span class="mn">Aug</span></div><div class="rc"><div class="tl">Conditioning (optional)</div><div class="sub">Fri &middot; 5:30 PM</div></div><span class="tp" style="background:#1B4F9C">Conditioning</span></div>
+      <div class="row" data-type="practice" style="border-left-color:#1B4F9C"><div class="dt"><span class="dn">18</span><span class="mn">Aug</span></div><div class="rc"><div class="tl">Soccer Practice</div><div class="sub">Tue &middot; 3:15 PM</div></div><span class="tp" style="background:#1B4F9C">Practice</span></div>
+      <div class="row" data-type="practice" style="border-left-color:#1B4F9C"><div class="dt"><span class="dn">20</span><span class="mn">Aug</span></div><div class="rc"><div class="tl">Soccer Practice</div><div class="sub">Thu &middot; 3:15 PM</div></div><span class="tp" style="background:#1B4F9C">Practice</span></div>
+      <div class="row" data-type="practice" style="border-left-color:#1B4F9C"><div class="dt"><span class="dn">21</span><span class="mn">Aug</span></div><div class="rc"><div class="tl">Soccer Practice</div><div class="sub">Fri &middot; 3:15 PM</div></div><span class="tp" style="background:#1B4F9C">Practice</span></div>
+      <div class="row" data-type="practice" style="border-left-color:#1B4F9C"><div class="dt"><span class="dn">24</span><span class="mn">Aug</span></div><div class="rc"><div class="tl">Soccer Practice</div><div class="sub">Mon &middot; 3:15 PM</div></div><span class="tp" style="background:#1B4F9C">Practice</span></div>
+      <div class="row" data-type="game" style="border-left-color:#F5B417"><div class="dt"><span class="dn">25</span><span class="mn">Aug</span></div><div class="rc"><div class="tl">at First Baptist Elyria</div><div class="sub">Tue &middot; 4:30 PM</div></div><span class="tp" style="background:#F5B417">Game</span></div>
+      <div class="row" data-type="game" style="border-left-color:#F5B417"><div class="dt"><span class="dn">27</span><span class="mn">Aug</span></div><div class="rc"><div class="tl">vs Christian Community Sch</div><div class="sub">Thu &middot; 5:00 PM</div></div><span class="tp" style="background:#F5B417">Game</span></div>
+      <div class="row" data-type="game" style="border-left-color:#F5B417"><div class="dt"><span class="dn">28</span><span class="mn">Aug</span></div><div class="rc"><div class="tl">at Coschocton Christian</div><div class="sub">Fri &middot; TBD</div></div><span class="tp" style="background:#F5B417">Game</span></div>
+      <div class="row" data-type="practice" style="border-left-color:#1B4F9C"><div class="dt"><span class="dn">31</span><span class="mn">Aug</span></div><div class="rc"><div class="tl">Soccer Practice</div><div class="sub">Mon &middot; 3:15 PM</div></div><span class="tp" style="background:#1B4F9C">Practice</span></div>
+      <h3 class="month" data-month="September">September</h3>
+      <div class="row" data-type="game" style="border-left-color:#F5B417"><div class="dt"><span class="dn">1</span><span class="mn">Sep</span></div><div class="rc"><div class="tl">vs Central Christian School</div><div class="sub">Tue &middot; 4:30 PM</div></div><span class="tp" style="background:#F5B417">Game</span></div>
+      <div class="row" data-type="practice" style="border-left-color:#1B4F9C"><div class="dt"><span class="dn">3</span><span class="mn">Sep</span></div><div class="rc"><div class="tl">Soccer Practice</div><div class="sub">Thu &middot; 3:15 PM</div></div><span class="tp" style="background:#1B4F9C">Practice</span></div>
+      <div class="row" data-type="practice" style="border-left-color:#1B4F9C"><div class="dt"><span class="dn">4</span><span class="mn">Sep</span></div><div class="rc"><div class="tl">Soccer Practice</div><div class="sub">Fri &middot; 3:15 PM</div></div><span class="tp" style="background:#1B4F9C">Practice</span></div>
+      <div class="row" data-type="practice" style="border-left-color:#1B4F9C"><div class="dt"><span class="dn">7</span><span class="mn">Sep</span></div><div class="rc"><div class="tl">Soccer Practice</div><div class="sub">Mon &middot; 3:15 PM</div></div><span class="tp" style="background:#1B4F9C">Practice</span></div>
+      <div class="row" data-type="game" style="border-left-color:#F5B417"><div class="dt"><span class="dn">8</span><span class="mn">Sep</span></div><div class="rc"><div class="tl">vs Open Door</div><div class="sub">Tue &middot; 4:30 PM</div></div><span class="tp" style="background:#F5B417">Game</span></div>
+      <div class="row" data-type="game" style="border-left-color:#F5B417"><div class="dt"><span class="dn">10</span><span class="mn">Sep</span></div><div class="rc"><div class="tl">vs Wayside</div><div class="sub">Thu &middot; 5:00 PM</div></div><span class="tp" style="background:#F5B417">Game</span></div>
+      <div class="row" data-type="practice" style="border-left-color:#1B4F9C"><div class="dt"><span class="dn">11</span><span class="mn">Sep</span></div><div class="rc"><div class="tl">Soccer Practice</div><div class="sub">Fri &middot; 3:15 PM</div></div><span class="tp" style="background:#1B4F9C">Practice</span></div>
+      <div class="row" data-type="practice" style="border-left-color:#1B4F9C"><div class="dt"><span class="dn">14</span><span class="mn">Sep</span></div><div class="rc"><div class="tl">Soccer Practice</div><div class="sub">Mon &middot; 3:15 PM</div></div><span class="tp" style="background:#1B4F9C">Practice</span></div>
+      <div class="row" data-type="practice" style="border-left-color:#1B4F9C"><div class="dt"><span class="dn">15</span><span class="mn">Sep</span></div><div class="rc"><div class="tl">Soccer Practice</div><div class="sub">Tue &middot; 3:15 PM</div></div><span class="tp" style="background:#1B4F9C">Practice</span></div>
+      <div class="row" data-type="practice" style="border-left-color:#1B4F9C"><div class="dt"><span class="dn">17</span><span class="mn">Sep</span></div><div class="rc"><div class="tl">Soccer Practice</div><div class="sub">Thu &middot; 3:15 PM</div></div><span class="tp" style="background:#1B4F9C">Practice</span></div>
+      <div class="row" data-type="game" style="border-left-color:#F5B417"><div class="dt"><span class="dn">18</span><span class="mn">Sep</span></div><div class="rc"><div class="tl">vs Coschocton Christian</div><div class="sub">Fri &middot; 5:00 PM</div></div><span class="tp" style="background:#F5B417">Game</span></div>
+      <div class="row" data-type="practice" style="border-left-color:#1B4F9C"><div class="dt"><span class="dn">21</span><span class="mn">Sep</span></div><div class="rc"><div class="tl">Soccer Practice</div><div class="sub">Mon &middot; 3:15 PM</div></div><span class="tp" style="background:#1B4F9C">Practice</span></div>
+      <div class="row" data-type="game" style="border-left-color:#F5B417"><div class="dt"><span class="dn">22</span><span class="mn">Sep</span></div><div class="rc"><div class="tl">at Open Door</div><div class="sub">Tue &middot; 4:30 PM</div></div><span class="tp" style="background:#F5B417">Game</span></div>
+      <div class="row" data-type="practice" style="border-left-color:#1B4F9C"><div class="dt"><span class="dn">24</span><span class="mn">Sep</span></div><div class="rc"><div class="tl">Soccer Practice</div><div class="sub">Thu &middot; 3:15 PM</div></div><span class="tp" style="background:#1B4F9C">Practice</span></div>
+      <div class="row" data-type="game" style="border-left-color:#F5B417"><div class="dt"><span class="dn">25</span><span class="mn">Sep</span></div><div class="rc"><div class="tl">vs Wooster Christian</div><div class="sub">Fri &middot; 4:30 PM</div></div><span class="tp" style="background:#F5B417">Game</span></div>
+      <div class="row" data-type="game" style="border-left-color:#F5B417"><div class="dt"><span class="dn">28</span><span class="mn">Sep</span></div><div class="rc"><div class="tl">at Christian Community Sch</div><div class="sub">Mon &middot; 5:00 PM</div></div><span class="tp" style="background:#F5B417">Game</span></div>
+      <div class="row" data-type="practice" style="border-left-color:#1B4F9C"><div class="dt"><span class="dn">29</span><span class="mn">Sep</span></div><div class="rc"><div class="tl">Soccer Practice</div><div class="sub">Tue &middot; 3:15 PM</div></div><span class="tp" style="background:#1B4F9C">Practice</span></div>
+      <h3 class="month" data-month="October">October</h3>
+      <div class="row" data-type="game" style="border-left-color:#F5B417"><div class="dt"><span class="dn">1</span><span class="mn">Oct</span></div><div class="rc"><div class="tl">at Wayside</div><div class="sub">Thu &middot; 5:00 PM</div></div><span class="tp" style="background:#F5B417">Game</span></div>
+      <div class="row" data-type="practice" style="border-left-color:#1B4F9C"><div class="dt"><span class="dn">2</span><span class="mn">Oct</span></div><div class="rc"><div class="tl">Soccer Practice</div><div class="sub">Fri &middot; 3:15 PM</div></div><span class="tp" style="background:#1B4F9C">Practice</span></div>
+      <div class="row" data-type="practice" style="border-left-color:#1B4F9C"><div class="dt"><span class="dn">5</span><span class="mn">Oct</span></div><div class="rc"><div class="tl">Soccer Practice</div><div class="sub">Mon &middot; 3:15 PM</div></div><span class="tp" style="background:#1B4F9C">Practice</span></div>
+      <div class="row" data-type="practice" style="border-left-color:#1B4F9C"><div class="dt"><span class="dn">6</span><span class="mn">Oct</span></div><div class="rc"><div class="tl">Soccer Practice</div><div class="sub">Tue &middot; 3:15 PM</div></div><span class="tp" style="background:#1B4F9C">Practice</span></div>
+      <div class="row" data-type="game" style="border-left-color:#F5B417"><div class="dt"><span class="dn">8</span><span class="mn">Oct</span></div><div class="rc"><div class="tl">vs First Baptist Elyria</div><div class="sub">Thu &middot; 4:30 PM</div></div><span class="tp" style="background:#F5B417">Game</span></div>
+    </div>
+    <p class="disclaimer">All games, times, and locations are subject to change. Practices don't run on game days.</p>
+  </section>
+</div>
+
+<div class="wrapwide">
+  <section id="calendar">
+    <h2>Team Calendar</h2>
+    <p class="calnote">Live Google Calendar for subscribing. Note: Google's embed shows all entries in one color, so use the color-coded list above to tell events apart.</p>
+    <div class="calwrap">
+      <iframe src="https://calendar.google.com/calendar/embed?src=a599f1add330f41726792a4e836d40cec656a7473e8c6a6ab42dc71469abe922%40group.calendar.google.com&ctz=America%2FNew_York&mode=MONTH&bgcolor=%23FFFFFF&showTitle=0&showPrint=0&showCalendars=0&showTz=0" title="ACS Lions Soccer Team Calendar" loading="lazy"></iframe>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <strong>Go Lions! 🦁</strong>
+  Questions? Reach Coach Josh on Remind.<br>
+  Join by texting <span class="code">@k97a98</span> to <span class="code">81010</span> &middot; <a href="https://remind.com/join/k97a98">remind.com/join/k97a98</a>
+</footer>
+
+<script>
+  (function(){
+    var chips = document.querySelectorAll('#filters .chip');
+    var rows = document.querySelectorAll('#agenda .row');
+    var months = document.querySelectorAll('#agenda .month');
+    function apply(filter){
+      rows.forEach(function(r){
+        r.classList.toggle('hidden', !(filter === 'all' || r.dataset.type === filter));
+      });
+      // hide month headers with no visible rows
+      months.forEach(function(m){
+        var vis = false, el = m.nextElementSibling;
+        while(el && !el.classList.contains('month')){
+          if(el.classList.contains('row') && !el.classList.contains('hidden')){ vis = true; break; }
+          el = el.nextElementSibling;
+        }
+        m.classList.toggle('hidden', !vis);
+      });
+    }
+    chips.forEach(function(c){
+      c.addEventListener('click', function(){
+        chips.forEach(function(x){ x.classList.remove('active'); });
+        c.classList.add('active');
+        apply(c.dataset.filter);
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>
