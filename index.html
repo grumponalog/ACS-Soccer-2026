@@ -5,6 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ACS Lions Soccer 2026 | Team Hub</title>
 <link rel="stylesheet" href="styles.css">
+<style>
+  .tn-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .tn-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:0 2px 14px rgba(0,0,0,.28)}
+  .tn-label{font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:800;color:var(--orange)}
+  #tn-next .tn-label{color:var(--sky)}
+  .ev{display:flex;align-items:center;justify-content:space-between;gap:12px;border-left:4px solid var(--sky);padding:4px 0 4px 14px;margin-top:12px}
+  .ev-title{font-weight:700;color:#fff;font-size:17px}
+  .ev-meta{color:var(--muted);font-size:14px;margin-top:2px}
+  .ev-tag{font-size:10px;font-weight:800;color:#04202e;padding:4px 9px;border-radius:999px;text-transform:uppercase;letter-spacing:.04em;white-space:nowrap}
+  .tn-empty{color:var(--muted);font-size:15px;margin-top:12px}
+  @media(max-width:520px){.tn-grid{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
 
@@ -54,11 +66,10 @@
   </section>
 
   <section>
-    <h2>Heads Up</h2>
-    <div class="card">
-      <span class="pill gold">Schedule change</span>
-      <h3>Conditioning now starts Monday, August 3</h3>
-      <p>Pushed back a week since it overlapped with Vacation Bible School. The Fall Sports Meeting is Friday, August 7 at 4:00 PM in the gym (no conditioning that day). Details on the Conditioning page.</p>
+    <h2>Today &amp; Next</h2>
+    <div class="tn-grid">
+      <div class="tn-card" id="tn-today"><span class="tn-label">Today</span><div class="tn-body"></div></div>
+      <div class="tn-card" id="tn-next"><span class="tn-label">Next Up</span><div class="tn-body"></div></div>
     </div>
   </section>
 
@@ -69,6 +80,26 @@
   Questions? Reach Coach Josh on Remind.<br>
   Join by texting <span class="code">@k97a98</span> to <span class="code">81010</span> &middot; <a href="https://remind.com/join/k97a98">remind.com/join/k97a98</a>
 </footer>
+
+<script>
+(function(){
+  var EVENTS=[{"d":"2026-08-03","t":"5:30 PM","title":"Conditioning (optional)","type":"conditioning"},{"d":"2026-08-05","t":"5:30 PM","title":"Conditioning (optional)","type":"conditioning"},{"d":"2026-08-07","t":"4:00 PM","title":"Fall Sports Meeting","type":"meeting"},{"d":"2026-08-10","t":"5:30 PM","title":"Conditioning (optional)","type":"conditioning"},{"d":"2026-08-12","t":"5:30 PM","title":"Conditioning (optional)","type":"conditioning"},{"d":"2026-08-14","t":"5:30 PM","title":"Conditioning (optional)","type":"conditioning"},{"d":"2026-08-17","t":"5:45 PM","title":"Back to School Night","type":"meeting"},{"d":"2026-08-18","t":"3:15 PM","title":"Soccer Practice","type":"practice"},{"d":"2026-08-20","t":"3:15 PM","title":"Soccer Practice","type":"practice"},{"d":"2026-08-21","t":"3:15 PM","title":"Soccer Practice","type":"practice"},{"d":"2026-08-24","t":"3:15 PM","title":"Soccer Practice","type":"practice"},{"d":"2026-08-25","t":"4:30 PM","title":"at First Baptist Elyria","type":"game"},{"d":"2026-08-27","t":"5:00 PM","title":"vs Christian Community Sch","type":"game"},{"d":"2026-08-28","t":"TBD","title":"at Coschocton Christian","type":"game"},{"d":"2026-08-31","t":"3:15 PM","title":"Soccer Practice","type":"practice"},{"d":"2026-09-01","t":"4:30 PM","title":"vs Central Christian School","type":"game"},{"d":"2026-09-03","t":"3:15 PM","title":"Soccer Practice","type":"practice"},{"d":"2026-09-04","t":"3:15 PM","title":"Soccer Practice","type":"practice"},{"d":"2026-09-07","t":"All day","title":"No Practice — Labor Day","type":"closure"},{"d":"2026-09-08","t":"4:30 PM","title":"vs Open Door","type":"game"},{"d":"2026-09-10","t":"5:00 PM","title":"vs Wayside","type":"game"},{"d":"2026-09-11","t":"3:15 PM","title":"Soccer Practice","type":"practice"},{"d":"2026-09-14","t":"3:15 PM","title":"Soccer Practice","type":"practice"},{"d":"2026-09-15","t":"3:15 PM","title":"Soccer Practice","type":"practice"},{"d":"2026-09-17","t":"3:15 PM","title":"Soccer Practice","type":"practice"},{"d":"2026-09-18","t":"5:00 PM","title":"vs Coschocton Christian","type":"game"},{"d":"2026-09-21","t":"3:15 PM","title":"Soccer Practice","type":"practice"},{"d":"2026-09-22","t":"4:30 PM","title":"at Open Door","type":"game"},{"d":"2026-09-24","t":"3:15 PM","title":"Soccer Practice","type":"practice"},{"d":"2026-09-25","t":"4:30 PM","title":"vs Wooster Christian","type":"game"},{"d":"2026-09-28","t":"5:00 PM","title":"at Christian Community Sch","type":"game"},{"d":"2026-09-29","t":"3:15 PM","title":"Soccer Practice","type":"practice"},{"d":"2026-10-01","t":"5:00 PM","title":"at Wayside","type":"game"},{"d":"2026-10-02","t":"3:15 PM","title":"Soccer Practice","type":"practice"},{"d":"2026-10-05","t":"3:15 PM","title":"Soccer Practice","type":"practice"},{"d":"2026-10-06","t":"3:15 PM","title":"Soccer Practice","type":"practice"},{"d":"2026-10-08","t":"4:30 PM","title":"vs First Baptist Elyria","type":"game"}];
+  var COLORS={game:'#FB8500',practice:'#2EC0F9',conditioning:'#2EC0F9',meeting:'#F4B740',closure:'#9fb0bd'};
+  var LABELS={game:'Game',practice:'Practice',conditioning:'Conditioning',meeting:'Meeting',closure:'Closed'};
+  function parse(s){var p=s.split('-');return new Date(+p[0],+p[1]-1,+p[2]);}
+  function fmt(dt){return dt.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'});}
+  function evHTML(e){
+    var c=COLORS[e.type]||'#2EC0F9';
+    return '<div class="ev" style="border-left-color:'+c+'"><div><div class="ev-title">'+e.title+'</div><div class="ev-meta">'+fmt(parse(e.d))+' &middot; '+e.t+'</div></div><span class="ev-tag" style="background:'+c+'">'+(LABELS[e.type]||'')+'</span></div>';
+  }
+  var now=new Date();
+  var todayStr=now.getFullYear()+'-'+String(now.getMonth()+1).padStart(2,'0')+'-'+String(now.getDate()).padStart(2,'0');
+  var today=EVENTS.filter(function(e){return e.d===todayStr;});
+  var future=EVENTS.filter(function(e){return e.d>todayStr;});
+  document.querySelector('#tn-today .tn-body').innerHTML = today.length ? today.map(evHTML).join('') : '<p class="tn-empty">Nothing scheduled today.</p>';
+  document.querySelector('#tn-next .tn-body').innerHTML = future.length ? evHTML(future[0]) : '<p class="tn-empty">Season complete. See you next year!</p>';
+})();
+</script>
 
 </body>
 </html>
