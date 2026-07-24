@@ -9,6 +9,13 @@
   .draft{border:1px dashed #c3d0e6;background:#f8fbff}
   .todo{color:#9aa7bd;font-style:italic;font-size:14px}
   .verse{border-left:3px solid var(--orange);padding:6px 0 6px 16px;color:var(--muted);font-style:italic;margin-top:10px}
+  details{border-top:1px solid var(--line);padding:13px 0}
+  details:first-of-type{border-top:none;padding-top:4px}
+  summary{cursor:pointer;font-weight:700;color:var(--navy);font-size:16px;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:14px}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";color:var(--sky);font-weight:800;font-size:22px;line-height:1}
+  details[open] summary::after{content:"\2013"}
+  details p{color:var(--muted);font-size:15px;margin-top:9px}
 </style>
 </head>
 <body>
@@ -39,20 +46,20 @@
     <div class="card">
       <span class="pill">What we're about</span>
       <h3>Rooted in the ACS mission</h3>
-      <p>Ashland Christian School exists to prepare students both academically and spiritually to take their place in God's world. Soccer is one more place we get to live that out. On the field it means developing godly character, competing with effort and integrity, and honoring God in how we play, win or lose.</p>
+      <p>Ashland Christian School exists to prepare students both academically and spiritually to take their place in God's world. Soccer is one more place we get to live that out. On the field it means developing Christ-like character, competing with effort and integrity, and honoring God in how we play, win or lose.</p>
       <div class="verse">"Whatever you do, work at it with all your heart, as working for the Lord." &mdash; Colossians 3:23</div>
     </div>
 
     <div class="card">
       <span class="pill">How we coach</span>
       <h3>Development first</h3>
-      <p>We use the US Soccer grassroots &ldquo;play-practice-play&rdquo; approach: small-sided games, lots of touches, and real development for every player. We care about growth over the scoreboard. Kids who work hard and love the game get better, and that's the win.</p>
+      <p>At its core, our approach is simple: kids get better by playing. We build practice around the game itself, lots of touches, small-sided games, and real decisions on the ball, instead of standing in lines. We value effort, creativity, and steady growth over the scoreboard. Every player develops, and that's the win.</p>
     </div>
 
     <div class="card">
       <span class="pill">Character</span>
-      <h3>How we carry ourselves</h3>
-      <p>We build the same godly character ACS teaches in the classroom into how we play: respect for teammates, opponents, refs, and coaches; effort every rep; and being the kind of teammate others want to play with. We compete hard and we do it with humility.</p>
+      <h3>More than the game</h3>
+      <p>Our program is designed to develop more than physical skill. We aim to shape discipline, teamwork, and Christ-like character in every player. Soccer isn't just about competition, it's a platform for spiritual growth and personal development, both on and off the field. We want our players building confidence, honoring God, and representing ACS with integrity in everything they do.</p>
     </div>
 
     <div class="card">
@@ -82,17 +89,28 @@
       </ul>
     </div>
 
-    <div class="card draft">
-      <span class="pill">Draft</span>
-      <h3>FAQ</h3>
-      <p class="todo">To develop: common parent questions (uniforms, fees, rain policy, playing time, etc.).</p>
+    <div class="card">
+      <span class="pill">FAQ</span>
+      <h3>Common Questions</h3>
+      <details>
+        <summary>When will we get uniforms?</summary>
+        <p>We usually hand those out a week or so before the first game. Uniforms will need to be returned at the end of the season.</p>
+      </details>
+      <details>
+        <summary>How much playing time will my child get?</summary>
+        <p>We value developing players over winning games. Older kids will get more playing time, but everyone plays in every game, as long as they show up and keep up their academic and behavioral standard at school.</p>
+      </details>
+      <details>
+        <summary>How can I get involved?</summary>
+        <p>Every game has volunteer opportunities, from running the scoreboard to selling refreshments. Contact the school office to find a spot that works for you.</p>
+      </details>
     </div>
   </section>
 
 </div>
 
 <footer>
-  <strong>Go Lions! 🦁</strong>
+  <strong>Go Lions!</strong>
   Questions? Reach Coach Josh on Remind.<br>
   Join by texting <span class="code">@k97a98</span> to <span class="code">81010</span> &middot; <a href="https://remind.com/join/k97a98">remind.com/join/k97a98</a>
 </footer>
