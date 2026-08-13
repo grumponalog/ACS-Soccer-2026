@@ -58,6 +58,7 @@ window.ACSCal = (function () {
           events.push({
             date: cur.start.date,
             time: cur.start.allDay ? null : cur.start.time,
+            endTime: (cur.end && !cur.end.allDay) ? cur.end.time : null,
             allDay: cur.start.allDay,
             title: cur.summary || 'Event',
             location: cur.location || '',
@@ -73,6 +74,7 @@ window.ACSCal = (function () {
       var key = line.slice(0, c).split(';')[0].toUpperCase();
       var val = line.slice(c + 1);
       if (key === 'DTSTART') cur.start = parseDT(val);
+      else if (key === 'DTEND') cur.end = parseDT(val);
       else if (key === 'SUMMARY') cur.summary = unesc(val);
       else if (key === 'LOCATION') cur.location = unesc(val);
       else if (key === 'DESCRIPTION') cur.desc = unesc(val);

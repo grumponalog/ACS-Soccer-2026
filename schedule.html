@@ -46,6 +46,23 @@
   .cal-dn{font-size:12px;font-weight:800;color:var(--muted);display:block;text-align:right;line-height:1.2}
   .cal-cell.today .cal-dn{color:var(--sky)}
   .cal-ev{display:block;font-size:10px;font-weight:800;color:#04202e;border-radius:5px;padding:2px 5px;margin-top:4px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .row.past,.cal-ev.past{opacity:.45}
+  .row.today{border-color:var(--sky);box-shadow:inset 0 0 0 1px var(--sky)}
+  .row.today .dn{color:var(--sky)}
+  .row .todaytag{font-size:9px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--navy);background:var(--sky);padding:3px 7px;border-radius:999px;margin-left:8px;vertical-align:2px}
+  .row.clickable,.cal-ev{cursor:pointer}
+  .row.clickable:hover{border-color:var(--sky)}
+  .cal-ev:hover{filter:brightness(1.15)}
+  .modal{position:fixed;inset:0;z-index:60;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(2,14,22,.74)}
+  .modal[hidden]{display:none}
+  .modal-panel{position:relative;width:100%;max-width:440px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;box-shadow:0 24px 60px rgba(0,0,0,.6)}
+  .modal-x{position:absolute;top:10px;right:12px;background:none;border:0;color:var(--muted);font-size:26px;line-height:1;cursor:pointer;padding:2px 9px;border-radius:9px}
+  .modal-x:hover{color:#fff;background:rgba(255,255,255,.08)}
+  .modal-panel h3{font-size:21px;color:#fff;font-weight:800;margin:2px 0 12px;line-height:1.25;padding-right:24px}
+  .modal-panel .ev-line{color:var(--ink);font-size:15px;margin-top:7px}
+  .modal-panel .ev-line b{color:var(--muted);font-weight:700;font-size:11px;letter-spacing:.12em;text-transform:uppercase;display:block;margin-bottom:1px}
+  .modal-panel .ev-line a{color:var(--sky)}
+  .modal-panel .ev-desc{color:var(--muted);font-size:14px;margin-top:14px;border-top:1px solid var(--line);padding-top:13px;line-height:1.55}
   .cal-legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:12px;font-size:12px;color:var(--muted);font-weight:700}
   .cal-legend span{display:inline-flex;align-items:center;gap:6px}
   .cal-legend i{width:10px;height:10px;border-radius:3px;display:inline-block}
@@ -199,6 +216,17 @@
   </section>
 </div>
 
+<div class="modal" id="evmodal" hidden>
+  <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="ev-title">
+    <button class="modal-x" id="ev-close" type="button" aria-label="Close">&times;</button>
+    <span class="pill" id="ev-pill"></span>
+    <h3 id="ev-title"></h3>
+    <div class="ev-line" id="ev-when"></div>
+    <div class="ev-line" id="ev-where"></div>
+    <div class="ev-desc" id="ev-desc"></div>
+  </div>
+</div>
+
 <footer>
   <strong>Go Lions!</strong>
   Questions? Reach the coaching staff on sportsYou.<br>
@@ -260,7 +288,7 @@
 
     function build(list){
       var html = '', curMonth = '';
-      list.forEach(function(e){
+      list.forEach(function(e, i){
         var p = e.date.split('-'), dt = new Date(+p[0], +p[1]-1, +p[2]);
         var mk = MONF[dt.getMonth()] + dt.getFullYear();
         if(mk !== curMonth){
@@ -271,7 +299,7 @@
         var sub = dt.toLocaleDateString('en-US', {weekday:'short'});
         if(e.time) sub += ' &middot; ' + e.time;
         if(e.desc && e.desc.length <= 40) sub += ' &middot; ' + esc(e.desc);
-        html += '<div class="row" data-type="' + e.type + '" style="border-left-color:' + c + (e.type === 'closure' ? ';opacity:.9' : '') + '">'
+        html += '<div class="row clickable" data-type="' + e.type + '" data-date="' + e.date + '" data-ev="' + i + '" style="border-left-color:' + c + (e.type === 'closure' ? ';opacity:.9' : '') + '">'
              +  '<div class="dt"><span class="dn">' + dt.getDate() + '</span><span class="mn">' + MONS[dt.getMonth()] + '</span></div>'
              +  '<div class="rc"><div class="tl">' + esc(e.title) + '</div><div class="sub">' + sub + '</div></div>'
              +  '<span class="tp" style="background:' + c + '">' + (LABELS[e.type] || 'Event') + '</span></div>';
@@ -288,6 +316,7 @@
         counts();
         apply();
         if(grid) setCalendar(live);
+        markRows();
         if(syncnote){
           syncnote.textContent = 'Live from the sportsYou team calendar \u00b7 ' + live.length + ' events.';
           syncnote.style.display = '';
@@ -358,15 +387,117 @@
         html += '<div class="' + cls + '"><span class="cal-dn">' + d.getDate() + '</span>';
         (byDay[key] || []).forEach(function(e){
           var c = COLORS[e.type] || '#2EC0F9';
+          var pastCls = (key < todayKey()) ? ' past' : '';
           var label = (e.time ? e.time.replace(/:00/,'').replace(/\s?(AM|PM)/i, function(x){ return x.trim().toLowerCase().charAt(0); }) + ' ' : '') + e.title;
-          html += '<span class="cal-ev" style="background:' + c + '" title="' + esc(e.title) + '">' + esc(label) + '</span>';
+          html += '<span class="cal-ev' + pastCls + '" data-ev="' + e._i + '" style="background:' + c + '" title="' + esc(e.title) + '">' + esc(label) + '</span>';
         });
         html += '</div>';
       }
       grid.innerHTML = html;
     }
 
+    function todayKey(){
+      if(window.ACSCal) return ACSCal.todayET();
+      var n = new Date();
+      return n.getFullYear() + '-' + String(n.getMonth()+1).padStart(2,'0') + '-' + String(n.getDate()).padStart(2,'0');
+    }
+
+    // Mark every list row as today / already passed, and make it clickable.
+    function markRows(){
+      var t = todayKey();
+      Array.prototype.forEach.call(agenda.querySelectorAll('.row'), function(r, i){
+        var d = r.dataset.date;
+        if(!d){
+          var day = parseInt(r.querySelector('.dn').textContent, 10);
+          var mon = MONS.indexOf(r.querySelector('.mn').textContent.trim());
+          var yr  = parseInt(agenda.dataset.year, 10) || new Date().getFullYear();
+          if(day && mon >= 0){
+            d = yr + '-' + String(mon+1).padStart(2,'0') + '-' + String(day).padStart(2,'0');
+            r.dataset.date = d;
+          }
+        }
+        if(!r.dataset.ev) r.dataset.ev = i;
+        r.classList.add('clickable');
+        r.classList.toggle('past', !!d && d < t);
+        var isToday = (d === t);
+        r.classList.toggle('today', isToday);
+        var tl = r.querySelector('.tl');
+        var tag = tl.querySelector('.todaytag');
+        if(isToday && !tag){
+          tag = document.createElement('span');
+          tag.className = 'todaytag';
+          tag.textContent = 'Today';
+          tl.appendChild(tag);
+        } else if(!isToday && tag){
+          tag.remove();
+        }
+      });
+    }
+
+    // ---- Event detail popup ----------------------------------------------
+    var modal = document.getElementById('evmodal');
+    var mPill = document.getElementById('ev-pill');
+    var mTitle = document.getElementById('ev-title');
+    var mWhen = document.getElementById('ev-when');
+    var mWhere = document.getElementById('ev-where');
+    var mDesc = document.getElementById('ev-desc');
+
+    function timeRange(e){
+      if(!e.time) return 'Time to be announced';
+      if(!e.endTime) return e.time;
+      var a = e.time, b = e.endTime;
+      var am = a.match(/\s?([AP]M)$/i), bm = b.match(/\s?([AP]M)$/i);
+      if(am && bm && am[1].toUpperCase() === bm[1].toUpperCase()) a = a.replace(/\s?[AP]M$/i, '');
+      return a + ' \u2013 ' + b;
+    }
+
+    function openEvent(e){
+      if(!e || !modal) return;
+      var c = COLORS[e.type] || '#2EC0F9';
+      mPill.textContent = LABELS[e.type] || 'Event';
+      mPill.style.background = c;
+      mPill.style.color = '#04202e';
+      mTitle.textContent = e.title;
+
+      var pr = e.date.split('-');
+      var dt = new Date(+pr[0], +pr[1]-1, +pr[2]);
+      var day = dt.toLocaleDateString('en-US', {weekday:'long', month:'long', day:'numeric'});
+      mWhen.innerHTML = '<b>When</b>' + day + ' &middot; ' + timeRange(e);
+
+      if(e.location){
+        mWhere.innerHTML = '<b>Where</b>' + esc(e.location) +
+          ' &middot; <a href="https://www.google.com/maps/search/?api=1&query=' +
+          encodeURIComponent(e.location) + '" target="_blank" rel="noopener">Map</a>';
+        mWhere.style.display = '';
+      } else {
+        mWhere.style.display = 'none';
+      }
+
+      if(e.desc){ mDesc.textContent = e.desc; mDesc.style.display = ''; }
+      else { mDesc.style.display = 'none'; }
+
+      modal.hidden = false;
+      document.getElementById('ev-close').focus();
+    }
+
+    function closeEvent(){ if(modal) modal.hidden = true; }
+
+    if(modal){
+      document.getElementById('ev-close').addEventListener('click', closeEvent);
+      modal.addEventListener('click', function(ev){ if(ev.target === modal) closeEvent(); });
+      document.addEventListener('keydown', function(ev){ if(ev.key === 'Escape') closeEvent(); });
+      agenda.addEventListener('click', function(ev){
+        var r = ev.target.closest ? ev.target.closest('.row') : null;
+        if(r && r.dataset.ev !== undefined) openEvent(calEvents[+r.dataset.ev]);
+      });
+      if(grid) grid.addEventListener('click', function(ev){
+        var c = ev.target.closest ? ev.target.closest('.cal-ev') : null;
+        if(c && c.dataset.ev !== undefined) openEvent(calEvents[+c.dataset.ev]);
+      });
+    }
+
     function setCalendar(list){
+      list.forEach(function(e, i){ e._i = i; });
       calEvents = list;
       months = monthKeys(list);
       if(!months.length){ return; }
@@ -381,6 +512,7 @@
       nextB.addEventListener('click', function(){ if(mi < months.length - 1){ mi++; drawMonth(); } });
       setCalendar(fromDOM());
     }
+    markRows();
 
     var copy = document.getElementById('copyfeed');
     if(copy){
@@ -394,6 +526,5 @@
     }
   })();
 </script>
-
 </body>
 </html>
