@@ -6,9 +6,6 @@
 <title>Schedule | ACS Lions Soccer 2026</title>
 <link rel="stylesheet" href="styles.css">
 <style>
-  .wrapwide{max-width:1600px;margin:0 auto;padding:0 16px}
-  .calwrap{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#fff;box-shadow:0 4px 16px rgba(20,40,80,.08)}
-  .calwrap iframe{display:block;width:100%;height:840px;border:0;background:#fff}
   .subrow{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:14px}
   .subrow a{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:700;font-size:14px;padding:11px 18px;border-radius:999px}
   .subrow a.primary{background:var(--sky);color:var(--navy)}
@@ -34,8 +31,10 @@
   .hidden{display:none!important}
   .calnote{font-size:13px;color:var(--muted);margin-bottom:12px}
   .disclaimer{font-size:13px;color:var(--muted);text-align:center;margin-top:12px;font-style:italic}
-  @media(max-width:900px){.calwrap iframe{height:640px}}
-  @media(max-width:520px){.calwrap iframe{height:520px}}
+  .feedurl{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12px;color:var(--sky);background:rgba(46,192,249,.09);border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin-top:8px;word-break:break-all;line-height:1.5}
+  .copybtn{font:inherit;font-weight:700;font-size:14px;padding:11px 18px;border-radius:999px;border:0;cursor:pointer;background:rgba(46,192,249,.14);color:var(--sky)}
+  .copybtn:hover{background:rgba(46,192,249,.24)}
+  #syncnote{margin:0 0 12px}
 </style>
 </head>
 <body>
@@ -57,14 +56,15 @@
 <div class="pagehead wrap">
   <div class="kicker">2026 Season</div>
   <h1>Schedule</h1>
-  <p class="lede">The full season below. Filter by type, or subscribe to the team calendar so everything lands on your phone automatically.</p>
+  <p class="lede">The full season below, straight from our sportsYou team calendar. Filter by type, or subscribe once and every change lands on your phone by itself.</p>
 </div>
 
 <div class="wrap">
 
   <div class="subrow">
-    <a class="primary" href="https://calendar.google.com/calendar/u/0?cid=YTU5OWYxYWRkMzMwZjQxNzI2NzkyYTRlODM2ZDQwY2VjNjU2YTc0NzNlOGM2YTZhYjQyZGM3MTQ2OWFiZTkyMkBn">＋ Add to Google Calendar</a>
-    <a class="ghost" href="#calendar">View calendar</a>
+    <a class="primary" href="webcal://calendar.sportsyou.com/access/us-be701e54-f8ae-4076-9f6d-b810fa55c8e2/3984e064-3776-4039-8d8a-cb31cefcc695">＋ Subscribe on iPhone / Mac</a>
+    <a class="ghost" href="https://calendar.google.com/calendar/r?cid=https%3A%2F%2Fcalendar.sportsyou.com%2Faccess%2Fus-be701e54-f8ae-4076-9f6d-b810fa55c8e2%2F3984e064-3776-4039-8d8a-cb31cefcc695">＋ Add to Google Calendar</a>
+    <a class="ghost" href="#calendar">Other ways to subscribe</a>
   </div>
 
   <section>
@@ -75,6 +75,8 @@
       <button class="chip" data-filter="conditioning"><i style="background:#2EC0F9"></i> Conditioning <span class="ct">5</span></button>
       <button class="chip" data-filter="meeting"><i style="background:#F4B740"></i> Meeting <span class="ct">2</span></button>
     </div>
+
+    <p class="calnote" id="syncnote" style="display:none"></p>
 
     <div id="agenda">
       <h3 class="month" data-month="August">August</h3>
@@ -122,12 +124,33 @@
   </section>
 </div>
 
-<div class="wrapwide">
+<div class="wrap">
   <section id="calendar">
-    <h2>Team Calendar</h2>
-    <p class="calnote">Live Google Calendar for subscribing. Note: Google's embed shows all entries in one color, so use the color-coded list above to tell events apart.</p>
-    <div class="calwrap">
-      <iframe src="https://calendar.google.com/calendar/embed?src=a599f1add330f41726792a4e836d40cec656a7473e8c6a6ab42dc71469abe922%40group.calendar.google.com&ctz=America%2FNew_York&mode=MONTH&bgcolor=%23FFFFFF&showTitle=0&showPrint=0&showCalendars=0&showTz=0" title="ACS Lions Soccer Team Calendar" loading="lazy"></iframe>
+    <h2>Subscribe to the Team Calendar</h2>
+    <p class="calnote">The schedule lives in sportsYou. Subscribe once and every change we make &mdash; a time, a location, a cancellation &mdash; updates on your phone by itself.</p>
+
+    <div class="card">
+      <h3>iPhone, iPad, or Mac</h3>
+      <p>Tap the button, then choose <strong>Subscribe</strong> when your calendar app asks.</p>
+      <div class="subrow" style="margin:12px 0 0"><a class="primary" href="webcal://calendar.sportsyou.com/access/us-be701e54-f8ae-4076-9f6d-b810fa55c8e2/3984e064-3776-4039-8d8a-cb31cefcc695">＋ Subscribe in Apple Calendar</a></div>
+    </div>
+
+    <div class="card">
+      <h3>Google Calendar</h3>
+      <p>Opens Google Calendar and asks you to confirm adding the ACS Lions Soccer calendar.</p>
+      <div class="subrow" style="margin:12px 0 0"><a class="primary" href="https://calendar.google.com/calendar/r?cid=https%3A%2F%2Fcalendar.sportsyou.com%2Faccess%2Fus-be701e54-f8ae-4076-9f6d-b810fa55c8e2%2F3984e064-3776-4039-8d8a-cb31cefcc695">＋ Add to Google Calendar</a></div>
+    </div>
+
+    <div class="card">
+      <h3>Outlook or anything else</h3>
+      <p>Add this address as an internet calendar subscription:</p>
+      <p class="feedurl">https://calendar.sportsyou.com/access/us-be701e54-f8ae-4076-9f6d-b810fa55c8e2/3984e064-3776-4039-8d8a-cb31cefcc695</p>
+      <div class="subrow" style="margin:12px 0 0"><button class="copybtn" id="copyfeed" type="button">Copy calendar link</button></div>
+    </div>
+
+    <div class="card">
+      <h3>Or just use the sportsYou app</h3>
+      <p>If you have joined the team with access code <strong>ZZL5-ENRH</strong>, the whole schedule is already in the app &mdash; games in red, practices and events in blue.</p>
     </div>
   </section>
 </div>
@@ -138,17 +161,26 @@
   Join with team code <span class="code">ZZL5-ENRH</span> &middot; <a href="https://sportsyou.com">sportsyou.com</a>
 </footer>
 
+<script src="calendar.js"></script>
 <script>
   (function(){
-    var chips = document.querySelectorAll('#filters .chip');
-    var rows = document.querySelectorAll('#agenda .row');
-    var months = document.querySelectorAll('#agenda .month');
-    function apply(filter){
-      rows.forEach(function(r){
-        r.classList.toggle('hidden', !(filter === 'all' || r.dataset.type === filter));
+    var agenda   = document.getElementById('agenda');
+    var filters  = document.getElementById('filters');
+    var syncnote = document.getElementById('syncnote');
+    var active   = 'all';
+
+    var COLORS = window.ACSCal ? ACSCal.COLORS : {game:'#FB8500',practice:'#2EC0F9',conditioning:'#2EC0F9',meeting:'#F4B740',closure:'#9fb0bd',event:'#2EC0F9'};
+    var LABELS = window.ACSCal ? ACSCal.LABELS : {game:'Game',practice:'Practice',conditioning:'Conditioning',meeting:'Meeting',closure:'Closed',event:'Event'};
+    var MONF = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+    var MONS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+    function apply(){
+      var rows = agenda.querySelectorAll('.row');
+      var months = agenda.querySelectorAll('.month');
+      Array.prototype.forEach.call(rows, function(r){
+        r.classList.toggle('hidden', !(active === 'all' || r.dataset.type === active));
       });
-      // hide month headers with no visible rows
-      months.forEach(function(m){
+      Array.prototype.forEach.call(months, function(m){
         var vis = false, el = m.nextElementSibling;
         while(el && !el.classList.contains('month')){
           if(el.classList.contains('row') && !el.classList.contains('hidden')){ vis = true; break; }
@@ -157,13 +189,77 @@
         m.classList.toggle('hidden', !vis);
       });
     }
-    chips.forEach(function(c){
-      c.addEventListener('click', function(){
-        chips.forEach(function(x){ x.classList.remove('active'); });
-        c.classList.add('active');
-        apply(c.dataset.filter);
+
+    function counts(){
+      var rows = agenda.querySelectorAll('.row'), n = {};
+      Array.prototype.forEach.call(rows, function(r){ n[r.dataset.type] = (n[r.dataset.type]||0) + 1; });
+      Array.prototype.forEach.call(filters.querySelectorAll('.chip'), function(c){
+        var f = c.dataset.filter, ct = c.querySelector('.ct');
+        var v = (f === 'all') ? rows.length : (n[f] || 0);
+        if(ct) ct.textContent = v;
+        c.style.display = (f !== 'all' && !v) ? 'none' : '';
       });
+    }
+
+    filters.addEventListener('click', function(ev){
+      var c = ev.target.closest ? ev.target.closest('.chip') : null;
+      if(!c) return;
+      Array.prototype.forEach.call(filters.querySelectorAll('.chip'), function(x){ x.classList.remove('active'); });
+      c.classList.add('active');
+      active = c.dataset.filter;
+      apply();
     });
+
+    function esc(s){
+      return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    }
+
+    function build(list){
+      var html = '', curMonth = '';
+      list.forEach(function(e){
+        var p = e.date.split('-'), dt = new Date(+p[0], +p[1]-1, +p[2]);
+        var mk = MONF[dt.getMonth()] + dt.getFullYear();
+        if(mk !== curMonth){
+          curMonth = mk;
+          html += '<h3 class="month" data-month="' + MONF[dt.getMonth()] + '">' + MONF[dt.getMonth()] + '</h3>';
+        }
+        var c = COLORS[e.type] || '#2EC0F9';
+        var sub = dt.toLocaleDateString('en-US', {weekday:'short'});
+        if(e.time) sub += ' &middot; ' + e.time;
+        if(e.desc && e.desc.length <= 40) sub += ' &middot; ' + esc(e.desc);
+        html += '<div class="row" data-type="' + e.type + '" style="border-left-color:' + c + (e.type === 'closure' ? ';opacity:.9' : '') + '">'
+             +  '<div class="dt"><span class="dn">' + dt.getDate() + '</span><span class="mn">' + MONS[dt.getMonth()] + '</span></div>'
+             +  '<div class="rc"><div class="tl">' + esc(e.title) + '</div><div class="sub">' + sub + '</div></div>'
+             +  '<span class="tp" style="background:' + c + '">' + (LABELS[e.type] || 'Event') + '</span></div>';
+      });
+      return html;
+    }
+
+    counts();
+
+    if(window.ACSCal){
+      ACSCal.load(function(live){
+        if(!live) return;
+        agenda.innerHTML = build(live);
+        counts();
+        apply();
+        if(syncnote){
+          syncnote.textContent = 'Live from the sportsYou team calendar \u00b7 ' + live.length + ' events.';
+          syncnote.style.display = '';
+        }
+      });
+    }
+
+    var copy = document.getElementById('copyfeed');
+    if(copy){
+      copy.addEventListener('click', function(){
+        var url = document.querySelector('.feedurl').textContent.trim();
+        var done = function(){ copy.textContent = 'Copied'; setTimeout(function(){ copy.textContent = 'Copy calendar link'; }, 1800); };
+        if(navigator.clipboard && navigator.clipboard.writeText){
+          navigator.clipboard.writeText(url).then(done, function(){});
+        }
+      });
+    }
   })();
 </script>
 
