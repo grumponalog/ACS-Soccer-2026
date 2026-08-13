@@ -31,6 +31,29 @@
   .hidden{display:none!important}
   .calnote{font-size:13px;color:var(--muted);margin-bottom:12px}
   .disclaimer{font-size:13px;color:var(--muted);text-align:center;margin-top:12px;font-style:italic}
+  .cal-nav{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+  .cal-title{font-weight:800;color:#fff;font-size:19px}
+  .cal-btn{font:inherit;font-weight:800;font-size:16px;line-height:1;width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--sky);cursor:pointer}
+  .cal-btn:hover:not(:disabled){border-color:var(--sky);background:rgba(46,192,249,.12)}
+  .cal-btn:disabled{opacity:.3;cursor:default}
+  .cal-head{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px;margin-bottom:6px}
+  .cal-dow{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:800;text-align:center}
+  .cal-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px}
+  .cal-cell{min-height:92px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:6px}
+  .cal-cell.out{background:transparent;border-color:transparent}
+  .cal-cell.out .cal-dn{opacity:.28}
+  .cal-cell.today{border-color:var(--sky);box-shadow:inset 0 0 0 1px var(--sky)}
+  .cal-dn{font-size:12px;font-weight:800;color:var(--muted);display:block;text-align:right;line-height:1.2}
+  .cal-cell.today .cal-dn{color:var(--sky)}
+  .cal-ev{display:block;font-size:10px;font-weight:800;color:#04202e;border-radius:5px;padding:2px 5px;margin-top:4px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .cal-legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:12px;font-size:12px;color:var(--muted);font-weight:700}
+  .cal-legend span{display:inline-flex;align-items:center;gap:6px}
+  .cal-legend i{width:10px;height:10px;border-radius:3px;display:inline-block}
+  @media(max-width:640px){
+    .cal-cell{min-height:58px;padding:4px;border-radius:8px}
+    .cal-ev{font-size:0;line-height:0;height:7px;padding:0;border-radius:99px;margin-top:3px}
+    .cal-grid,.cal-head{gap:4px}
+  }
   .feedurl{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12px;color:var(--sky);background:rgba(46,192,249,.09);border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin-top:8px;word-break:break-all;line-height:1.5}
   .copybtn{font:inherit;font-weight:700;font-size:14px;padding:11px 18px;border-radius:999px;border:0;cursor:pointer;background:rgba(46,192,249,.14);color:var(--sky)}
   .copybtn:hover{background:rgba(46,192,249,.24)}
@@ -64,7 +87,7 @@
   <div class="subrow">
     <a class="primary" href="webcal://calendar.sportsyou.com/access/us-be701e54-f8ae-4076-9f6d-b810fa55c8e2/3984e064-3776-4039-8d8a-cb31cefcc695">＋ Subscribe on iPhone / Mac</a>
     <a class="ghost" href="https://calendar.google.com/calendar/r?cid=https%3A%2F%2Fcalendar.sportsyou.com%2Faccess%2Fus-be701e54-f8ae-4076-9f6d-b810fa55c8e2%2F3984e064-3776-4039-8d8a-cb31cefcc695">＋ Add to Google Calendar</a>
-    <a class="ghost" href="#calendar">Other ways to subscribe</a>
+    <a class="ghost" href="#calview">View the month</a>
   </div>
 
   <section>
@@ -78,7 +101,7 @@
 
     <p class="calnote" id="syncnote" style="display:none"></p>
 
-    <div id="agenda">
+    <div id="agenda" data-year="2026">
       <h3 class="month" data-month="August">August</h3>
       <div class="row" data-type="conditioning" style="border-left-color:#2EC0F9"><div class="dt"><span class="dn">3</span><span class="mn">Aug</span></div><div class="rc"><div class="tl">Conditioning (optional)</div><div class="sub">Mon &middot; 5:30 PM</div></div><span class="tp" style="background:#2EC0F9">Conditioning</span></div>
       <div class="row" data-type="conditioning" style="border-left-color:#2EC0F9"><div class="dt"><span class="dn">5</span><span class="mn">Aug</span></div><div class="rc"><div class="tl">Conditioning (optional)</div><div class="sub">Wed &middot; 5:30 PM</div></div><span class="tp" style="background:#2EC0F9">Conditioning</span></div>
@@ -125,6 +148,27 @@
 </div>
 
 <div class="wrap">
+  <section id="calview">
+    <h2>Team Calendar</h2>
+    <div class="cal-nav">
+      <button class="cal-btn" id="cal-prev" type="button" aria-label="Previous month">&lsaquo;</button>
+      <div class="cal-title" id="cal-title"></div>
+      <button class="cal-btn" id="cal-next" type="button" aria-label="Next month">&rsaquo;</button>
+    </div>
+    <div class="cal-head">
+      <div class="cal-dow">Sun</div><div class="cal-dow">Mon</div><div class="cal-dow">Tue</div>
+      <div class="cal-dow">Wed</div><div class="cal-dow">Thu</div><div class="cal-dow">Fri</div>
+      <div class="cal-dow">Sat</div>
+    </div>
+    <div class="cal-grid" id="cal-grid"></div>
+    <div class="cal-legend">
+      <span><i style="background:#FB8500"></i> Game</span>
+      <span><i style="background:#2EC0F9"></i> Practice / Conditioning</span>
+      <span><i style="background:#F4B740"></i> Meeting</span>
+      <span><i style="background:#9fb0bd"></i> No practice</span>
+    </div>
+  </section>
+
   <section id="calendar">
     <h2>Subscribe to the Team Calendar</h2>
     <p class="calnote">The schedule lives in sportsYou. Subscribe once and every change we make &mdash; a time, a location, a cancellation &mdash; updates on your phone by itself.</p>
@@ -243,11 +287,99 @@
         agenda.innerHTML = build(live);
         counts();
         apply();
+        if(grid) setCalendar(live);
         if(syncnote){
           syncnote.textContent = 'Live from the sportsYou team calendar \u00b7 ' + live.length + ' events.';
           syncnote.style.display = '';
         }
       });
+    }
+
+    // ---- Month grid -------------------------------------------------------
+    var grid  = document.getElementById('cal-grid');
+    var title = document.getElementById('cal-title');
+    var prevB = document.getElementById('cal-prev');
+    var nextB = document.getElementById('cal-next');
+    var calEvents = [], months = [], mi = 0;
+
+    // Fallback: read the events straight back out of the static list above,
+    // so the grid still draws if the live feed can't be reached.
+    function fromDOM(){
+      var year = parseInt(agenda.dataset.year, 10) || new Date().getFullYear();
+      var out = [];
+      Array.prototype.forEach.call(agenda.querySelectorAll('.row'), function(r){
+        var day = parseInt(r.querySelector('.dn').textContent, 10);
+        var mon = MONS.indexOf(r.querySelector('.mn').textContent.trim());
+        if(!day || mon < 0) return;
+        var subtxt = r.querySelector('.sub').textContent;
+        var tm = subtxt.match(/\d{1,2}:\d{2}\s?[AP]M/i);
+        out.push({
+          date: year + '-' + String(mon+1).padStart(2,'0') + '-' + String(day).padStart(2,'0'),
+          time: tm ? tm[0] : null,
+          title: r.querySelector('.tl').textContent,
+          type: r.dataset.type
+        });
+      });
+      return out;
+    }
+
+    function monthKeys(list){
+      var seen = [];
+      list.forEach(function(e){
+        var k = e.date.slice(0,7);
+        if(seen.indexOf(k) < 0) seen.push(k);
+      });
+      seen.sort();
+      return seen;
+    }
+
+    function drawMonth(){
+      if(!months.length){ return; }
+      var parts = months[mi].split('-');
+      var y = +parts[0], m = +parts[1] - 1;
+      title.textContent = MONF[m] + ' ' + y;
+      prevB.disabled = (mi === 0);
+      nextB.disabled = (mi === months.length - 1);
+
+      var first = new Date(y, m, 1);
+      var start = new Date(y, m, 1 - first.getDay());
+      var today = window.ACSCal ? ACSCal.todayET() : null;
+      var byDay = {};
+      calEvents.forEach(function(e){ (byDay[e.date] = byDay[e.date] || []).push(e); });
+
+      var daysInMonth = new Date(y, m + 1, 0).getDate();
+      var cells = Math.ceil((first.getDay() + daysInMonth) / 7) * 7;
+
+      var html = '';
+      for(var i = 0; i < cells; i++){
+        var d = new Date(start.getFullYear(), start.getMonth(), start.getDate() + i);
+        var key = d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
+        var cls = 'cal-cell' + (d.getMonth() !== m ? ' out' : '') + (key === today ? ' today' : '');
+        html += '<div class="' + cls + '"><span class="cal-dn">' + d.getDate() + '</span>';
+        (byDay[key] || []).forEach(function(e){
+          var c = COLORS[e.type] || '#2EC0F9';
+          var label = (e.time ? e.time.replace(/:00/,'').replace(/\s?(AM|PM)/i, function(x){ return x.trim().toLowerCase().charAt(0); }) + ' ' : '') + e.title;
+          html += '<span class="cal-ev" style="background:' + c + '" title="' + esc(e.title) + '">' + esc(label) + '</span>';
+        });
+        html += '</div>';
+      }
+      grid.innerHTML = html;
+    }
+
+    function setCalendar(list){
+      calEvents = list;
+      months = monthKeys(list);
+      if(!months.length){ return; }
+      var now = window.ACSCal ? ACSCal.todayET().slice(0,7) : null;
+      var idx = months.indexOf(now);
+      mi = idx >= 0 ? idx : 0;
+      drawMonth();
+    }
+
+    if(grid){
+      prevB.addEventListener('click', function(){ if(mi > 0){ mi--; drawMonth(); } });
+      nextB.addEventListener('click', function(){ if(mi < months.length - 1){ mi++; drawMonth(); } });
+      setCalendar(fromDOM());
     }
 
     var copy = document.getElementById('copyfeed');
