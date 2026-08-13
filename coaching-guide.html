@@ -1,0 +1,1504 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ACS Lions Soccer — Season Plan &amp; Coaching Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#001017;--navy-2:#0a1d27;--navy-3:#12303d;
+  --blue:#2EC0F9;--blue-dk:#12a6de;--gold:#FFCF30;--gray:#6E6E6E;
+  --line:#e6ecef;--bg-soft:#f4f8fa;--white:#ffffff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Rubik',-apple-system,BlinkMacSystemFont,sans-serif;color:#20343d;background:var(--white);line-height:1.65;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-weight:600;line-height:1.15;color:var(--navy);letter-spacing:-.01em}
+p{color:var(--gray)}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+.eyebrow{display:inline-block;font-size:.78rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--blue);margin-bottom:14px}
+.eyebrow.gold{color:var(--gold)}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#00151f;font-weight:600;font-size:.95rem;padding:14px 30px;border-radius:30px;transition:.2s;border:2px solid var(--blue)}
+.btn:hover{background:var(--blue-dk);border-color:var(--blue-dk)}
+.btn.ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.35)}
+.btn.ghost:hover{background:rgba(255,255,255,.08);border-color:#fff}
+
+/* HERO */
+.hero{background:radial-gradient(1200px 600px at 78% -10%, #103543 0%, var(--navy) 55%);color:#fff;padding:26px 0 90px;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;right:-120px;bottom:-140px;width:420px;height:420px;border-radius:50%;background:rgba(46,192,249,.10);filter:blur(10px)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:10px 0 40px;gap:20px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:14px}
+.brand img{height:64px;width:auto;display:block}
+.brand .bt{font-weight:700;font-size:1.05rem;color:#fff;letter-spacing:.02em;line-height:1.1}
+.brand .bt span{display:block;font-weight:400;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--blue)}
+.nav-links{display:flex;gap:24px;font-size:.9rem;font-weight:500}
+.nav-links a{color:rgba(255,255,255,.82)}
+.nav-links a:hover{color:var(--gold)}
+.hero-inner{max-width:820px;position:relative;z-index:2}
+.hero h1{color:#fff;font-size:clamp(2.4rem,6vw,4.2rem);font-weight:700;letter-spacing:-.02em}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero .lead{color:rgba(255,255,255,.82);font-size:1.2rem;margin:22px 0 34px;max-width:660px}
+.hero-meta{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:36px}
+.chip{display:inline-flex;align-items:center;gap:9px;font-size:.86rem;font-weight:500;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);padding:9px 16px;border-radius:30px;color:#fff}
+.chip b{color:var(--blue);font-weight:600}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px}
+
+.page{display:none}
+.page.active{display:block}
+.tabbar{position:sticky;top:0;z-index:30;background:#06202b;border-bottom:1px solid rgba(255,255,255,.09)}
+.tabbar .wrap{display:flex;gap:4px;overflow-x:auto;padding:0 28px}
+.tabbar a{white-space:nowrap;cursor:pointer;color:rgba(255,255,255,.68);font-weight:600;font-size:.92rem;padding:15px 16px;border-bottom:3px solid transparent}
+.tabbar a:hover{color:#fff}
+.tabbar a.active{color:var(--blue);border-bottom-color:var(--blue)}
+
+/* SECTIONS */
+section{padding:84px 0}
+.section-head{max-width:760px;margin-bottom:48px}
+.section-head h2{font-size:clamp(1.9rem,4vw,2.7rem)}
+.section-head p{font-size:1.1rem;margin-top:16px}
+.soft{background:var(--bg-soft)}
+.subhead{max-width:760px;margin:56px 0 26px}
+.subhead h3{font-size:clamp(1.4rem,3vw,1.9rem)}
+.subhead p{font-size:1rem;margin-top:10px}
+
+/* philosophy cards */
+.ppp{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.ppp .card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:32px 28px;position:relative}
+.ppp .card .num{font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--blue)}
+.ppp .card.mid .num{color:var(--gold)}
+.ppp .card h3{margin:8px 0 12px;font-size:1.35rem}
+.ppp .card p{font-size:.98rem}
+.ppp .card .bar{height:5px;width:44px;border-radius:5px;background:var(--blue);margin-bottom:20px}
+.ppp .card.mid .bar{background:var(--gold)}
+
+/* week progression pills */
+.weeks{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:14px}
+.week{border:1px solid var(--line);border-radius:20px;padding:28px;background:#fff;border-top:5px solid var(--blue)}
+.week:nth-child(2){border-top-color:var(--gold)}
+.week:nth-child(3){border-top-color:var(--navy)}
+.week .wlabel{font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gray)}
+.week h3{margin:6px 0 12px;font-size:1.4rem}
+.week p{font-size:.96rem}
+
+/* session table */
+.session{background:#fff;border:1px solid var(--line);border-radius:22px;overflow:hidden;margin-bottom:26px;box-shadow:0 1px 0 rgba(0,16,23,.02)}
+.session-top{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;background:var(--navy);color:#fff;padding:22px 30px}
+.session-top .st-l{display:flex;align-items:center;gap:16px}
+.day-badge{width:54px;height:54px;border-radius:14px;background:var(--blue);color:#00151f;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:700;line-height:1;flex:none}
+.day-badge span{font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;margin-top:3px}
+.session.gold .day-badge{background:var(--gold)}
+.session-top h3{color:#fff;font-size:1.3rem}
+.session-top .focus{color:var(--blue);font-size:.82rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.session.gold .session-top .focus{color:var(--gold)}
+.session-top .time{font-size:.82rem;font-weight:600;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);padding:8px 16px;border-radius:30px}
+table{width:100%;border-collapse:collapse}
+.session td,.session th{text-align:left;padding:16px 30px;vertical-align:top;border-top:1px solid var(--line);font-size:.96rem}
+.session tr:first-child td{border-top:none}
+.session .t-time{width:118px;font-weight:600;color:var(--navy);white-space:nowrap;font-size:.9rem}
+.session .t-phase{width:150px}
+.phase-tag{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 11px;border-radius:20px}
+.phase-play{background:rgba(46,192,249,.14);color:#0b7fb0}
+.phase-practice{background:rgba(255,207,48,.2);color:#946b00}
+.phase-warm{background:#eef2f4;color:var(--gray)}
+.session .t-detail b{color:var(--navy);font-weight:600}
+.session .t-detail .q{display:block;margin-top:6px;font-size:.88rem;color:var(--blue-dk);font-style:italic}
+
+/* weekly grid */
+.grid-week{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:8px}
+.gday{border:1px solid var(--line);border-radius:18px;padding:24px 22px;background:#fff;border-top:5px solid var(--blue)}
+.gday:nth-child(2){border-top-color:var(--gold)}
+.gday:nth-child(3){border-top-color:var(--navy)}
+.gday:nth-child(4){border-top-color:var(--blue)}
+.gday .gd{font-size:.74rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gray)}
+.gday h3{font-size:1.2rem;margin:6px 0 10px}
+.gday p{font-size:.92rem}
+
+/* jargon chips */
+.terms{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.term{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px 24px;border-left:5px solid var(--blue)}
+.term b{color:var(--navy);font-weight:600}
+.term p{font-size:.96rem;margin-top:4px}
+
+/* drill cards */
+.drills{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.drill{background:#fff;border:1px solid var(--line);border-radius:20px;padding:26px 26px 24px;position:relative;border-top:5px solid var(--blue)}
+.drill.warm{border-top-color:var(--gray)}
+.drill.speed{border-top-color:var(--gold)}
+.drill.ball{border-top-color:var(--blue)}
+.drill.game{border-top-color:var(--navy)}
+.drill .tag{display:inline-block;font-size:.66rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:4px 11px;border-radius:20px;margin-bottom:12px}
+.tag.warm{background:#eef2f4;color:var(--gray)}
+.tag.speed{background:rgba(255,207,48,.22);color:#946b00}
+.tag.ball{background:rgba(46,192,249,.15);color:#0b7fb0}
+.tag.game{background:rgba(0,16,23,.08);color:var(--navy)}
+.drill h3{font-size:1.22rem;margin-bottom:10px}
+.drill .r{font-size:.95rem;margin-bottom:9px;color:#3a4d56}
+.drill .r:last-child{margin-bottom:0}
+.drill .r b{display:inline-block;min-width:96px;color:var(--blue-dk);font-weight:600;font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;vertical-align:top}
+.drill .r span{color:var(--gray)}
+.drill.speed .r b{color:#946b00}
+.drill.game .r b{color:var(--navy)}
+
+.note{background:#fff;border:1px solid var(--line);border-left:5px solid var(--gold);border-radius:14px;padding:22px 26px;margin-top:22px}
+.note h4{font-size:1.05rem;margin-bottom:8px}
+.note p{font-size:.95rem;margin-bottom:8px}
+.note p:last-child{margin-bottom:0}
+.checklist{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.checklist span{background:var(--bg-soft);border:1px solid var(--line);border-radius:30px;padding:8px 16px;font-size:.86rem;font-weight:500;color:var(--navy)}
+
+/* practice tabs & detail blocks */
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:26px}
+.tab{padding:12px 24px;border-radius:30px;border:1px solid var(--line);background:#fff;font-weight:600;font-size:.95rem;cursor:pointer;color:var(--gray);transition:.15s}
+.tab:hover{border-color:var(--blue)}
+.tab.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+.tabpanel{display:none}
+.tabpanel.active{display:block}
+.dmeta{display:flex;flex-wrap:wrap;gap:20px;margin-bottom:20px;padding:20px 22px;background:var(--bg-soft);border:1px solid var(--line);border-radius:14px}
+.dmeta div{flex:1;min-width:220px}
+.dmeta b{display:block;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin-bottom:4px}
+.dmeta p{font-size:.94rem;color:#3a4d56}
+.block{background:#fff;border:1px solid var(--line);border-left:5px solid var(--blue);border-radius:16px;padding:20px 24px;margin-bottom:16px}
+.block.warm{border-left-color:var(--gray)}
+.block.practice{border-left-color:var(--gold)}
+.block.play{border-left-color:var(--blue)}
+.block .bh{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.block .bt{font-weight:600;color:var(--navy);font-size:1.15rem}
+.block .btime{font-size:.78rem;font-weight:600;color:var(--gray);white-space:nowrap;display:flex;align-items:center;gap:8px}
+.block .d{font-size:.95rem;margin-bottom:9px;color:#3a4d56;display:flex;gap:12px}
+.block .d:last-child{margin-bottom:0}
+.block .d b{flex:none;width:120px;color:var(--blue-dk);font-weight:600;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;padding-top:3px}
+.block.practice .d b{color:#946b00}
+.block .d span{color:var(--gray)}
+.block .d.ask span{color:var(--blue-dk);font-style:italic}
+@media(max-width:560px){.block .d{flex-direction:column;gap:2px}.block .d b{width:auto}}
+
+.qa{display:block;margin-top:6px;font-size:.86rem;color:#20343d}
+.qa b{color:var(--navy);font-weight:600}
+.d.ans b{color:var(--navy)}
+.d.ans span{color:#3a4d56;font-style:normal}
+
+.diagram-btn{display:inline-flex;align-items:center;gap:6px;margin-left:6px;background:rgba(46,192,249,.14);color:#0b7fb0;border:1px solid rgba(46,192,249,.4);border-radius:30px;padding:5px 12px;font-size:.72rem;font-weight:700;cursor:pointer;letter-spacing:.06em;text-transform:uppercase;vertical-align:middle}
+.diagram-btn:hover{background:rgba(46,192,249,.24)}
+.modal{display:none;position:fixed;inset:0;background:rgba(0,16,23,.72);z-index:100;padding:20px;align-items:center;justify-content:center}
+.modal.open{display:flex}
+.modal-card{background:#fff;border-radius:20px;max-width:660px;width:100%;max-height:90vh;overflow:auto;padding:26px 28px;position:relative}
+.modal-close{position:absolute;top:12px;right:18px;border:none;background:none;font-size:1.9rem;line-height:1;color:var(--gray);cursor:pointer}
+.modal-body h4{font-size:1.3rem;margin-bottom:14px;padding-right:30px}
+.diagram{background:var(--bg-soft);border:1px solid var(--line);border-radius:14px;padding:12px}
+.diagram svg{width:100%;height:auto;display:block}
+.legend2{display:flex;gap:16px;flex-wrap:wrap;font-size:.82rem;color:#3a4d56;margin-top:14px;font-weight:500}
+.legend2 span{display:inline-flex;align-items:center;gap:7px}
+.legend2 i{width:14px;height:14px;border-radius:50%;display:inline-block;border:1px solid #0a1d27}
+.legend2 i.cone{width:0;height:0;border-radius:0;border:none;border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:11px solid #FB8500}
+.legend2 i.ball{background:#fff;border:1.5px solid #001017}
+.legend2 i.goal{width:16px;height:4px;border-radius:0;background:#0a1d27;border:none}
+.dgnote{font-size:.92rem;color:var(--gray);margin-top:14px}
+.d ul{flex:1;margin:0;padding-left:18px}
+.d ul li{color:var(--gray);font-size:.95rem;margin-bottom:4px}
+.d ul li:last-child{margin-bottom:0}
+
+.setup-btn{display:inline-flex;align-items:center;gap:8px;margin-top:6px;background:var(--navy);color:#fff;border:none;border-radius:30px;padding:11px 20px;font-size:.85rem;font-weight:700;cursor:pointer;letter-spacing:.02em}
+.setup-btn:hover{background:#0a2b3a}
+.dgsteps{margin:14px 0 0 18px;font-size:.92rem;color:var(--gray)}
+.dgsteps li{margin-bottom:5px}
+.dgbag{font-size:.9rem;color:var(--navy);margin-top:12px;background:var(--bg-soft);border:1px solid var(--line);border-radius:10px;padding:10px 14px}
+
+/* footer */
+footer{background:var(--navy);color:rgba(255,255,255,.7);padding:60px 0 40px;text-align:center}
+footer .brand{justify-content:center;margin-bottom:20px}
+footer p{color:rgba(255,255,255,.6);font-size:.9rem;max-width:640px;margin:0 auto}
+footer .verse{color:var(--gold);font-size:.95rem;font-style:italic;margin:22px auto 0;max-width:560px}
+.divider{height:1px;background:rgba(255,255,255,.12);max-width:1120px;margin:34px auto 0}
+
+@media(max-width:860px){
+  .nav-links{display:none}
+  .ppp,.weeks,.terms,.drills{grid-template-columns:1fr}
+  .grid-week{grid-template-columns:1fr 1fr}
+  .session td,.session th{padding:13px 18px}
+  .session .t-time{width:auto}
+  .session .t-phase{width:auto}
+}
+@media(max-width:560px){.grid-week{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+    <nav class="nav">
+      <div class="brand">
+        <img src="https://ashlandchristian.org/wp-content/uploads/2025/02/testimonial-lion.png" alt="Ashland Christian School Lion">
+        <div class="bt">ACS Lions Soccer<span>Ashland Christian School</span></div>
+      </div>
+    </nav>
+
+    <div class="hero-inner">
+      <span class="eyebrow">Grades 4–8 · Boys &amp; Girls</span>
+      <h1>Lions Soccer<br><em>Season Plan &amp; Coaching Guide</em></h1>
+      <p class="lead">Our summer conditioning program, season practice plan, and a plain-English coaching guide — all in one place. Built on the U.S. Soccer grassroots <b style="color:#fff">Play–Practice–Play</b> model, where the game is the teacher and every player gets more touches, more decisions, and more fun.</p>
+      <div class="hero-meta">
+        <span class="chip"><b>Conditioning</b> · Mon / Wed / Fri · 5:30–7:00 PM · 3 weeks</span>
+        <span class="chip"><b>Practice</b> · Mon / Tue / Thu / Fri · 3:15–5:00 PM</span>
+      </div>
+      <div class="hero-cta">
+        <a class="btn" data-page="practice">View Practice Plan →</a>
+        <a class="btn ghost" data-page="guide">Open the Coaching Guide</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="tabbar"><div class="wrap">
+  <a data-page="philosophy" class="active">Our Approach</a>
+  <a data-page="conditioning">Conditioning</a>
+  <a data-page="practice">Practice Plan</a>
+  <a data-page="guide">Coaching Guide</a>
+  <a data-page="parents">For Parents</a>
+</div></div>
+
+<!-- PHILOSOPHY -->
+<section id="philosophy" class="page active">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Our Approach</span>
+      <h2>The Play–Practice–Play Method</h2>
+      <p>Every session — conditioning or practice — follows the same rhythm U.S. Soccer uses to develop young players. We start with the game, teach inside the game, and end with the game.</p>
+    </div>
+    <div class="ppp">
+      <div class="card">
+        <div class="bar"></div>
+        <div class="num">Phase 1 · Play</div>
+        <h3>Arrive &amp; Play</h3>
+        <p>Players get on the ball the moment they arrive — small-sided games and free play warm up the body and the mind. Coaches watch and let the game flow.</p>
+      </div>
+      <div class="card mid">
+        <div class="bar"></div>
+        <div class="num">Phase 2 · Practice</div>
+        <h3>Train the Theme</h3>
+        <p>A focused activity and small-sided game build the day's theme. Coaches use guided questions instead of long lectures, then let players solve it.</p>
+      </div>
+      <div class="card">
+        <div class="bar"></div>
+        <div class="num">Phase 3 · Play</div>
+        <h3>Play the Game</h3>
+        <p>We finish where we started — a scrimmage with minimal interference, so players apply what they practiced at real game speed.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONDITIONING -->
+<section id="conditioning" class="soft page">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow gold">Summer Conditioning · Optional</span>
+      <h2>3-Week Conditioning Program</h2>
+      <p>An optional, no-pressure summer build to get Lions moving, fit, and sharp before the season. Mondays, Wednesdays, and Fridays, 5:30–7:00 PM. Every day is ball-centered and playful — we build fitness through soccer, not away from it.</p>
+    </div>
+
+    <div class="weeks">
+      <div class="week">
+        <div class="wlabel">Week 1</div>
+        <h3>Build the Base</h3>
+        <p>Reintroduce movement, teach the warm-up routine, and rebuild the technical foundation. Moderate intensity — the goal is quality movement and good habits, not exhaustion.</p>
+      </div>
+      <div class="week">
+        <div class="wlabel">Week 2</div>
+        <h3>Turn It Up</h3>
+        <p>Add volume and intensity. Longer aerobic games, more speed and agility reps, and quicker transitions. Players start to feel their engine growing.</p>
+      </div>
+      <div class="week">
+        <div class="wlabel">Week 3</div>
+        <h3>Game Speed</h3>
+        <p>Everything at match tempo. Competitive conditioning games, sharp finishing, and full-effort battles that carry straight into preseason practice.</p>
+      </div>
+    </div>
+    <p style="font-size:.92rem;margin:0 0 40px">Each day below is the base template. Across the three weeks, hold the structure the same and increase the work: more rounds, shorter rest, larger spaces, and higher tempo as fitness improves.</p>
+
+    <div class="session">
+      <div class="session-top">
+        <div class="st-l">
+          <div class="day-badge">M<span>Mon</span></div>
+          <div><div class="focus">The Engine</div><h3>Aerobic Base + Technical Footwork</h3></div>
+        </div>
+        <div class="time">5:30 – 7:00 PM · 90 min</div>
+      </div>
+      <table><tbody>
+        <tr><td class="t-time">5:30–5:45</td><td class="t-phase"><span class="phase-tag phase-warm">Movement Prep</span></td><td class="t-detail"><b>Dynamic warm-up.</b> Jog, skips, lunges, leg swings, and open/close-the-gate mobility. Add ankle and hip activation. Every player finishes with 2 minutes of light ball juggling.</td></tr>
+        <tr><td class="t-time">5:45–6:05</td><td class="t-phase"><span class="phase-tag phase-warm">Technical</span></td><td class="t-detail"><b>Footwork ladder + ball mastery.</b> Quick-feet ladder patterns, then dribbling circuit: inside-outside touches, sole rolls, and turns through a cone maze. Focus on light touches and head up. <button class="diagram-btn" type="button" data-dg="dg-ballmastery">&#9656; Field setup</button></td></tr>
+        <tr><td class="t-time">6:05–6:35</td><td class="t-phase"><span class="phase-tag phase-practice">Practice</span></td><td class="t-detail"><b>Aerobic dribble intervals.</b> 2-minute continuous dribbling laps at a strong pace (both feet, changes of direction on the whistle), 1-minute active recovery. Repeat 6–8 rounds. Builds the aerobic engine with the ball at their feet.<span class="q">Coach ask: "Which surface keeps the ball closest when you're moving fast?"</span><span class="qa"><b>Listen for:</b> the laces and outside of the foot — small pushes keep the ball under you at a sprint. The inside is for passing and control, not for running fast.</span> <button class="diagram-btn" type="button" data-dg="dg-dribbleintervals">&#9656; Field setup</button></td></tr>
+        <tr><td class="t-time">6:35–6:55</td><td class="t-phase"><span class="phase-tag phase-play">Play</span></td><td class="t-detail"><b>Possession game — 4v4 / 5v5 keep-away.</b> Larger field to force running. Team that strings 6 passes together scores a point. Constant movement = built-in conditioning. <button class="diagram-btn" type="button" data-dg="dg-possession">&#9656; Field setup</button></td></tr>
+        <tr><td class="t-time">6:55–7:00</td><td class="t-phase"><span class="phase-tag phase-warm">Cool-down</span></td><td class="t-detail"><b>Static stretch + hydrate.</b> Calves, quads, hamstrings, hips. Quick team huddle: one thing that felt better than last session.</td></tr>
+      </tbody></table>
+    </div>
+
+    <div class="session gold">
+      <div class="session-top">
+        <div class="st-l">
+          <div class="day-badge">W<span>Wed</span></div>
+          <div><div class="focus">The Springs</div><h3>Speed, Agility &amp; Quickness</h3></div>
+        </div>
+        <div class="time">5:30 – 7:00 PM · 90 min</div>
+      </div>
+      <table><tbody>
+        <tr><td class="t-time">5:30–5:45</td><td class="t-phase"><span class="phase-tag phase-warm">Movement Prep</span></td><td class="t-detail"><b>Dynamic warm-up + activation.</b> Same routine as Monday, then add A-skips, high knees, and short accelerations at 70% to prime the legs for sprinting.</td></tr>
+        <tr><td class="t-time">5:45–6:05</td><td class="t-phase"><span class="phase-tag phase-warm">Speed &amp; Agility</span></td><td class="t-detail"><b>SAQ circuit.</b> Ladder quickness, cone shuffles, 5-10-5 change-of-direction, and short reaction sprints to a coach's call. Full effort, full rest — quality over quantity. <button class="diagram-btn" type="button" data-dg="dg-saq">&#9656; Field setup</button></td></tr>
+        <tr><td class="t-time">6:05–6:35</td><td class="t-phase"><span class="phase-tag phase-practice">Practice</span></td><td class="t-detail"><b>1v1 speed duels to goal.</b> Attacker and defender race from cones — first touch, accelerate, and finish. Trains explosive speed and recovery running inside a soccer moment. Rotate roles; rest between reps.<span class="q">Coach ask: "What can your first touch do to win you a half-step?"</span><span class="qa"><b>Listen for:</b> a touch that pushes the ball into the space you're running to, so you're accelerating onto it — you beat the defender before the race even starts.</span> <button class="diagram-btn" type="button" data-dg="dg-speedduel">&#9656; Field setup</button></td></tr>
+        <tr><td class="t-time">6:35–6:55</td><td class="t-phase"><span class="phase-tag phase-play">Play</span></td><td class="t-detail"><b>Transition game — 3v3 to 4 goals.</b> Small field, fast switches, quick counters. Rewards sprinting to attack and sprinting to defend the moment possession changes. <button class="diagram-btn" type="button" data-dg="dg-4goals">&#9656; Field setup</button></td></tr>
+        <tr><td class="t-time">6:55–7:00</td><td class="t-phase"><span class="phase-tag phase-warm">Cool-down</span></td><td class="t-detail"><b>Walk, stretch, hydrate.</b> Extra attention to calves and hip flexors after a speed day.</td></tr>
+      </tbody></table>
+    </div>
+
+    <div class="session">
+      <div class="session-top">
+        <div class="st-l">
+          <div class="day-badge">F<span>Fri</span></div>
+          <div><div class="focus">The Battles</div><h3>Game-Based Conditioning + Fun</h3></div>
+        </div>
+        <div class="time">5:30 – 7:00 PM · 90 min</div>
+      </div>
+      <table><tbody>
+        <tr><td class="t-time">5:30–5:45</td><td class="t-phase"><span class="phase-tag phase-warm">Movement Prep</span></td><td class="t-detail"><b>Dynamic warm-up + juggling challenge.</b> Warm the body, then a light, fun juggling or first-touch challenge to raise the energy for a competitive day.</td></tr>
+        <tr><td class="t-time">5:45–6:05</td><td class="t-phase"><span class="phase-tag phase-warm">Relay Circuit</span></td><td class="t-detail"><b>Team relay races.</b> Dribble relays, shuttle runs, and obstacle courses with the ball. Competitive, high-energy, and builds anaerobic capacity while they're having fun. <button class="diagram-btn" type="button" data-dg="dg-relay">&#9656; Field setup</button></td></tr>
+        <tr><td class="t-time">6:05–6:35</td><td class="t-phase"><span class="phase-tag phase-practice">Practice</span></td><td class="t-detail"><b>Small-sided tournament — rotating 3v3.</b> Short 4-minute games, winners stay, quick turnaround. Repeated high-intensity efforts with real stakes. Everyone plays every round.<span class="q">Coach ask: "How do you keep working when your legs are tired?"</span><span class="qa"><b>Listen for:</b> shorten your steps, keep your feet moving, and compete for one more ball. Pushing through fatigue is a choice as much as it is fitness.</span> <button class="diagram-btn" type="button" data-dg="dg-tournament">&#9656; Field setup</button></td></tr>
+        <tr><td class="t-time">6:35–6:55</td><td class="t-phase"><span class="phase-tag phase-play">Play</span></td><td class="t-detail"><b>World Cup finale — free scrimmage.</b> Bigger-sided game, minimal coaching, just let the Lions play and compete to close the week. <button class="diagram-btn" type="button" data-dg="dg-scrimmage">&#9656; Field setup</button></td></tr>
+        <tr><td class="t-time">6:55–7:00</td><td class="t-phase"><span class="phase-tag phase-warm">Cool-down</span></td><td class="t-detail"><b>Stretch + weekend reset.</b> Full-body stretch, hydrate, and a reminder to rest well over the weekend.</td></tr>
+      </tbody></table>
+    </div>
+
+    <div class="note">
+      <h4>Week-to-week progression</h4>
+      <p><b>Week 1</b> — run the templates at moderate effort; teach the warm-up and technique. <b>Week 2</b> — add 1–2 rounds to each block, trim rest, and enlarge spaces. <b>Week 3</b> — everything at game speed with competition in every block, then taper the final Friday so players arrive at preseason fresh, not flat.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRACTICE -->
+<section id="practice" class="page">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Season Practice Plan</span>
+      <h2>Weekly Practice Schedule</h2>
+      <p>Four practices a week — Monday, Tuesday, Thursday, and Friday, 3:15–5:00 PM. Each day owns one theme and runs the full Play–Practice–Play rhythm so players connect the skill straight to the game. Tap a day for the full session detail.</p>
+    </div>
+
+    <div class="grid-week">
+      <div class="gday"><div class="gd">Monday</div><h3>Dribbling &amp; 1v1</h3><p>Beating a defender, changes of pace, and the confidence to take players on.</p></div>
+      <div class="gday"><div class="gd">Tuesday</div><h3>Passing &amp; Receiving</h3><p>First touch, support angles, and connecting the team through the ball.</p></div>
+      <div class="gday"><div class="gd">Thursday</div><h3>Finishing</h3><p>Attacking the goal, combinations, and putting chances away with both feet.</p></div>
+      <div class="gday"><div class="gd">Friday</div><h3>Defending &amp; Game Day</h3><p>Winning the ball back, team defending, and a full game to celebrate the week.</p></div>
+    </div>
+    <p style="font-size:.92rem;margin:0 0 34px">The 105-minute rhythm stays the same every day: <b style="color:var(--navy)">Play (25) → Practice: Training (30) → Practice: Small-Sided Game (25) → Play: Scrimmage (20) → Cool-down (5)</b>. Only the theme changes.</p>
+
+    <div class="note"><h4>Leveling up week to week</h4><p>Keep the four day-themes and the Play–Practice–Play rhythm the same all season — that consistency helps the kids. What changes is the difficulty: shrink the space for more pressure or enlarge it for more running, add or free up a defender, and tighten the conditions (fewer touches, first-time finishes, quicker restarts). Most of all, lean into whatever the last game showed you needed. Same framework, a little harder and sharper each week.</p></div>
+
+    <!-- TABS -->
+    <div class="tabs" role="tablist">
+      <button class="tab active" data-day="mon">Monday</button>
+      <button class="tab" data-day="tue">Tuesday</button>
+      <button class="tab" data-day="thu">Thursday</button>
+      <button class="tab" data-day="fri">Friday</button>
+    </div>
+
+    <!-- MONDAY -->
+    <div class="tabpanel active" id="day-mon">
+      <div class="session">
+        <div class="session-top">
+          <div class="st-l"><div class="day-badge">M<span>Mon</span></div><div><div class="focus">Theme · Dribbling &amp; 1v1</div><h3>Beat the Defender</h3></div></div>
+          <div class="time">3:15 – 5:00 PM · 105 min</div>
+        </div>
+        <div style="padding:22px 30px">
+          <div class="dmeta">
+            <div><b>Goal for the day</b><p>Give every player the tools and the courage to take a defender on 1v1 and win — a move, a change of pace, and an explosion into space.</p></div>
+            <div><b>You'll need</b><p>A ball per player · ~20 cones · 2 colors of bibs · 4 pop-up goals (6 ft).</p></div><div><b>Warm-up</b><p>Open with ~5 min of dynamic prep, each player with a ball: easy jog, leg swings, open-the-gate, ankle bounces and knee hugs, plus a little juggling — then flow straight into the arrival game below.</p></div><div style="flex-basis:100%;min-width:100%"><button class="setup-btn" type="button" data-dg="dg-setup-mon">&#9656; Set up the field before they arrive</button></div>
+          </div>
+
+          <div class="block play">
+            <div class="bh"><span class="bt">Arrival &amp; Free Dribbling + Dribble Tag</span><span class="btime"><span class="phase-tag phase-play">Play</span> · 3:15–3:40 · 25 min</span></div>
+            <p class="d"><b>Set up</b><span>20×20 grid, every player with a ball inside. Pick 2 taggers to start. <button class="diagram-btn" type="button" data-dg="dg-dribbletag">&#9656; Field setup</button></span></p>
+            <p class="d"><b>Run it</b><span>Free dribble with heads up. On "go," taggers try to knock other balls out of the grid while protecting nothing of their own. Ball knocked out? 5 toe-taps at the edge and re-enter. New taggers every 2–3 min. Final 8 min: 1v1-to-the-line races — pair up on opposite edges, coach rolls a ball between them, first to control and dribble across the far line wins.</span></p>
+            <div class="d"><b>Coaching points</b><ul><li>Small, close touches</li><li>Head up to scan</li><li>Shield the ball with your body</li><li>Use both feet</li></ul></div>
+            <p class="d ask"><b>Ask</b><span>"What can your body do to protect the ball while you're still moving?"</span></p>
+            <p class="d ans"><b>Listen for</b><span>put your body between the ball and the defender, keep it on your far foot, and use an arm to feel and hold them off.</span></p>
+            <p class="d"><b>Make it harder</b><span>Shrink the grid, or add a third tagger so there's more pressure and more scanning.</span></p>
+            <p class="d"><b>Good when</b><span>Players change direction to escape pressure without staring at the ball.</span></p>
+          </div>
+
+          <div class="block practice">
+            <div class="bh"><span class="bt">1v1 to Gates</span><span class="btime"><span class="phase-tag phase-practice">Practice · Training</span> · 3:40–4:10 · 30 min</span></div>
+            <p class="d"><b>Set up</b><span>Several channels ~10×8 yds, a gate (2 cones) on each end line. Attacker with a ball at one end, defender starting from the far gate. Run multiple channels at once so nobody waits. <button class="diagram-btn" type="button" data-dg="dg-1v1gates">&#9656; Field setup</button></span></p>
+            <p class="d"><b>Run it</b><span>Attacker beats the defender and dribbles through either end gate to score. Teach one move per round — (1) change of pace, (2) scissor / step-over, (3) chop / cut-back. Demo slowly with both feet, then go live. Rotate attacker↔defender every 2 goes; switch partners each round.</span></p>
+            <div class="d"><b>Coaching points</b><ul><li>Sell the fake with body and eyes</li><li>Explode right after the move, not during it</li><li>First touch into space, not at the defender</li><li>Attack the defender's front foot</li></ul></div>
+            <p class="d ask"><b>Ask</b><span>"When do you explode past the defender — before or after the move?"</span></p>
+            <p class="d ans"><b>Listen for</b><span>after — you burst the instant the defender leans the wrong way. The move sets the trap; the acceleration beats them.</span></p>
+            <p class="d"><b>Make it harder</b><span>Add a second gate to attack so the attacker chooses which way to beat the defender; add a small-goal finish right after the take-on.</span></p>
+            <p class="d"><b>Good when</b><span>Players commit to a move at pace and accelerate through, instead of slow-dribbling at the defender.</span></p>
+          </div>
+
+          <div class="block practice">
+            <div class="bh"><span class="bt">3v3 to Small Goals — take-on bonus</span><span class="btime"><span class="phase-tag phase-practice">Practice · SSG</span> · 4:10–4:35 · 25 min</span></div>
+            <p class="d"><b>Set up</b><span>25×20 grid, two pop-up goals (6 ft) on each end line, no keepers. Teams of 3; extras rest one game and rotate in. <button class="diagram-btn" type="button" data-dg="dg-3v3goals">&#9656; Field setup</button></span></p>
+            <p class="d"><b>Run it</b><span>Normal 3v3. Rule: a goal scored right after a successful 1v1 take-on counts <b>double</b>. 4–5 minute games, winners stay on.</span></p>
+            <div class="d"><b>Coaching points</b><ul><li>Be brave, take defenders on in tight space</li><li>Support the teammate who beats their man</li><li>Attack the space behind a beaten defender</li></ul></div>
+            <p class="d ask"><b>Ask</b><span>"Once you've beaten your defender, where's the space to attack?"</span></p>
+            <p class="d ans"><b>Listen for</b><span>the gap the defender just left — attack it toward goal before help arrives, and spot the teammate whose defender stepped over to cover.</span></p>
+            <p class="d"><b>Good when</b><span>Players choose to take defenders on inside a real game, not just in the drill.</span></p>
+          </div>
+
+          <div class="block play">
+            <div class="bh"><span class="bt">5v5 / 7v7 Scrimmage</span><span class="btime"><span class="phase-tag phase-play">Play</span> · 4:35–4:55 · 20 min</span></div>
+            <p class="d"><b>Set up</b><span>Two even teams by bib color; biggest space you have, real goals or wide gates. With a full squad, run two smaller games side by side or rotate subs every few minutes so nobody sits. <button class="diagram-btn" type="button" data-dg="dg-scrimmage">&#9656; Field setup</button></span></p>
+            <p class="d"><b>Run it</b><span>Let them play with minimal stoppages. One quiet reminder at most: "look for your 1v1 when you get isolated."</span></p>
+            <p class="d ask"><b>Ask (only if needed)</b><span>"Can you take him on right there?"</span></p>
+            <p class="d ans"><b>Listen for</b><span>yes when you're 1v1 in space with cover behind you; no when you're the last defender back or badly outnumbered.</span></p>
+            <p class="d"><b>Good when</b><span>The dribbling shows up on its own at game speed.</span></p>
+          </div>
+
+          <div class="block warm">
+            <div class="bh"><span class="bt">Cool-down &amp; Huddle</span><span class="btime"><span class="phase-tag phase-warm">Cool-down</span> · 4:55–5:00 · 5 min</span></div>
+            <p class="d"><b>Run it</b><span>Static stretch ~20s each: calves, quads, hamstrings, hips. Hydrate.</span></p>
+            <p class="d"><b>Huddle</b><span>"What worked when you took a player on today?" One or two players share.</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TUESDAY -->
+    <div class="tabpanel" id="day-tue">
+      <div class="session gold">
+        <div class="session-top">
+          <div class="st-l"><div class="day-badge">T<span>Tue</span></div><div><div class="focus">Theme · Passing &amp; Receiving</div><h3>Connect the Team</h3></div></div>
+          <div class="time">3:15 – 5:00 PM · 105 min</div>
+        </div>
+        <div style="padding:22px 30px">
+          <div class="dmeta">
+            <div><b>Goal for the day</b><p>A first touch that opens up the field, and crisp passing with movement so the team can keep the ball under pressure.</p></div>
+            <div><b>You'll need</b><p>A ball per player · ~20 cones · 2 colors of bibs · a few pinnies for "targets" / neutrals.</p></div><div><b>Warm-up</b><p>Open with ~5 min of dynamic prep, each player with a ball: easy jog, leg swings, open-the-gate, ankle bounces and knee hugs, plus a little juggling — then flow straight into the arrival game below.</p></div><div style="flex-basis:100%;min-width:100%"><button class="setup-btn" type="button" data-dg="dg-setup-tue">&#9656; Set up the field before they arrive</button></div>
+          </div>
+
+          <div class="block play">
+            <div class="bh"><span class="bt">Rondo Warm-Up — 4v1 / 5v2 Keep-Away</span><span class="btime"><span class="phase-tag phase-play">Play</span> · 3:15–3:40 · 25 min</span></div>
+            <p class="d"><b>Set up</b><span>Small squares ~8×8 yds; 4–5 players around the outside, 1–2 defenders inside. <button class="diagram-btn" type="button" data-dg="dg-rondo">&#9656; Field setup</button></span></p>
+            <p class="d"><b>Run it</b><span>Outside players keep the ball away; whoever loses it or misplays a pass swaps into the middle. Start two-touch. Fast, fun, full of reps before you've said a word.</span></p>
+            <div class="d"><b>Coaching points</b><ul><li>Open your body to see the whole square</li><li>Pass to your teammate's back (far) foot</li><li>First touch out of your feet</li><li>Move a step after every pass</li></ul></div>
+            <p class="d ask"><b>Ask</b><span>"Which angle lets you receive and still see the whole field?"</span></p>
+            <p class="d ans"><b>Listen for</b><span>an open, side-on angle off the passing line, so you see the ball and the field at once — never flat or hidden behind a defender.</span></p>
+            <p class="d"><b>Make it harder</b><span>One-touch for confident groups, or shrink the square.</span></p>
+            <p class="d"><b>Good when</b><span>The ball zips, angles keep opening, and the middle defenders are chasing.</span></p>
+          </div>
+
+          <div class="block practice">
+            <div class="bh"><span class="bt">Passing Patterns → 3v1 / 4v2 Grids</span><span class="btime"><span class="phase-tag phase-practice">Practice · Training</span> · 3:40–4:10 · 30 min</span></div>
+            <p class="d"><b>Set up</b><span>4–5 cones in a Y or diamond for patterns; then small ~10×10 grids for live 3v1 / 4v2. <button class="diagram-btn" type="button" data-dg="dg-passpattern">&#9656; Field setup</button></span></p>
+            <p class="d"><b>Run it · patterns</b><span>Put a player at each cone (extras wait at the start cone). The first player passes to the next cone in the shape, then <b>follows their pass</b> and joins that line. The receiver takes a touch across the body and plays on to the next cone, so the ball travels around the Y or diamond nonstop. Both feet, about 5 minutes, then switch directions.</span></p>
+            <p class="d"><b>Run it · live</b><span>Now split into small ~10×10 grids for keep-away. In <b>3v1</b>, three attackers keep the ball from one defender (<b>4v2</b> = four vs two). Score a point each time you connect a set number of passes (start at 5). Lose it, or knock it out of the grid, and the player who lost it goes in the middle — in 4v2, rotate the defenders. About 6–8 minutes.</span></p>
+            <div class="d"><b>Coaching points</b><ul><li>Pass to the back foot</li><li>Receive with your back foot, across your body</li><li>Check to the ball, then show for it</li><li>Firm, accurate weight of pass</li><li>Both feet</li></ul></div>
+            <p class="d ask"><b>Ask</b><span>"Which way should your first touch go before the ball even arrives?"</span></p>
+            <p class="d ans"><b>Listen for</b><span>away from pressure and toward your next pass — decide before it arrives and take your touch into space, not onto your toes.</span></p>
+            <p class="d"><b>Make it harder</b><span>Limit to two touches, then one; add a second defender.</span></p>
+            <p class="d"><b>Good when</b><span>The first touch already sets up the next pass and players keep adjusting their support angles.</span></p>
+          </div>
+
+          <div class="block practice">
+            <div class="bh"><span class="bt">4v4 Possession + End-Zone Targets</span><span class="btime"><span class="phase-tag phase-practice">Practice · SSG</span> · 4:10–4:35 · 25 min</span></div>
+            <p class="d"><b>Set up</b><span>30×24 grid with a 3-yd end zone at each end; one target player per team waiting in the far end zone. <button class="diagram-btn" type="button" data-dg="dg-4v4endzone">&#9656; Field setup</button></span></p>
+            <p class="d"><b>Run it</b><span>Connect 5 passes, then play into your target in the end zone for a point; the target returns it and play continues. Rotate the target every couple of minutes.</span></p>
+            <div class="d"><b>Coaching points</b><ul><li>Be patient, keep the ball</li><li>Switch the point of attack to the open side</li><li>Move off the ball to create angles</li><li>Support at an angle, not flat</li></ul></div>
+            <p class="d ask"><b>Ask</b><span>"How did you get open for your teammate just now?"</span></p>
+            <p class="d ans"><b>Listen for</b><span>you moved — a check away and back, or a step into the gap between two defenders. You make the passing lane with your feet.</span></p>
+            <p class="d"><b>Make it harder</b><span>Add a neutral player for the team in possession, or drop the pass count but add a defender.</span></p>
+            <p class="d"><b>Good when</b><span>The team keeps the ball and finds the target through movement, not by forcing it.</span></p>
+          </div>
+
+          <div class="block play">
+            <div class="bh"><span class="bt">Scrimmage</span><span class="btime"><span class="phase-tag phase-play">Play</span> · 4:35–4:55 · 20 min</span></div>
+            <p class="d"><b>Set up</b><span>Two even teams, goals, biggest space available. With a full squad, run two games side by side or keep subs rotating so everyone plays. <button class="diagram-btn" type="button" data-dg="dg-scrimmage">&#9656; Field setup</button></span></p>
+            <p class="d"><b>Run it</b><span>Encourage playing out and connecting, but let them play freely.</span></p>
+            <p class="d ask"><b>Ask (only if needed)</b><span>"Can we string three passes before we go forward?"</span></p>
+            <p class="d ans"><b>Listen for</b><span>yes when we stay patient and give the ball-carrier two support angles; the third pass is usually the one that opens the forward ball.</span></p>
+            <p class="d"><b>Good when</b><span>Players look to connect and support instead of booting it clear.</span></p>
+          </div>
+
+          <div class="block warm">
+            <div class="bh"><span class="bt">Cool-down &amp; Huddle</span><span class="btime"><span class="phase-tag phase-warm">Cool-down</span> · 4:55–5:00 · 5 min</span></div>
+            <p class="d"><b>Run it</b><span>Static stretch ~20s each: calves, quads, hamstrings, hips. Hydrate.</span></p>
+            <p class="d"><b>Huddle</b><span>"How did you get open for a teammate today?"</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- THURSDAY -->
+    <div class="tabpanel" id="day-thu">
+      <div class="session">
+        <div class="session-top">
+          <div class="st-l"><div class="day-badge">Th<span>Thu</span></div><div><div class="focus">Theme · Finishing</div><h3>Attack the Goal</h3></div></div>
+          <div class="time">3:15 – 5:00 PM · 105 min</div>
+        </div>
+        <div style="padding:22px 30px">
+          <div class="dmeta">
+            <div><b>Goal for the day</b><p>Composed, both-footed finishing and a clear head in the box — knowing when to shoot and when to slide the extra pass.</p></div>
+            <div><b>You'll need</b><p>A ball per player · 2 full goals · goalkeepers (or rotate players in) · ~16 cones · bibs.</p></div><div><b>Warm-up</b><p>Open with ~5 min of dynamic prep, each player with a ball: easy jog, leg swings, open-the-gate, ankle bounces and knee hugs, plus a little juggling — then flow straight into the arrival game below.</p></div><div style="flex-basis:100%;min-width:100%"><button class="setup-btn" type="button" data-dg="dg-setup-thu">&#9656; Set up the field before they arrive</button></div>
+          </div>
+
+          <div class="block play">
+            <div class="bh"><span class="bt">Finishing Lines + Free Play on Goals</span><span class="btime"><span class="phase-tag phase-play">Play</span> · 3:15–3:40 · 25 min</span></div>
+            <p class="d"><b>Set up</b><span>Two shooting lines, left and right, ~16–18 yds out; open nets or keepers; a ball each. Keep both lines going so nobody waits. <button class="diagram-btn" type="button" data-dg="dg-finishlines">&#9656; Field setup</button></span></p>
+            <p class="d"><b>Run it</b><span>Dribble in and finish, placement first, then retrieve a ball and switch lines. Roll into small games to goal to wake up the striker's instinct.</span></p>
+            <div class="d"><b>Coaching points</b><ul><li>Plant foot beside the ball</li><li>Side-foot or laces for placement</li><li>Head steady, eyes on the ball</li><li>Aim for the far corner / back post</li></ul></div>
+            <p class="d ask"><b>Ask</b><span>"Placement or power from here — which scores more often?"</span></p>
+            <p class="d ans"><b>Listen for</b><span>placement — a firm, accurate side-foot to the corner beats blasting it at the keeper. Save power for when you have a big, open angle.</span></p>
+            <p class="d"><b>Make it harder</b><span>One-touch finishes off a served ball.</span></p>
+            <p class="d"><b>Good when</b><span>Shots are on frame and into the corners, off both feet.</span></p>
+          </div>
+
+          <div class="block practice">
+            <div class="bh"><span class="bt">2v1 &amp; 3v2 to Goal</span><span class="btime"><span class="phase-tag phase-practice">Practice · Training</span> · 3:40–4:10 · 30 min</span></div>
+            <p class="d"><b>Set up</b><span>One full goal with a keeper; attackers start ~25 yds out, defender(s) start goal-side; feeder balls at a cone. <button class="diagram-btn" type="button" data-dg="dg-2v1goal">&#9656; Field setup</button></span></p>
+            <p class="d"><b>Run it</b><span>Attackers combine — give-and-go or overlap — to break the defense and finish. Reset and rotate roles quickly so reps stay high.</span></p>
+            <div class="d"><b>Coaching points</b><ul><li>Draw the defender in, then release the pass</li><li>Time your run to stay onside</li><li>Finish first-time when the keeper is moving</li><li>Follow your shot for rebounds</li></ul></div>
+            <p class="d ask"><b>Ask</b><span>"When is it time to shoot, and when do you play the extra pass?"</span></p>
+            <p class="d ans"><b>Listen for</b><span>shoot when you have a clear look and the keeper's beaten; pass when a teammate has the better angle. A square ball into an open net beats a hopeful shot.</span></p>
+            <p class="d"><b>Make it harder</b><span>Add a recovering defender who chases from behind to force quicker decisions.</span></p>
+            <p class="d"><b>Good when</b><span>They use the extra attacker and finish calmly instead of forcing a low-odds shot.</span></p>
+          </div>
+
+          <div class="block practice">
+            <div class="bh"><span class="bt">4v4 + Keepers to Full Goals — first-time bonus</span><span class="btime"><span class="phase-tag phase-practice">Practice · SSG</span> · 4:10–4:35 · 25 min</span></div>
+            <p class="d"><b>Set up</b><span>30×25 grid with two full goals and keepers. <button class="diagram-btn" type="button" data-dg="dg-4v4goals">&#9656; Field setup</button></span></p>
+            <p class="d"><b>Run it</b><span>Normal game; first-time finishes count <b>double</b>. Fast transitions, lots of shots.</span></p>
+            <div class="d"><b>Coaching points</b><ul><li>Get numbers forward quickly</li><li>Serve the ball in early</li><li>Crash the goal for rebounds</li><li>Shoot first-time when you can</li></ul></div>
+            <p class="d ask"><b>Ask</b><span>"Who's attacking the back post for the rebound?"</span></p>
+            <p class="d ans"><b>Listen for</b><span>the far-side attacker — always run to the back post as the shot is struck; that's where most rebounds and cut-backs land.</span></p>
+            <p class="d"><b>Good when</b><span>Players shoot early and gamble on rebounds instead of over-passing.</span></p>
+          </div>
+
+          <div class="block play">
+            <div class="bh"><span class="bt">Scrimmage on Goals</span><span class="btime"><span class="phase-tag phase-play">Play</span> · 4:35–4:55 · 20 min</span></div>
+            <p class="d"><b>Set up</b><span>Two even teams, full goals, biggest space available. With a full squad, run two games side by side or rotate subs often so no one sits. <button class="diagram-btn" type="button" data-dg="dg-scrimmage">&#9656; Field setup</button></span></p>
+            <p class="d"><b>Run it</b><span>Full game — reward getting numbers forward to attack. Mostly observe.</span></p>
+            <p class="d"><b>Good when</b><span>The team commits runners forward and creates real chances.</span></p>
+          </div>
+
+          <div class="block warm">
+            <div class="bh"><span class="bt">Cool-down &amp; Huddle</span><span class="btime"><span class="phase-tag phase-warm">Cool-down</span> · 4:55–5:00 · 5 min</span></div>
+            <p class="d"><b>Run it</b><span>Static stretch ~20s each: calves, quads, hamstrings, hips. Hydrate.</span></p>
+            <p class="d"><b>Huddle</b><span>"Where on the goal are you aiming — and why?"</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FRIDAY -->
+    <div class="tabpanel" id="day-fri">
+      <div class="session gold">
+        <div class="session-top">
+          <div class="st-l"><div class="day-badge">F<span>Fri</span></div><div><div class="focus">Theme · Defending &amp; Game Day</div><h3>Win It Back</h3></div></div>
+          <div class="time">3:15 – 5:00 PM · 105 min</div>
+        </div>
+        <div style="padding:22px 30px">
+          <div class="dmeta">
+            <div><b>Goal for the day</b><p>Defend well as an individual and as a group — pressure, patience, and cover — then let it rip in a full game to celebrate the week.</p></div>
+            <div><b>You'll need</b><p>A ball per player · ~20 cones · 2 colors of bibs · pop-up goals + 2 full goals for game day.</p></div><div><b>Warm-up</b><p>Open with ~5 min of dynamic prep, each player with a ball: easy jog, leg swings, open-the-gate, ankle bounces and knee hugs, plus a little juggling — then flow straight into the arrival game below.</p></div><div style="flex-basis:100%;min-width:100%"><button class="setup-btn" type="button" data-dg="dg-setup-fri">&#9656; Set up the field before they arrive</button></div>
+          </div>
+
+          <div class="block play">
+            <div class="bh"><span class="bt">Free Play + 1v1 Defending Warm-Up</span><span class="btime"><span class="phase-tag phase-play">Play</span> · 3:15–3:40 · 25 min</span></div>
+            <p class="d"><b>Set up</b><span>Grid for free dribbling, then pair players into short channels.</span></p>
+            <p class="d"><b>Run it</b><span>Touches first, then 1v1 in channels: the attacker tries to reach the end line, the defender jockeys and delays without diving in.</span></p>
+            <div class="d"><b>Coaching points</b><ul><li>Approach on a curve</li><li>Show the attacker one way</li><li>Stay on your toes, side-on</li><li>Be patient, don't dive in</li></ul></div>
+            <p class="d ask"><b>Ask</b><span>"Which way are you steering the attacker, and why?"</span></p>
+            <p class="d ans"><b>Listen for</b><span>toward the sideline or onto their weaker foot — away from goal and the middle, so they have fewer options and help can arrive.</span></p>
+            <p class="d"><b>Good when</b><span>Defenders slow the attacker and force the mistake instead of lunging in.</span></p>
+          </div>
+
+          <div class="block practice">
+            <div class="bh"><span class="bt">1v1 &amp; 2v2 Defending</span><span class="btime"><span class="phase-tag phase-practice">Practice · Training</span> · 3:40–4:10 · 30 min</span></div>
+            <p class="d"><b>Set up</b><span>Channels for 1v1; then 2v2 grids with pop-up goals to defend. <button class="diagram-btn" type="button" data-dg="dg-2v2def">&#9656; Field setup</button></span></p>
+            <p class="d"><b>Run it</b><span>Start with 1v1 pressure and angle work, then build to 2v2 — first defender pressures the ball, second covers behind. Talk: "you take ball, I've got cover."</span></p>
+            <div class="d"><b>Coaching points</b><ul><li>First defender pressures the ball</li><li>Second defender covers behind and inside</li><li>Keep the right distance (about a stride away)</li><li>Delay to buy time for help</li><li>Win it, then keep it</li></ul></div>
+            <p class="d ask"><b>Ask</b><span>"How close do you get before you slow down — and who's covering behind you?"</span></p>
+            <p class="d ans"><b>Listen for</b><span>to about a stride away, then break down on your toes; the second defender sits a few yards behind and inside, ready to cover if the first is beaten.</span></p>
+            <p class="d"><b>Make it harder</b><span>Go 3v3 with a target player to spring a counter the moment they win the ball.</span></p>
+            <p class="d"><b>Good when</b><span>Pairs defend together and immediately turn a steal into an attack.</span></p>
+          </div>
+
+          <div class="block practice">
+            <div class="bh"><span class="bt">4v4 / 5v5 Win-It-Back Game (6 seconds)</span><span class="btime"><span class="phase-tag phase-practice">Practice · SSG</span> · 4:10–4:35 · 25 min</span></div>
+            <p class="d"><b>Set up</b><span>30×25 grid with goals. <button class="diagram-btn" type="button" data-dg="dg-winitback">&#9656; Field setup</button></span></p>
+            <p class="d"><b>Run it</b><span>Normal game with one twist: the team that just lost the ball earns a bonus point if they win it back within <b>6 seconds</b>. Count it out loud.</span></p>
+            <div class="d"><b>Coaching points</b><ul><li>Nearest player presses immediately</li><li>Cut the passing lanes</li><li>Collapse toward the ball together</li><li>Win it back within 6 seconds</li></ul></div>
+            <p class="d ask"><b>Ask</b><span>"The second we lose it — who presses first?"</span></p>
+            <p class="d ans"><b>Listen for</b><span>the closest player to the ball presses instantly while everyone else squeezes in to cut the passing lanes — that's how we win it back in six seconds.</span></p>
+            <p class="d"><b>Good when</b><span>The whole team reacts instantly on turnovers instead of jogging back.</span></p>
+          </div>
+
+          <div class="block play">
+            <div class="bh"><span class="bt">Game Day Scrimmage</span><span class="btime"><span class="phase-tag phase-play">Play</span> · 4:35–4:55 · 20 min</span></div>
+            <p class="d"><b>Set up</b><span>Two even teams, full goals, biggest space available. With a full squad, run two games side by side or rotate subs often so no one sits. <button class="diagram-btn" type="button" data-dg="dg-scrimmage">&#9656; Field setup</button></span></p>
+            <p class="d"><b>Run it</b><span>The biggest game of the week — minimal coaching, just celebrate the Lions and let them compete.</span></p>
+            <p class="d"><b>Good when</b><span>The week's themes show up on their own and everyone's having fun.</span></p>
+          </div>
+
+          <div class="block warm">
+            <div class="bh"><span class="bt">Cool-down &amp; Week Reflection</span><span class="btime"><span class="phase-tag phase-warm">Cool-down</span> · 4:55–5:00 · 5 min</span></div>
+            <p class="d"><b>Run it</b><span>Full-body stretch, hydrate.</span></p>
+            <p class="d"><b>Huddle</b><span>One thing we got better at this week; one thing to work on next week.</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COACHING GUIDE -->
+<section id="guide" class="soft page">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow gold">Coach's How-To Guide</span>
+      <h2>Every Drill, Explained Simply</h2>
+      <p>You don't need a coaching badge to run a great session. This guide breaks down every warm-up, drill, and term in the plan above — what it is, how to set it up in seconds, and what "good" looks like — so you can walk onto the field and coach any day with confidence.</p>
+    </div>
+
+    <!-- LINGO -->
+    <div id="lingo" class="subhead">
+      <span class="eyebrow">Decode the Lingo</span>
+      <h3>Soccer Words, in Plain English</h3>
+      <p>These are the terms sprinkled through the plan. Read these once and the rest of the guide clicks into place.</p>
+    </div>
+    <div class="terms">
+      <div class="term"><b>Small-sided game (SSG)</b><p>Any mini game with fewer players than a real match — 3v3, 4v4, etc. Fewer players means every kid touches the ball far more often. The heart of the whole method.</p></div>
+      <div class="term"><b>Grid</b><p>A square or rectangle marked with 4 cones — the playing area for a drill. Bigger grid = more running; smaller grid = more touches and pressure. You'll size it up or down all the time.</p></div>
+      <div class="term"><b>Gate</b><p>Two cones set about 1–2 steps apart, making a mini doorway. Players "score" by dribbling or passing through it. Scatter several around a grid.</p></div>
+      <div class="term"><b>Surfaces of the foot</b><p>The parts of the foot you touch the ball with: <b>inside</b> (passing &amp; control), <b>laces / top</b> (dribbling fast &amp; shooting), <b>outside</b> (quick touches while running), <b>sole / bottom</b> (stopping &amp; rolling).</p></div>
+      <div class="term"><b>Take-on</b><p>Beating a defender by dribbling past them one-on-one. When we "reward a take-on," we're encouraging kids to be brave and try it.</p></div>
+      <div class="term"><b>Transition</b><p>The moment the ball changes teams — you just lost it (defend now!) or just won it (attack now!). Fast transitions win games.</p></div>
+      <div class="term"><b>Possession</b><p>Keeping the ball as a team by passing and moving. "Possession games" score points for stringing passes together, not for goals.</p></div>
+      <div class="term"><b>Give-and-go (wall pass)</b><p>Pass to a teammate and immediately sprint past your defender to get it right back — like passing off a wall. A simple 2-player combo.</p></div>
+      <div class="term"><b>Overlap</b><p>A teammate runs from behind and around you on the outside to create an extra attacker and stretch the defense.</p></div>
+      <div class="term"><b>Both feet</b><p>Practicing with the left foot as much as the right. Young players lean hard on their strong foot — we deliberately make them use both.</p></div>
+      <div class="term"><b>SAQ</b><p>Speed, Agility &amp; Quickness — the umbrella term for short, sharp footwork and sprint drills that make players faster and more nimble.</p></div>
+      <div class="term"><b>Guided questions</b><p>Instead of telling kids the answer, you ask a short question and let them discover it by trying. "Which foot keeps the ball closest when you run fast?" They experiment, they learn, it sticks.</p></div>
+    </div>
+
+    <!-- WARM-UP -->
+    <div id="warmup" class="subhead">
+      <span class="eyebrow gold">Warm-Up &amp; Activation</span>
+      <h3>Waking the Body Up</h3>
+      <p>Two to three minutes of easy movement before anything intense. "Activation" just means gently switching on the muscles around a joint so kids don't tweak an ankle or pull a hip. No equipment needed.</p>
+    </div>
+    <div class="drills">
+      <div class="drill warm"><span class="tag warm">Warm-Up</span><h3>Jog &amp; Skips</h3><p class="r"><b>What</b><span>Easy lap to raise the heart rate, then exaggerated skipping to loosen hips and legs.</span></p><p class="r"><b>Run it</b><span>One slow lap, then skip 15 yards and back, twice.</span></p><p class="r"><b>Good when</b><span>Kids are moving smoothly and breathing a little harder — not sprinting yet.</span></p></div>
+      <div class="drill warm"><span class="tag warm">Warm-Up</span><h3>Walking Lunges</h3><p class="r"><b>What</b><span>Big forward steps, dropping the back knee toward the ground. Warms legs and hips.</span></p><p class="r"><b>Run it</b><span>Lunge-walk 10 steps out, jog back. Keep the front knee over the ankle, not past the toes.</span></p><p class="r"><b>Good when</b><span>Steps are controlled and balanced, chest up.</span></p></div>
+      <div class="drill warm"><span class="tag warm">Hip Activation</span><h3>Leg Swings</h3><p class="r"><b>What</b><span>Swinging one leg to loosen the hip — the main "hip activation" move.</span></p><p class="r"><b>Run it</b><span>Hold a fence or partner. Swing one leg forward &amp; back ×10, then side to side ×10. Switch legs.</span></p><p class="r"><b>Good when</b><span>The swing is relaxed and getting a bit bigger each rep.</span></p></div>
+      <div class="drill warm"><span class="tag warm">Hip Activation</span><h3>Open / Close the Gate</h3><p class="r"><b>What</b><span>Walking while rotating the knee out (open) and in (close). Loosens the hips for kicking and cutting.</span></p><p class="r"><b>Run it</b><span>Walk forward; lift a knee and rotate it out to the side (open the gate), next step rotate the other knee in across the body (close the gate). 5 each way.</span></p><p class="r"><b>Good when</b><span>Knees lift to hip height and rotate smoothly.</span></p></div>
+      <div class="drill warm"><span class="tag warm">Hip Activation</span><h3>Walking Knee Hugs</h3><p class="r"><b>What</b><span>Pulling each knee up to the chest as you walk. Wakes up hips and glutes.</span></p><p class="r"><b>Run it</b><span>Each step, hug one knee to the chest and squeeze for a beat, then step and switch. 10 total.</span></p><p class="r"><b>Good when</b><span>Kids stay tall and balanced instead of hunching over.</span></p></div>
+      <div class="drill warm"><span class="tag warm">Ankle Activation</span><h3>Ankle Bounces &amp; Walks</h3><p class="r"><b>What</b><span>Waking up the ankles so they can push off and cut safely.</span></p><p class="r"><b>Run it</b><span>Walk 10 yards on tip-toes, walk back on heels. Finish with 15–20 small quick pogo hops on the balls of the feet.</span></p><p class="r"><b>Good when</b><span>Hops are light, quick, and quiet — barely touching down.</span></p></div>
+      <div class="drill warm"><span class="tag warm">Warm-Up</span><h3>Juggling</h3><p class="r"><b>What</b><span>Keeping the ball off the ground with feet and thighs. Builds touch, balance, and confidence — and it's fun.</span></p><p class="r"><b>Run it</b><span>Everyone with a ball, count your best streak. Younger kids: allow one bounce between touches.</span></p><p class="r"><b>Good when</b><span>Touches are soft and under the ball, not swinging at it.</span></p></div>
+      <div class="drill warm"><span class="tag warm">Cool-Down</span><h3>Static Stretch</h3><p class="r"><b>What</b><span>Slow, held stretches at the <i>end</i> of a session to help recovery. (Save the deep stretching for after — the warm-up should be moving, not standing still.)</span></p><p class="r"><b>Run it</b><span>Hold each ~20 seconds: calves, quads, hamstrings, hips. Sip water. Quick team huddle.</span></p><p class="r"><b>Good when</b><span>Everyone's calm, hydrated, and cooled down before heading home.</span></p></div>
+    </div>
+
+    <!-- SPEED & FITNESS -->
+    <div id="speed" class="subhead">
+      <span class="eyebrow gold">Speed, Agility &amp; Fitness</span>
+      <h3>Getting Faster &amp; Fitter</h3>
+      <p>Short, sharp drills for quick feet and sprinting, plus the ball-based fitness work from the conditioning plan. Rule of thumb for speed work: <b>full effort, full rest</b> — quality beats quantity.</p>
+    </div>
+    <div class="drills">
+      <div class="drill speed"><span class="tag speed">Agility</span><h3>Quick-Feet Ladder</h3>
+        <p style="margin:2px 0 12px"><button class="diagram-btn" type="button" data-dg="dg-saq">&#9656; Field setup</button></p><p class="r"><b>What</b><span>A flat rope ladder on the ground; players step feet in and out fast. No ladder? Lay a line of cones 1.5 ft apart.</span></p><p class="r"><b>Run it</b><span>Patterns like one foot per box, then two feet per box, then a side shuffle through. Fast feet, light on the toes.</span></p><p class="r"><b>Good when</b><span>Feet are quick and quiet and they're not looking down the whole time.</span></p></div>
+      <div class="drill speed"><span class="tag speed">Agility</span><h3>A-Skips &amp; High Knees</h3><p class="r"><b>What</b><span>Sprint-form drills. A-skip = a skip driving the knee up to hip height. High knees = quick running in place/forward with knees pumping up.</span></p><p class="r"><b>Run it</b><span>15 yards of each. Drive knees up, pump the arms, land on the balls of the feet.</span></p><p class="r"><b>Good when</b><span>Tall posture, knees up, arms driving — this is teaching good running form.</span></p></div>
+      <div class="drill speed"><span class="tag speed">Agility</span><h3>Cone Shuffles</h3>
+        <p style="margin:2px 0 12px"><button class="diagram-btn" type="button" data-dg="dg-saq">&#9656; Field setup</button></p><p class="r"><b>What</b><span>Side-to-side shuffling between two cones in an athletic stance.</span></p><p class="r"><b>Run it</b><span>Cones ~5 yards apart. Shuffle side to side, stay low, <b>don't cross the feet</b>. 3–4 trips.</span></p><p class="r"><b>Good when</b><span>Hips stay low and feet stay quick underneath them.</span></p></div>
+      <div class="drill speed"><span class="tag speed">Agility</span><h3>5-10-5 (Change of Direction)</h3>
+        <p style="margin:2px 0 12px"><button class="diagram-btn" type="button" data-dg="dg-saq">&#9656; Field setup</button></p><p class="r"><b>What</b><span>A classic agility sprint: 3 cones in a line, 5 yards between each.</span></p><p class="r"><b>Run it</b><span>Start at the middle cone. Sprint 5 yds to one side &amp; touch the line, sprint 10 yds to the far cone &amp; touch, sprint 5 yds back through the middle.</span></p><p class="r"><b>Good when</b><span>They plant hard, stay low in the turns, and explode out — not rounding the corners.</span></p></div>
+      <div class="drill speed"><span class="tag speed">Speed</span><h3>Reaction Sprints &amp; Build-Ups</h3><p class="r"><b>What</b><span>Sprints that start on your signal (reaction) and "accelerations" that build gradually to ~70% to prep the legs.</span></p><p class="r"><b>Run it</b><span>Line them up; point or call a direction and they sprint 10–15 yds. For build-ups, jog→stride→ease off, ×3.</span></p><p class="r"><b>Good when</b><span>They react instantly and run relaxed, not tense.</span></p></div>
+      <div class="drill speed"><span class="tag speed">Conditioning</span><h3>Shuttle Runs</h3>
+        <p style="margin:2px 0 12px"><button class="diagram-btn" type="button" data-dg="dg-saq">&#9656; Field setup</button></p><p class="r"><b>What</b><span>Sprint to a line and back, repeatedly. Simple fitness plus change-of-direction.</span></p><p class="r"><b>Run it</b><span>Cones at 5, 10, 15 yards. Sprint to each and back. Rest, repeat 4–6 times.</span></p><p class="r"><b>Good when</b><span>Effort holds up on the later reps — that's the fitness building.</span></p></div>
+      <div class="drill speed"><span class="tag speed">Conditioning</span><h3>Relay Races &amp; Obstacle Course</h3>
+        <p style="margin:2px 0 12px"><button class="diagram-btn" type="button" data-dg="dg-relay">&#9656; Field setup</button></p><p class="r"><b>What</b><span>Team races — dribbling relays, shuttle relays, or weaving a ball through cones/over small hurdles. Competitive fitness that feels like a game.</span></p><p class="r"><b>Run it</b><span>Split into even teams, one ball per team, first team to finish wins. Keep lines short so kids rest, then go hard.</span></p><p class="r"><b>Good when</b><span>Energy is high, effort is real, and control doesn't fall apart in the rush.</span></p></div>
+      <div class="drill speed"><span class="tag speed">Conditioning</span><h3>Aerobic Dribble Intervals</h3>
+        <p style="margin:2px 0 12px"><button class="diagram-btn" type="button" data-dg="dg-dribbleintervals">&#9656; Field setup</button></p><p class="r"><b>What</b><span>Building endurance <i>with</i> the ball instead of just running laps.</span></p><p class="r"><b>Run it</b><span>Dribble at a strong pace for 2 minutes (change direction on the whistle, use both feet), then 1 minute easy recovery. Repeat 6–8 times.</span></p><p class="r"><b>Good when</b><span>The ball stays close even as they tire and legs get heavy.</span></p></div>
+      <div class="drill speed"><span class="tag speed">Speed + Ball</span><h3>1v1 Speed Duels to Goal</h3>
+        <p style="margin:2px 0 12px"><button class="diagram-btn" type="button" data-dg="dg-speedduel">&#9656; Field setup</button></p><p class="r"><b>What</b><span>Two players race for a ball, then attack a goal 1v1. Explosive speed inside a real soccer moment.</span></p><p class="r"><b>Run it</b><span>Two lines behind cones ~15 yds from goal. Coach rolls a ball out; both sprint — whoever gets it attacks, the other defends. Keeper in goal. Rest between reps.</span></p><p class="r"><b>Good when</b><span>First touch pushes the ball toward goal and they accelerate onto it.</span></p></div>
+    </div>
+
+    <!-- BALL WORK -->
+    <div id="ball" class="subhead">
+      <span class="eyebrow">Ball &amp; Technical Work</span>
+      <h3>Skills on the Ball</h3>
+      <p>The touches, moves, and technique drills. The golden rule: <b>everyone has a ball, nobody stands in long lines.</b> More touches = faster learning.</p>
+    </div>
+    <div class="drills">
+      <div class="drill ball"><span class="tag ball">Technique</span><h3>Ball Mastery</h3>
+        <p style="margin:2px 0 12px"><button class="diagram-btn" type="button" data-dg="dg-ballmastery">&#9656; Field setup</button></p><p class="r"><b>What</b><span>Repetitive touches to get comfortable — <b>inside-outside</b> (push the ball with the inside of the foot, then the outside), <b>sole rolls</b> (roll it side to side with the bottom of the foot), toe taps on top.</span></p><p class="r"><b>Run it</b><span>Everyone with a ball in a grid, 30–45 seconds per move, both feet.</span></p><p class="r"><b>Good when</b><span>Touches are relaxed and heads start to come up off the ball.</span></p></div>
+      <div class="drill ball"><span class="tag ball">Technique</span><h3>Footwork Ladder + Ball</h3><p class="r"><b>What</b><span>Quick feet through the ladder, then dribble out — links foot speed to controlling the ball.</span></p><p class="r"><b>Run it</b><span>Do a ladder pattern, then dribble a ball waiting at the end through a few cones.</span></p><p class="r"><b>Good when</b><span>The quick feet carry straight into a controlled dribble.</span></p></div>
+      <div class="drill ball"><span class="tag ball">Game</span><h3>Dribble Tag</h3>
+        <p style="margin:2px 0 12px"><button class="diagram-btn" type="button" data-dg="dg-dribbletag">&#9656; Field setup</button></p><p class="r"><b>What</b><span>A fun warm-up game — everyone dribbles in a grid while 1–2 "taggers" try to kick others' balls out, all while protecting their own.</span></p><p class="r"><b>Run it</b><span>Everyone with a ball inside a grid. If your ball gets knocked out, do 3 toe-taps and rejoin. Rotate taggers.</span></p><p class="r"><b>Good when</b><span>Kids keep their heads up and shield the ball with their body.</span></p></div>
+      <div class="drill ball"><span class="tag ball">1v1 Moves</span><h3>Scissor &amp; Step-Over</h3><p class="r"><b>What</b><span>Fake moves to beat a defender. A scissor/step-over is swinging a foot <i>around</i> the front of the ball (without touching it) to sell a fake, then pushing the ball away with the other foot.</span></p><p class="r"><b>Run it</b><span>Practice slowly with no defender first, both feet, then add a passive defender to beat.</span></p><p class="r"><b>Good when</b><span>The fake is followed by a quick burst — the move only works with the acceleration after it.</span></p></div>
+      <div class="drill ball"><span class="tag ball">1v1 Moves</span><h3>Change of Pace</h3><p class="r"><b>What</b><span>The simplest, most effective move: slow down to lull the defender, then explode past them.</span></p><p class="r"><b>Run it</b><span>Dribble at a defender, ease off, then push the ball into space and sprint.</span></p><p class="r"><b>Good when</b><span>The speed change is obvious — slow, then GO.</span></p></div>
+      <div class="drill ball"><span class="tag ball">Technique</span><h3>Receiving "Across the Body" / Open Up</h3><p class="r"><b>What</b><span>Taking your first touch with the <i>far</i> foot into open space so you can see the field — instead of trapping the ball dead in front of you under pressure.</span></p><p class="r"><b>Run it</b><span>As the pass arrives, touch it with the foot farthest from the ball, pushing it out to your side and turning to face forward.</span></p><p class="r"><b>Good when</b><span>After one touch they're facing up the field, not with their back to it.</span></p></div>
+      <div class="drill ball"><span class="tag ball">Technique</span><h3>Passing Patterns</h3>
+        <p style="margin:2px 0 12px"><button class="diagram-btn" type="button" data-dg="dg-passpattern">&#9656; Field setup</button></p><p class="r"><b>What</b><span>Passing in a set sequence — "pass and follow your pass" — to groove good technique and movement.</span></p><p class="r"><b>Run it</b><span>Set 4–5 cones in a shape; players pass along the pattern, then jog to the cone they passed to. Both feet.</span></p><p class="r"><b>Good when</b><span>Passes are firm and accurate and players move immediately after passing.</span></p></div>
+      <div class="drill ball"><span class="tag ball">Finishing</span><h3>Finishing Lines</h3>
+        <p style="margin:2px 0 12px"><button class="diagram-btn" type="button" data-dg="dg-finishlines">&#9656; Field setup</button></p><p class="r"><b>What</b><span>Organized shooting reps at goal, both feet — accuracy first, then power.</span></p><p class="r"><b>Run it</b><span>A short line of players; each dribbles in and shoots, then retrieves a ball. Keep two lines going (left &amp; right) so nobody waits long.</span></p><p class="r"><b>Good when</b><span>They're placing shots to the corners and hitting with the laces, not toe-poking.</span></p></div>
+    </div>
+
+    <!-- SMALL-SIDED GAMES -->
+    <div id="games" class="subhead">
+      <span class="eyebrow">Small-Sided Games</span>
+      <h3>The Games (and How to Set Them Up)</h3>
+      <p>This is where it all comes together. Set the field, split even teams, give the game a simple rule, then mostly step back and let them play. A few coaching questions here and there beat constant whistle-blowing.</p>
+    </div>
+    <div class="drills">
+      <div class="drill game"><span class="tag game">Possession</span><h3>Rondo / Keep-Away (4v1, 5v2)</h3>
+        <p style="margin:2px 0 12px"><button class="diagram-btn" type="button" data-dg="dg-rondo">&#9656; Field setup</button></p><p class="r"><b>What</b><span>The classic "monkey in the middle." Outside players keep the ball; the defender(s) in the middle try to win it.</span></p><p class="r"><b>Set up</b><span>Small circle or square of players, 1–2 defenders inside.</span></p><p class="r"><b>Run it</b><span>Keep possession with quick passes. Whoever loses the ball (or misplaces a pass) swaps into the middle.</span></p><p class="r"><b>Good when</b><span>Passers open up angles and the ball zips around.</span></p></div>
+      <div class="drill game"><span class="tag game">1v1</span><h3>1v1 to a Line / Gate</h3>
+        <p style="margin:2px 0 12px"><button class="diagram-btn" type="button" data-dg="dg-1v1gates">&#9656; Field setup</button></p><p class="r"><b>What</b><span>One attacker tries to beat one defender by dribbling across a line or through a gate.</span></p><p class="r"><b>Set up</b><span>A small channel; attacker at one end with a ball, defender facing them.</span></p><p class="r"><b>Run it</b><span>Attacker scores by dribbling over the far line / through a gate. Swap roles each go.</span></p><p class="r"><b>Good when</b><span>Attackers try their moves &amp; changes of pace; defenders stay patient, don't dive in.</span></p></div>
+      <div class="drill game"><span class="tag game">Mini Game</span><h3>3v3 to Small Goals</h3>
+        <p style="margin:2px 0 12px"><button class="diagram-btn" type="button" data-dg="dg-3v3goals">&#9656; Field setup</button></p><p class="r"><b>What</b><span>A tiny match, no goalkeepers, two pop-up goals (6 ft) per end.</span></p><p class="r"><b>Set up</b><span>Grid about 25×20 yards, two pop-up goals (6 ft) on each end line.</span></p><p class="r"><b>Run it</b><span>Play a normal game. Add a rule to fit the day — e.g., "a goal after a take-on counts double."</span></p><p class="r"><b>Good when</b><span>Everyone's involved and the rule is nudging the behavior you want.</span></p></div>
+      <div class="drill game"><span class="tag game">Possession</span><h3>4v4 Possession + End-Zone Targets</h3>
+        <p style="margin:2px 0 12px"><button class="diagram-btn" type="button" data-dg="dg-4v4endzone">&#9656; Field setup</button></p><p class="r"><b>What</b><span>Keep the ball, then find a "target" teammate in an end zone to score a point.</span></p><p class="r"><b>Set up</b><span>Grid with an end zone at each end; one target player per team stands in the opposite end zone.</span></p><p class="r"><b>Run it</b><span>Connect a set number of passes, then pass into your target for a point. Rotate the target.</span></p><p class="r"><b>Good when</b><span>Players move to support and stay patient instead of forcing it.</span></p></div>
+      <div class="drill game"><span class="tag game">Attacking</span><h3>2v1 &amp; 3v2 to Goal</h3>
+        <p style="margin:2px 0 12px"><button class="diagram-btn" type="button" data-dg="dg-2v1goal">&#9656; Field setup</button></p><p class="r"><b>What</b><span>Attackers <i>outnumber</i> defenders and attack a real goal — teaches the shoot-or-pass decision with an advantage.</span></p><p class="r"><b>Set up</b><span>One goal with a keeper; attackers start ~25 yds out, defender(s) start goal-side.</span></p><p class="r"><b>Run it</b><span>Attackers go for goal using give-and-goes or overlaps. Reset and rotate quickly.</span></p><p class="r"><b>Good when</b><span>They use the extra player — a pass to the open teammate — rather than forcing a shot.</span></p></div>
+      <div class="drill game"><span class="tag game">Transition</span><h3>Transition Game to 4 Goals</h3>
+        <p style="margin:2px 0 12px"><button class="diagram-btn" type="button" data-dg="dg-4goals">&#9656; Field setup</button></p><p class="r"><b>What</b><span>Each team defends two goals and attacks two — spreads the field and forces quick switching and transitions.</span></p><p class="r"><b>Set up</b><span>A wider grid with two pop-up goals (6 ft) on each end line (4 total).</span></p><p class="r"><b>Run it</b><span>Score in either of the two goals you're attacking. When possession flips, everyone reacts fast.</span></p><p class="r"><b>Good when</b><span>Players switch play to the open goal and sprint the moment the ball turns over.</span></p></div>
+      <div class="drill game"><span class="tag game">Defending</span><h3>Win-It-Back Game (6 seconds)</h3>
+        <p style="margin:2px 0 12px"><button class="diagram-btn" type="button" data-dg="dg-winitback">&#9656; Field setup</button></p><p class="r"><b>What</b><span>A normal small game with one twist that teaches team defending.</span></p><p class="r"><b>Set up</b><span>Any 4v4 / 5v5 setup with goals.</span></p><p class="r"><b>Run it</b><span>The team that just lost the ball earns a bonus point if they win it back within 6 seconds. Count it out loud.</span></p><p class="r"><b>Good when</b><span>Players pressure together immediately instead of jogging back.</span></p></div>
+      <div class="drill game"><span class="tag game">Competition</span><h3>Tournament — Winners Stay</h3>
+        <p style="margin:2px 0 12px"><button class="diagram-btn" type="button" data-dg="dg-tournament">&#9656; Field setup</button></p><p class="r"><b>What</b><span>Short, back-to-back mini games with stakes. Great for competitive conditioning.</span></p><p class="r"><b>Set up</b><span>Two or three tiny fields, teams of 3.</span></p><p class="r"><b>Run it</b><span>4-minute games; the winning team stays on, the next team rotates in. Everyone plays every round.</span></p><p class="r"><b>Good when</b><span>Games are quick, teams are even, and there's real energy.</span></p></div>
+      <div class="drill game"><span class="tag game">Free Play</span><h3>Scrimmage</h3>
+        <p style="margin:2px 0 12px"><button class="diagram-btn" type="button" data-dg="dg-scrimmage">&#9656; Field setup</button></p><p class="r"><b>What</b><span>A regular game — the final "Play" phase where kids apply what they practiced.</span></p><p class="r"><b>Set up</b><span>Even teams, goals, biggest space you have.</span></p><p class="r"><b>Run it</b><span>Let them play. Coach mostly watches; drop in one quick question, not a running commentary.</span></p><p class="r"><b>Good when</b><span>You see the day's theme show up on its own. That's the win.</span></p></div>
+    </div>
+
+    <!-- FIELD SETUP -->
+    <div id="setup" class="subhead">
+      <span class="eyebrow gold">Field Setup &amp; Coaching Basics</span>
+      <h3>The 5-Minute Setup</h3>
+      <p>Everything you need to run a session smoothly, keep it fair, and keep it safe.</p>
+    </div>
+    <div class="note">
+      <h4>What to pack</h4>
+      <p>A simple bag covers every drill in the plan.</p>
+      <div class="checklist"><span>~20 cones</span><span>2 sets of colored bibs/pinnies</span><span>A ball per player</span><span>Pop-up goals (or use cones)</span><span>Water for breaks</span><span>This plan on your phone</span></div>
+    </div>
+    <div class="note">
+      <h4>Cones do everything</h4>
+      <p>Four cones = a <b>grid</b> (the play area). Two cones close together = a <b>gate</b> or a <b>pop-up goal</b>. A line of cones = a <b>ladder</b> or a dribbling course. You rarely need anything fancier. Make the space bigger for more running and passing, smaller for more touches and pressure.</p>
+    </div>
+    <div class="note">
+      <h4>Our goals</h4>
+      <p>We have <b>two full-size goals, fixed at the ends</b>, plus <b>four 6-ft pop-up goals</b> you can move anywhere. Use the full-size goals for finishing work and the scrimmage, and the pop-up goals for the small-goal games (3v3, 2v2, 4-goal). Cone gates (two cones) can cover any extra targets you need.</p>
+    </div>
+    <div class="note">
+      <h4>Making even teams fast</h4>
+      <p>Hand out bibs as kids arrive to split colors evenly, and mix ability and age across teams. If a game is lopsided, don't stop it — just swap one player or add a rule that helps the team that's behind. Keep groups small (3v3, 4v4) so nobody hides and everyone touches the ball.</p>
+    </div>
+    <div class="note">
+      <h4>The one habit that makes you look like a pro</h4>
+      <p>Ask, don't tell. When you see something, resist explaining for 30 seconds and instead ask a short question — "What could you try there?" — then let them figure it out in the next rep. Kids remember what they discover far better than what they're told.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOR PARENTS -->
+<section id="parents" class="page">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow gold">For Parents &amp; Players</span>
+      <h2>What to Know</h2>
+      <p>A few notes to keep our Lions safe, healthy, and enjoying the game all summer and season long.</p>
+    </div>
+    <div class="note">
+      <h4>Come ready</h4>
+      <p>Bring these to every session so players get the most out of their time on the field.</p>
+      <div class="checklist"><span>Size 5 ball</span><span>Full water bottle</span><span>Shin guards</span><span>Cleats + flats</span><span>Sunscreen</span><span>Weather-appropriate layers</span></div>
+    </div>
+    <div class="note">
+      <h4>Health &amp; wellbeing first</h4>
+      <p>Summer conditioning is <b>optional and no-pressure</b> — come when you can. We take water breaks every 15–20 minutes, watch the heat, and keep intensity age-appropriate for grades 4–8. Rest and recovery between sessions matter as much as the work itself. If a player is hurt or unwell, we sit them out — no exceptions.</p>
+    </div>
+    <div class="note">
+      <h4>Our coaching promise</h4>
+      <p>We coach the U.S. Soccer grassroots way: maximum touches on the ball, the game as the best teacher, guided questions over long lectures, and every player getting real playing time. We're developing soccer players and young people of character — the scoreboard comes second to growth, effort, and joy in the game.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="brand">
+      <img src="https://ashlandchristian.org/wp-content/uploads/2025/02/acs-logo.png" alt="Ashland Christian School" style="height:70px">
+    </div>
+    <p>ACS Lions Soccer · Grades 4–8 · Ashland Christian School · 1144 W Main St, Ashland, OH · (419) 289-6617</p>
+    <p class="verse">"Whatever you do, work at it with all your heart, as working for the Lord." — Colossians 3:23</p>
+    <div class="divider"></div>
+    <p style="margin-top:26px;font-size:.82rem">Built on the U.S. Soccer grassroots Play–Practice–Play development model.</p>
+  </div>
+</footer>
+
+<!-- FIELD DIAGRAM MODAL -->
+<div class="modal" id="fieldModal">
+  <div class="modal-card">
+    <button class="modal-close" type="button" aria-label="Close">&times;</button>
+    <div class="modal-body"></div>
+  </div>
+</div>
+
+<!-- DIAGRAM TEMPLATES (hidden) -->
+<div id="dgstore" hidden>
+
+  <div id="dg-1v1gates">
+    <h4>1v1 to Gates</h4>
+    <div class="diagram">
+      <svg viewBox="0 0 460 300" xmlns="http://www.w3.org/2000/svg">
+        <rect x="150" y="30" width="160" height="240" rx="8" fill="#dff0e4" stroke="#86c79a" stroke-width="2"/>
+        <!-- top gate -->
+        <circle cx="210" cy="30" r="5" fill="#FB8500"/><circle cx="250" cy="30" r="5" fill="#FB8500"/>
+        <!-- bottom gate -->
+        <circle cx="210" cy="270" r="5" fill="#FB8500"/><circle cx="250" cy="270" r="5" fill="#FB8500"/>
+        <!-- defender at far gate -->
+        <circle cx="230" cy="80" r="10" fill="#FFCF30" stroke="#0a1d27"/><text x="230" y="84" font-size="11" text-anchor="middle" fill="#0a1d27" font-weight="700">D</text>
+        <!-- attacker + ball near bottom -->
+        <circle cx="230" cy="215" r="10" fill="#2EC0F9" stroke="#0a1d27"/><text x="230" y="219" font-size="11" text-anchor="middle" fill="#0a1d27" font-weight="700">A</text>
+        <circle cx="230" cy="198" r="6" fill="#fff" stroke="#001017" stroke-width="1.5"/>
+        <!-- movement arrow -->
+        <line x1="245" y1="190" x2="243" y2="120" stroke="#0b7fb0" stroke-width="2" stroke-dasharray="5 4"/>
+        <polygon points="243,112 238,122 248,122" fill="#0b7fb0"/>
+        <!-- length label (right) -->
+        <line x1="330" y1="30" x2="330" y2="270" stroke="#6E6E6E" stroke-width="1" stroke-dasharray="3 3"/>
+        <text x="345" y="155" font-size="13" fill="#20343d" font-weight="600" transform="rotate(90 345 155)" text-anchor="middle">10 yds</text>
+        <!-- width label (bottom) -->
+        <line x1="150" y1="285" x2="310" y2="285" stroke="#6E6E6E" stroke-width="1" stroke-dasharray="3 3"/>
+        <text x="230" y="299" font-size="13" fill="#20343d" font-weight="600" text-anchor="middle">8 yds</text>
+      </svg>
+    </div>
+    <div class="legend2"><span><i style="background:#2EC0F9"></i>Attacker (A)</span><span><i style="background:#FFCF30"></i>Defender (D)</span><span><i class="cone"></i>Cone / gate</span><span><i class="ball"></i>Ball</span></div>
+    <p class="dgnote">Run several of these channels side by side so nobody waits. The attacker beats the defender and dribbles through <b>either</b> end gate. Rotate roles every two goes.</p>
+  </div>
+
+  <div id="dg-3v3goals">
+    <h4>3v3 to Small Goals</h4>
+    <div class="diagram">
+      <svg viewBox="0 0 460 340" xmlns="http://www.w3.org/2000/svg">
+        <rect x="60" y="40" width="340" height="240" rx="8" fill="#dff0e4" stroke="#86c79a" stroke-width="2"/>
+        <!-- pop-up goals: 2 per end line -->
+        <line x1="60" y1="90" x2="60" y2="120" stroke="#0a1d27" stroke-width="4"/><line x1="60" y1="200" x2="60" y2="230" stroke="#0a1d27" stroke-width="4"/>
+        <line x1="400" y1="90" x2="400" y2="120" stroke="#0a1d27" stroke-width="4"/><line x1="400" y1="200" x2="400" y2="230" stroke="#0a1d27" stroke-width="4"/>
+        <!-- team A (blue) -->
+        <circle cx="140" cy="110" r="10" fill="#2EC0F9" stroke="#0a1d27"/><circle cx="150" cy="200" r="10" fill="#2EC0F9" stroke="#0a1d27"/><circle cx="210" cy="160" r="10" fill="#2EC0F9" stroke="#0a1d27"/>
+        <!-- team B (gold) -->
+        <circle cx="320" cy="110" r="10" fill="#FFCF30" stroke="#0a1d27"/><circle cx="310" cy="210" r="10" fill="#FFCF30" stroke="#0a1d27"/><circle cx="250" cy="150" r="10" fill="#FFCF30" stroke="#0a1d27"/>
+        <!-- ball -->
+        <circle cx="228" cy="160" r="6" fill="#fff" stroke="#001017" stroke-width="1.5"/>
+        <!-- length label -->
+        <line x1="60" y1="300" x2="400" y2="300" stroke="#6E6E6E" stroke-width="1" stroke-dasharray="3 3"/>
+        <text x="230" y="316" font-size="13" fill="#20343d" font-weight="600" text-anchor="middle">25 yds</text>
+        <!-- width label -->
+        <line x1="45" y1="40" x2="45" y2="280" stroke="#6E6E6E" stroke-width="1" stroke-dasharray="3 3"/>
+        <text x="30" y="160" font-size="13" fill="#20343d" font-weight="600" transform="rotate(-90 30 160)" text-anchor="middle">20 yds</text>
+      </svg>
+    </div>
+    <div class="legend2"><span><i style="background:#2EC0F9"></i>Team A</span><span><i style="background:#FFCF30"></i>Team B</span><span><i class="goal"></i>Pop-up goal</span><span><i class="ball"></i>Ball</span></div>
+    <p class="dgnote">Two pop-up goals (6 ft) on each end line, no keepers. A goal right after a successful take-on counts double.</p>
+  </div>
+
+  <div id="dg-rondo">
+    <h4>Rondo / Keep-Away (4v1)</h4>
+    <div class="diagram">
+      <svg viewBox="0 0 460 320" xmlns="http://www.w3.org/2000/svg">
+        <rect x="140" y="50" width="180" height="180" rx="8" fill="#dff0e4" stroke="#86c79a" stroke-width="2"/>
+        <!-- 4 outside players (blue) at the edges -->
+        <circle cx="230" cy="50" r="10" fill="#2EC0F9" stroke="#0a1d27"/>
+        <circle cx="320" cy="140" r="10" fill="#2EC0F9" stroke="#0a1d27"/>
+        <circle cx="230" cy="230" r="10" fill="#2EC0F9" stroke="#0a1d27"/>
+        <circle cx="140" cy="140" r="10" fill="#2EC0F9" stroke="#0a1d27"/>
+        <!-- defender in middle (gold) -->
+        <circle cx="230" cy="140" r="10" fill="#FFCF30" stroke="#0a1d27"/><text x="230" y="144" font-size="11" text-anchor="middle" fill="#0a1d27" font-weight="700">D</text>
+        <!-- ball near a passer -->
+        <circle cx="230" cy="68" r="6" fill="#fff" stroke="#001017" stroke-width="1.5"/>
+        <!-- pass arrows around -->
+        <line x1="245" y1="60" x2="305" y2="128" stroke="#0b7fb0" stroke-width="2" stroke-dasharray="5 4"/>
+        <polygon points="312,134 300,132 305,122" fill="#0b7fb0"/>
+        <!-- size label -->
+        <line x1="140" y1="248" x2="320" y2="248" stroke="#6E6E6E" stroke-width="1" stroke-dasharray="3 3"/>
+        <text x="230" y="264" font-size="13" fill="#20343d" font-weight="600" text-anchor="middle">8 x 8 yds</text>
+      </svg>
+    </div>
+    <div class="legend2"><span><i style="background:#2EC0F9"></i>Outside players</span><span><i style="background:#FFCF30"></i>Defender (D)</span><span><i class="ball"></i>Ball</span></div>
+    <p class="dgnote">Outside players keep it away with quick passes; whoever loses it swaps into the middle. Use 5v2 in a slightly bigger square for older groups.</p>
+  </div>
+
+  <div id="dg-4v4endzone">
+    <h4>4v4 Possession + End-Zone Targets</h4>
+    <div class="diagram">
+      <svg viewBox="0 0 480 340" xmlns="http://www.w3.org/2000/svg">
+        <rect x="60" y="40" width="360" height="240" rx="8" fill="#dff0e4" stroke="#86c79a" stroke-width="2"/>
+        <!-- end zones -->
+        <rect x="60" y="40" width="34" height="240" fill="#c7e6d1" stroke="#86c79a" stroke-width="1"/>
+        <rect x="386" y="40" width="34" height="240" fill="#c7e6d1" stroke="#86c79a" stroke-width="1"/>
+        <!-- targets in end zones -->
+        <circle cx="77" cy="160" r="10" fill="#2EC0F9" stroke="#0a1d27"/><text x="77" y="164" font-size="10" text-anchor="middle" fill="#0a1d27" font-weight="700">T</text>
+        <circle cx="403" cy="160" r="10" fill="#FFCF30" stroke="#0a1d27"/><text x="403" y="164" font-size="10" text-anchor="middle" fill="#0a1d27" font-weight="700">T</text>
+        <!-- team A -->
+        <circle cx="160" cy="100" r="10" fill="#2EC0F9" stroke="#0a1d27"/><circle cx="200" cy="210" r="10" fill="#2EC0F9" stroke="#0a1d27"/><circle cx="260" cy="150" r="10" fill="#2EC0F9" stroke="#0a1d27"/><circle cx="300" cy="90" r="10" fill="#2EC0F9" stroke="#0a1d27"/>
+        <!-- team B -->
+        <circle cx="200" cy="120" r="10" fill="#FFCF30" stroke="#0a1d27"/><circle cx="250" cy="220" r="10" fill="#FFCF30" stroke="#0a1d27"/><circle cx="300" cy="170" r="10" fill="#FFCF30" stroke="#0a1d27"/><circle cx="330" cy="130" r="10" fill="#FFCF30" stroke="#0a1d27"/>
+        <circle cx="272" cy="150" r="6" fill="#fff" stroke="#001017" stroke-width="1.5"/>
+        <!-- labels -->
+        <line x1="60" y1="300" x2="420" y2="300" stroke="#6E6E6E" stroke-width="1" stroke-dasharray="3 3"/>
+        <text x="240" y="316" font-size="13" fill="#20343d" font-weight="600" text-anchor="middle">30 yds</text>
+        <line x1="45" y1="40" x2="45" y2="280" stroke="#6E6E6E" stroke-width="1" stroke-dasharray="3 3"/>
+        <text x="30" y="160" font-size="13" fill="#20343d" font-weight="600" transform="rotate(-90 30 160)" text-anchor="middle">24 yds</text>
+        <text x="77" y="300" font-size="11" fill="#20343d" text-anchor="middle">3-yd zone</text>
+        <text x="403" y="300" font-size="11" fill="#20343d" text-anchor="middle">3-yd zone</text>
+      </svg>
+    </div>
+    <div class="legend2"><span><i style="background:#2EC0F9"></i>Team A</span><span><i style="background:#FFCF30"></i>Team B</span><span>T = target player</span><span><i class="ball"></i>Ball</span></div>
+    <p class="dgnote">Connect 5 passes, then play into your target (T) in the far end zone for a point. The target returns it and play continues. Rotate the target.</p>
+  </div>
+
+  <div id="dg-2v1goal">
+    <h4>2v1 &amp; 3v2 to Goal</h4>
+    <div class="diagram">
+      <svg viewBox="0 0 460 340" xmlns="http://www.w3.org/2000/svg">
+        <rect x="60" y="30" width="340" height="270" rx="8" fill="#dff0e4" stroke="#86c79a" stroke-width="2"/>
+        <!-- goal at top with keeper -->
+        <line x1="200" y1="30" x2="260" y2="30" stroke="#0a1d27" stroke-width="5"/>
+        <circle cx="230" cy="48" r="10" fill="#6E6E6E" stroke="#0a1d27"/><text x="230" y="52" font-size="10" text-anchor="middle" fill="#fff" font-weight="700">GK</text>
+        <!-- defender goal-side -->
+        <circle cx="230" cy="120" r="10" fill="#FFCF30" stroke="#0a1d27"/><text x="230" y="124" font-size="11" text-anchor="middle" fill="#0a1d27" font-weight="700">D</text>
+        <!-- 2 attackers ~25 yds out -->
+        <circle cx="180" cy="240" r="10" fill="#2EC0F9" stroke="#0a1d27"/><circle cx="285" cy="240" r="10" fill="#2EC0F9" stroke="#0a1d27"/>
+        <circle cx="180" cy="222" r="6" fill="#fff" stroke="#001017" stroke-width="1.5"/>
+        <!-- pass + run arrows -->
+        <line x1="192" y1="235" x2="273" y2="235" stroke="#0b7fb0" stroke-width="2" stroke-dasharray="5 4"/><polygon points="281,235 270,230 270,240" fill="#0b7fb0"/>
+        <line x1="285" y1="228" x2="255" y2="140" stroke="#0b7fb0" stroke-width="2" stroke-dasharray="5 4"/><polygon points="252,132 250,144 260,140" fill="#0b7fb0"/>
+        <!-- distance -->
+        <line x1="415" y1="30" x2="415" y2="240" stroke="#6E6E6E" stroke-width="1" stroke-dasharray="3 3"/>
+        <text x="430" y="135" font-size="13" fill="#20343d" font-weight="600" transform="rotate(90 430 135)" text-anchor="middle">~25 yds to goal</text>
+      </svg>
+    </div>
+    <div class="legend2"><span><i style="background:#2EC0F9"></i>Attackers</span><span><i style="background:#FFCF30"></i>Defender</span><span><i style="background:#6E6E6E"></i>Keeper</span><span><i class="goal"></i>Full goal</span><span><i class="ball"></i>Ball</span></div>
+    <p class="dgnote">Attackers outnumber the defender and combine (give-and-go or overlap) to finish. For 3v2, add one attacker and one defender. Reset and rotate fast.</p>
+  </div>
+
+  <div id="dg-4v4goals">
+    <h4>4v4 + Keepers to Full Goals</h4>
+    <div class="diagram">
+      <svg viewBox="0 0 460 340" xmlns="http://www.w3.org/2000/svg">
+        <rect x="60" y="40" width="340" height="240" rx="8" fill="#dff0e4" stroke="#86c79a" stroke-width="2"/>
+        <line x1="60" y1="135" x2="60" y2="185" stroke="#0a1d27" stroke-width="5"/>
+        <line x1="400" y1="135" x2="400" y2="185" stroke="#0a1d27" stroke-width="5"/>
+        <circle cx="78" cy="160" r="10" fill="#6E6E6E" stroke="#0a1d27"/><text x="78" y="164" font-size="9" text-anchor="middle" fill="#fff" font-weight="700">GK</text>
+        <circle cx="382" cy="160" r="10" fill="#6E6E6E" stroke="#0a1d27"/><text x="382" y="164" font-size="9" text-anchor="middle" fill="#fff" font-weight="700">GK</text>
+        <circle cx="150" cy="110" r="10" fill="#2EC0F9" stroke="#0a1d27"/><circle cx="170" cy="210" r="10" fill="#2EC0F9" stroke="#0a1d27"/><circle cx="230" cy="150" r="10" fill="#2EC0F9" stroke="#0a1d27"/><circle cx="270" cy="100" r="10" fill="#2EC0F9" stroke="#0a1d27"/>
+        <circle cx="200" cy="140" r="10" fill="#FFCF30" stroke="#0a1d27"/><circle cx="260" cy="210" r="10" fill="#FFCF30" stroke="#0a1d27"/><circle cx="300" cy="160" r="10" fill="#FFCF30" stroke="#0a1d27"/><circle cx="320" cy="120" r="10" fill="#FFCF30" stroke="#0a1d27"/>
+        <circle cx="242" cy="150" r="6" fill="#fff" stroke="#001017" stroke-width="1.5"/>
+        <line x1="60" y1="300" x2="400" y2="300" stroke="#6E6E6E" stroke-width="1" stroke-dasharray="3 3"/>
+        <text x="230" y="316" font-size="13" fill="#20343d" font-weight="600" text-anchor="middle">30 yds</text>
+        <line x1="45" y1="40" x2="45" y2="280" stroke="#6E6E6E" stroke-width="1" stroke-dasharray="3 3"/>
+        <text x="30" y="160" font-size="13" fill="#20343d" font-weight="600" transform="rotate(-90 30 160)" text-anchor="middle">25 yds</text>
+      </svg>
+    </div>
+    <div class="legend2"><span><i style="background:#2EC0F9"></i>Team A</span><span><i style="background:#FFCF30"></i>Team B</span><span><i style="background:#6E6E6E"></i>Keeper</span><span><i class="goal"></i>Full goal</span><span><i class="ball"></i>Ball</span></div>
+    <p class="dgnote">Full game to two goals with keepers. First-time finishes count double, so serve early and crash the back post for rebounds.</p>
+  </div>
+
+  <div id="dg-2v2def">
+    <h4>1v1 &amp; 2v2 Defending</h4>
+    <div class="diagram">
+      <svg viewBox="0 0 460 320" xmlns="http://www.w3.org/2000/svg">
+        <rect x="70" y="40" width="320" height="220" rx="8" fill="#dff0e4" stroke="#86c79a" stroke-width="2"/>
+        <!-- pop-up goals to defend (bottom end) -->
+        <line x1="150" y1="260" x2="180" y2="260" stroke="#0a1d27" stroke-width="4"/><line x1="280" y1="260" x2="310" y2="260" stroke="#0a1d27" stroke-width="4"/>
+        <!-- attackers (blue) with ball, top -->
+        <circle cx="180" cy="90" r="10" fill="#2EC0F9" stroke="#0a1d27"/><circle cx="280" cy="90" r="10" fill="#2EC0F9" stroke="#0a1d27"/>
+        <circle cx="180" cy="108" r="6" fill="#fff" stroke="#001017" stroke-width="1.5"/>
+        <!-- defenders: pressure + cover -->
+        <circle cx="185" cy="160" r="10" fill="#FFCF30" stroke="#0a1d27"/><text x="185" y="164" font-size="9" text-anchor="middle" fill="#0a1d27" font-weight="700">1</text>
+        <circle cx="245" cy="200" r="10" fill="#FFCF30" stroke="#0a1d27"/><text x="245" y="204" font-size="9" text-anchor="middle" fill="#0a1d27" font-weight="700">2</text>
+        <!-- annotations -->
+        <text x="120" y="150" font-size="11" fill="#946b00" font-weight="600">pressure</text>
+        <text x="255" y="185" font-size="11" fill="#946b00" font-weight="600">cover</text>
+        <line x1="55" y1="40" x2="55" y2="260" stroke="#6E6E6E" stroke-width="1" stroke-dasharray="3 3"/>
+        <text x="40" y="150" font-size="13" fill="#20343d" font-weight="600" transform="rotate(-90 40 150)" text-anchor="middle">~15 yds</text>
+      </svg>
+    </div>
+    <div class="legend2"><span><i style="background:#2EC0F9"></i>Attackers</span><span><i style="background:#FFCF30"></i>Defenders (1=ball, 2=cover)</span><span><i class="goal"></i>Pop-up goal</span><span><i class="ball"></i>Ball</span></div>
+    <p class="dgnote">Defender 1 pressures the ball and shows the attacker one way; defender 2 tucks in behind and inside to cover. Talk: "you take ball, I've got cover."</p>
+  </div>
+
+  <div id="dg-winitback">
+    <h4>4v4 / 5v5 Win-It-Back (6 seconds)</h4>
+    <div class="diagram">
+      <svg viewBox="0 0 460 340" xmlns="http://www.w3.org/2000/svg">
+        <rect x="60" y="40" width="340" height="240" rx="8" fill="#dff0e4" stroke="#86c79a" stroke-width="2"/>
+        <line x1="60" y1="135" x2="60" y2="185" stroke="#0a1d27" stroke-width="5"/>
+        <line x1="400" y1="135" x2="400" y2="185" stroke="#0a1d27" stroke-width="5"/>
+        <!-- team A (just lost it, pressing) -->
+        <circle cx="230" cy="150" r="10" fill="#2EC0F9" stroke="#0a1d27"/><circle cx="270" cy="110" r="10" fill="#2EC0F9" stroke="#0a1d27"/><circle cx="290" cy="200" r="10" fill="#2EC0F9" stroke="#0a1d27"/><circle cx="200" cy="120" r="10" fill="#2EC0F9" stroke="#0a1d27"/>
+        <!-- team B (won it) -->
+        <circle cx="255" cy="150" r="10" fill="#FFCF30" stroke="#0a1d27"/><circle cx="320" cy="150" r="10" fill="#FFCF30" stroke="#0a1d27"/><circle cx="300" cy="230" r="10" fill="#FFCF30" stroke="#0a1d27"/><circle cx="180" cy="180" r="10" fill="#FFCF30" stroke="#0a1d27"/>
+        <circle cx="255" cy="150" r="6" fill="#fff" stroke="#001017" stroke-width="1.5"/>
+        <!-- press arrows toward ball -->
+        <line x1="222" y1="150" x2="242" y2="150" stroke="#0b7fb0" stroke-width="2" stroke-dasharray="4 3"/><polygon points="250,150 240,145 240,155" fill="#0b7fb0"/>
+        <line x1="265" y1="118" x2="258" y2="140" stroke="#0b7fb0" stroke-width="2" stroke-dasharray="4 3"/><polygon points="256,148 252,137 262,140" fill="#0b7fb0"/>
+        <text x="230" y="312" font-size="12" fill="#20343d" text-anchor="middle" font-weight="600">The instant you lose it, the nearest player presses and everyone squeezes toward the ball.</text>
+        <line x1="60" y1="292" x2="400" y2="292" stroke="#6E6E6E" stroke-width="1" stroke-dasharray="3 3"/>
+        <text x="230" y="296" font-size="1" fill="#fff">.</text>
+      </svg>
+    </div>
+    <div class="legend2"><span><i style="background:#2EC0F9"></i>Team that lost it (press)</span><span><i style="background:#FFCF30"></i>Team that won it</span><span><i class="ball"></i>Ball</span></div>
+    <p class="dgnote">Normal 4v4 / 5v5 to goals on a 30 x 25 grid. Win the ball back within 6 seconds of losing it for a bonus point, count it out loud.</p>
+  </div>
+
+  <div id="dg-ballmastery">
+    <h4>Ball Mastery in a Grid</h4>
+    <div class="diagram">
+      <svg viewBox="0 0 460 320" xmlns="http://www.w3.org/2000/svg">
+        <rect x="80" y="40" width="300" height="220" rx="8" fill="#dff0e4" stroke="#86c79a" stroke-width="2"/>
+        <g>
+          <circle cx="140" cy="90" r="10" fill="#2EC0F9" stroke="#0a1d27"/><circle cx="140" cy="106" r="5" fill="#fff" stroke="#001017" stroke-width="1.3"/>
+          <circle cx="250" cy="80" r="10" fill="#2EC0F9" stroke="#0a1d27"/><circle cx="250" cy="96" r="5" fill="#fff" stroke="#001017" stroke-width="1.3"/>
+          <circle cx="330" cy="130" r="10" fill="#2EC0F9" stroke="#0a1d27"/><circle cx="330" cy="146" r="5" fill="#fff" stroke="#001017" stroke-width="1.3"/>
+          <circle cx="150" cy="200" r="10" fill="#2EC0F9" stroke="#0a1d27"/><circle cx="150" cy="216" r="5" fill="#fff" stroke="#001017" stroke-width="1.3"/>
+          <circle cx="260" cy="200" r="10" fill="#2EC0F9" stroke="#0a1d27"/><circle cx="260" cy="216" r="5" fill="#fff" stroke="#001017" stroke-width="1.3"/>
+          <circle cx="200" cy="150" r="10" fill="#2EC0F9" stroke="#0a1d27"/><circle cx="200" cy="166" r="5" fill="#fff" stroke="#001017" stroke-width="1.3"/>
+        </g>
+        <line x1="80" y1="280" x2="380" y2="280" stroke="#6E6E6E" stroke-width="1" stroke-dasharray="3 3"/>
+        <text x="230" y="296" font-size="13" fill="#20343d" font-weight="600" text-anchor="middle">20 x 20 yds</text>
+      </svg>
+    </div>
+    <div class="legend2"><span><i style="background:#2EC0F9"></i>Player</span><span><i class="ball"></i>Ball (one each)</span></div>
+    <p class="dgnote">Everyone has a ball inside the grid — 30–45 seconds per move (inside-outside, sole rolls, toe taps), both feet. Nobody stands in line.</p>
+  </div>
+
+  <div id="dg-dribbletag">
+    <h4>Dribble Tag</h4>
+    <div class="diagram">
+      <svg viewBox="0 0 460 320" xmlns="http://www.w3.org/2000/svg">
+        <rect x="80" y="40" width="300" height="220" rx="8" fill="#dff0e4" stroke="#86c79a" stroke-width="2"/>
+        <circle cx="150" cy="100" r="10" fill="#2EC0F9" stroke="#0a1d27"/><circle cx="150" cy="116" r="5" fill="#fff" stroke="#001017" stroke-width="1.3"/>
+        <circle cx="300" cy="110" r="10" fill="#2EC0F9" stroke="#0a1d27"/><circle cx="300" cy="126" r="5" fill="#fff" stroke="#001017" stroke-width="1.3"/>
+        <circle cx="180" cy="210" r="10" fill="#2EC0F9" stroke="#0a1d27"/><circle cx="180" cy="226" r="5" fill="#fff" stroke="#001017" stroke-width="1.3"/>
+        <circle cx="320" cy="200" r="10" fill="#2EC0F9" stroke="#0a1d27"/><circle cx="320" cy="216" r="5" fill="#fff" stroke="#001017" stroke-width="1.3"/>
+        <!-- taggers, no ball -->
+        <circle cx="230" cy="150" r="10" fill="#FFCF30" stroke="#0a1d27"/><text x="230" y="154" font-size="10" text-anchor="middle" fill="#0a1d27" font-weight="700">T</text>
+        <circle cx="255" cy="190" r="10" fill="#FFCF30" stroke="#0a1d27"/><text x="255" y="194" font-size="10" text-anchor="middle" fill="#0a1d27" font-weight="700">T</text>
+        <line x1="240" y1="158" x2="290" y2="120" stroke="#946b00" stroke-width="2" stroke-dasharray="4 3"/><polygon points="296,116 285,116 289,126" fill="#946b00"/>
+        <line x1="80" y1="280" x2="380" y2="280" stroke="#6E6E6E" stroke-width="1" stroke-dasharray="3 3"/>
+        <text x="230" y="296" font-size="13" fill="#20343d" font-weight="600" text-anchor="middle">20 x 20 yds</text>
+      </svg>
+    </div>
+    <div class="legend2"><span><i style="background:#2EC0F9"></i>Dribbler + ball</span><span><i style="background:#FFCF30"></i>Tagger (T, no ball)</span></div>
+    <p class="dgnote">Taggers try to knock other balls out of the grid while everyone keeps their head up. Ball knocked out = 3 toe-taps and rejoin. Rotate taggers.</p>
+  </div>
+
+  <div id="dg-dribbleintervals">
+    <h4>Aerobic Dribble Intervals</h4>
+    <div class="diagram">
+      <svg viewBox="0 0 460 320" xmlns="http://www.w3.org/2000/svg">
+        <rect x="70" y="40" width="320" height="220" rx="8" fill="#dff0e4" stroke="#86c79a" stroke-width="2"/>
+        <!-- corner cones marking the lap -->
+        <circle cx="110" cy="80" r="5" fill="#FB8500"/><circle cx="350" cy="80" r="5" fill="#FB8500"/><circle cx="350" cy="220" r="5" fill="#FB8500"/><circle cx="110" cy="220" r="5" fill="#FB8500"/>
+        <!-- lap path -->
+        <rect x="110" y="80" width="240" height="140" rx="10" fill="none" stroke="#0b7fb0" stroke-width="2" stroke-dasharray="6 5"/>
+        <polygon points="240,74 232,86 248,86" fill="#0b7fb0"/>
+        <!-- player + ball -->
+        <circle cx="170" cy="80" r="10" fill="#2EC0F9" stroke="#0a1d27"/><circle cx="186" cy="80" r="5" fill="#fff" stroke="#001017" stroke-width="1.3"/>
+        <text x="230" y="155" font-size="13" fill="#20343d" font-weight="600" text-anchor="middle">2 min on · 1 min recovery</text>
+        <text x="230" y="176" font-size="12" fill="#6E6E6E" text-anchor="middle">repeat 6–8 rounds</text>
+      </svg>
+    </div>
+    <div class="legend2"><span><i style="background:#2EC0F9"></i>Player + ball</span><span><i class="cone"></i>Corner cone</span></div>
+    <p class="dgnote">Dribble a continuous lap at a strong pace, changing direction on the whistle, both feet, then a minute easy. The ball stays close even as legs tire.</p>
+  </div>
+
+  <div id="dg-possession">
+    <h4>Possession Game — 4v4 / 5v5 Keep-Away</h4>
+    <div class="diagram">
+      <svg viewBox="0 0 460 340" xmlns="http://www.w3.org/2000/svg">
+        <rect x="60" y="40" width="340" height="240" rx="8" fill="#dff0e4" stroke="#86c79a" stroke-width="2"/>
+        <circle cx="130" cy="100" r="10" fill="#2EC0F9" stroke="#0a1d27"/><circle cx="170" cy="200" r="10" fill="#2EC0F9" stroke="#0a1d27"/><circle cx="240" cy="140" r="10" fill="#2EC0F9" stroke="#0a1d27"/><circle cx="300" cy="220" r="10" fill="#2EC0F9" stroke="#0a1d27"/><circle cx="330" cy="110" r="10" fill="#2EC0F9" stroke="#0a1d27"/>
+        <circle cx="180" cy="120" r="10" fill="#FFCF30" stroke="#0a1d27"/><circle cx="220" cy="210" r="10" fill="#FFCF30" stroke="#0a1d27"/><circle cx="290" cy="150" r="10" fill="#FFCF30" stroke="#0a1d27"/><circle cx="340" cy="180" r="10" fill="#FFCF30" stroke="#0a1d27"/><circle cx="130" cy="180" r="10" fill="#FFCF30" stroke="#0a1d27"/>
+        <circle cx="252" cy="140" r="6" fill="#fff" stroke="#001017" stroke-width="1.5"/>
+        <line x1="60" y1="300" x2="400" y2="300" stroke="#6E6E6E" stroke-width="1" stroke-dasharray="3 3"/>
+        <text x="230" y="316" font-size="13" fill="#20343d" font-weight="600" text-anchor="middle">30 x 25 yds (larger to force running)</text>
+      </svg>
+    </div>
+    <div class="legend2"><span><i style="background:#2EC0F9"></i>Team A</span><span><i style="background:#FFCF30"></i>Team B</span><span><i class="ball"></i>Ball</span></div>
+    <p class="dgnote">Keep the ball as a team — string 6 passes together for a point. A big field forces constant movement, so the conditioning is built in.</p>
+  </div>
+
+  <div id="dg-saq">
+    <h4>SAQ Circuit — Ladder, Shuffle, 5-10-5</h4>
+    <div class="diagram">
+      <svg viewBox="0 0 460 320" xmlns="http://www.w3.org/2000/svg">
+        <!-- ladder -->
+        <rect x="50" y="70" width="46" height="150" fill="none" stroke="#0a1d27" stroke-width="1.5"/>
+        <line x1="50" y1="100" x2="96" y2="100" stroke="#0a1d27"/><line x1="50" y1="130" x2="96" y2="130" stroke="#0a1d27"/><line x1="50" y1="160" x2="96" y2="160" stroke="#0a1d27"/><line x1="50" y1="190" x2="96" y2="190" stroke="#0a1d27"/>
+        <text x="73" y="245" font-size="11" fill="#20343d" text-anchor="middle">Quick-feet ladder</text>
+        <!-- cone shuffle -->
+        <circle cx="170" cy="90" r="5" fill="#FB8500"/><circle cx="170" cy="200" r="5" fill="#FB8500"/>
+        <line x1="170" y1="96" x2="170" y2="194" stroke="#946b00" stroke-width="2" stroke-dasharray="4 3"/>
+        <text x="170" y="245" font-size="11" fill="#20343d" text-anchor="middle">Shuffle · ~5 yds</text>
+        <!-- 5-10-5 -->
+        <circle cx="290" cy="145" r="5" fill="#FB8500"/><circle cx="360" cy="145" r="5" fill="#FB8500"/><circle cx="430" cy="145" r="5" fill="#FB8500"/>
+        <line x1="290" y1="160" x2="360" y2="160" stroke="#6E6E6E" stroke-dasharray="3 3"/><text x="325" y="174" font-size="10" fill="#20343d" text-anchor="middle">5 yds</text>
+        <line x1="360" y1="120" x2="430" y2="120" stroke="#6E6E6E" stroke-dasharray="3 3"/><text x="395" y="114" font-size="10" fill="#20343d" text-anchor="middle">5 yds</text>
+        <text x="360" y="245" font-size="11" fill="#20343d" text-anchor="middle">5-10-5 change of direction</text>
+        <circle cx="360" cy="145" r="9" fill="#2EC0F9" stroke="#0a1d27"/>
+      </svg>
+    </div>
+    <div class="legend2"><span><i style="background:#2EC0F9"></i>Player</span><span><i class="cone"></i>Cone</span></div>
+    <p class="dgnote">Full effort, full rest. Ladder for quick feet, shuffle low without crossing the feet, then 5-10-5: start in the middle, 5 to one side, 10 to the far side, 5 back.</p>
+  </div>
+
+  <div id="dg-speedduel">
+    <h4>1v1 Speed Duels to Goal</h4>
+    <div class="diagram">
+      <svg viewBox="0 0 460 340" xmlns="http://www.w3.org/2000/svg">
+        <rect x="60" y="30" width="340" height="270" rx="8" fill="#dff0e4" stroke="#86c79a" stroke-width="2"/>
+        <line x1="200" y1="30" x2="260" y2="30" stroke="#0a1d27" stroke-width="5"/>
+        <circle cx="230" cy="48" r="10" fill="#6E6E6E" stroke="#0a1d27"/><text x="230" y="52" font-size="9" text-anchor="middle" fill="#fff" font-weight="700">GK</text>
+        <!-- coach with ball, center -->
+        <circle cx="230" cy="150" r="10" fill="#001017"/><text x="230" y="154" font-size="9" text-anchor="middle" fill="#fff" font-weight="700">C</text>
+        <circle cx="230" cy="168" r="6" fill="#fff" stroke="#001017" stroke-width="1.5"/>
+        <!-- two players behind cones ~15 yds out -->
+        <circle cx="170" cy="250" r="5" fill="#FB8500"/><circle cx="290" cy="250" r="5" fill="#FB8500"/>
+        <circle cx="170" cy="270" r="10" fill="#2EC0F9" stroke="#0a1d27"/><circle cx="290" cy="270" r="10" fill="#2EC0F9" stroke="#0a1d27"/>
+        <!-- sprint arrows to the ball -->
+        <line x1="178" y1="262" x2="222" y2="176" stroke="#0b7fb0" stroke-width="2" stroke-dasharray="5 4"/><polygon points="220,168 216,180 226,177" fill="#0b7fb0"/>
+        <line x1="282" y1="262" x2="238" y2="176" stroke="#0b7fb0" stroke-width="2" stroke-dasharray="5 4"/><polygon points="240,168 234,177 244,180" fill="#0b7fb0"/>
+        <line x1="415" y1="30" x2="415" y2="260" stroke="#6E6E6E" stroke-width="1" stroke-dasharray="3 3"/>
+        <text x="430" y="145" font-size="13" fill="#20343d" font-weight="600" transform="rotate(90 430 145)" text-anchor="middle">~15 yds to goal</text>
+      </svg>
+    </div>
+    <div class="legend2"><span><i style="background:#2EC0F9"></i>Players</span><span><i style="background:#6E6E6E"></i>Keeper</span><span><i style="background:#001017"></i>Coach (serves ball)</span><span><i class="cone"></i>Cone</span></div>
+    <p class="dgnote">Coach rolls a ball out; both players sprint from their cones. Whoever gets it attacks the goal 1v1, the other defends. First touch toward goal wins the half-step.</p>
+  </div>
+
+  <div id="dg-4goals">
+    <h4>Transition Game to 4 Goals</h4>
+    <div class="diagram">
+      <svg viewBox="0 0 460 340" xmlns="http://www.w3.org/2000/svg">
+        <rect x="60" y="40" width="340" height="240" rx="8" fill="#dff0e4" stroke="#86c79a" stroke-width="2"/>
+        <!-- 2 goals each end -->
+        <line x1="60" y1="90" x2="60" y2="120" stroke="#0a1d27" stroke-width="4"/><line x1="60" y1="200" x2="60" y2="230" stroke="#0a1d27" stroke-width="4"/>
+        <line x1="400" y1="90" x2="400" y2="120" stroke="#0a1d27" stroke-width="4"/><line x1="400" y1="200" x2="400" y2="230" stroke="#0a1d27" stroke-width="4"/>
+        <circle cx="150" cy="120" r="10" fill="#2EC0F9" stroke="#0a1d27"/><circle cx="170" cy="210" r="10" fill="#2EC0F9" stroke="#0a1d27"/><circle cx="230" cy="150" r="10" fill="#2EC0F9" stroke="#0a1d27"/>
+        <circle cx="300" cy="120" r="10" fill="#FFCF30" stroke="#0a1d27"/><circle cx="290" cy="210" r="10" fill="#FFCF30" stroke="#0a1d27"/><circle cx="250" cy="160" r="10" fill="#FFCF30" stroke="#0a1d27"/>
+        <circle cx="242" cy="152" r="6" fill="#fff" stroke="#001017" stroke-width="1.5"/>
+        <line x1="60" y1="300" x2="400" y2="300" stroke="#6E6E6E" stroke-width="1" stroke-dasharray="3 3"/>
+        <text x="230" y="316" font-size="13" fill="#20343d" font-weight="600" text-anchor="middle">30 x 20 yds · 4 pop-up goals</text>
+      </svg>
+    </div>
+    <div class="legend2"><span><i style="background:#2EC0F9"></i>Team A</span><span><i style="background:#FFCF30"></i>Team B</span><span><i class="goal"></i>Pop-up goal</span><span><i class="ball"></i>Ball</span></div>
+    <p class="dgnote">Each team attacks the two pop-up goals in front of them and defends the two behind. Score in either. When possession flips, everyone reacts fast — switch to the open pop-up goal.</p>
+  </div>
+
+  <div id="dg-relay">
+    <h4>Relay Races &amp; Obstacle Course</h4>
+    <div class="diagram">
+      <svg viewBox="0 0 460 320" xmlns="http://www.w3.org/2000/svg">
+        <!-- three lanes -->
+        <g>
+          <circle cx="70" cy="70" r="10" fill="#2EC0F9" stroke="#0a1d27"/><circle cx="70" cy="94" r="10" fill="#2EC0F9" stroke="#0a1d27"/>
+          <circle cx="150" cy="70" r="5" fill="#FB8500"/><circle cx="220" cy="70" r="5" fill="#FB8500"/><circle cx="290" cy="70" r="5" fill="#FB8500"/>
+          <line x1="88" y1="70" x2="360" y2="70" stroke="#0b7fb0" stroke-width="2" stroke-dasharray="5 4"/><polygon points="366,70 356,65 356,75" fill="#0b7fb0"/>
+          <circle cx="360" cy="70" r="6" fill="#fff" stroke="#001017" stroke-width="1.3"/>
+        </g>
+        <g>
+          <circle cx="70" cy="150" r="10" fill="#FFCF30" stroke="#0a1d27"/><circle cx="70" cy="174" r="10" fill="#FFCF30" stroke="#0a1d27"/>
+          <circle cx="150" cy="150" r="5" fill="#FB8500"/><circle cx="220" cy="150" r="5" fill="#FB8500"/><circle cx="290" cy="150" r="5" fill="#FB8500"/>
+          <line x1="88" y1="150" x2="360" y2="150" stroke="#946b00" stroke-width="2" stroke-dasharray="5 4"/><polygon points="366,150 356,145 356,155" fill="#946b00"/>
+          <circle cx="360" cy="150" r="6" fill="#fff" stroke="#001017" stroke-width="1.3"/>
+        </g>
+        <g>
+          <circle cx="70" cy="230" r="10" fill="#2EC0F9" stroke="#0a1d27"/><circle cx="70" cy="254" r="10" fill="#2EC0F9" stroke="#0a1d27"/>
+          <circle cx="150" cy="230" r="5" fill="#FB8500"/><circle cx="220" cy="230" r="5" fill="#FB8500"/><circle cx="290" cy="230" r="5" fill="#FB8500"/>
+          <line x1="88" y1="230" x2="360" y2="230" stroke="#0b7fb0" stroke-width="2" stroke-dasharray="5 4"/><polygon points="366,230 356,225 356,235" fill="#0b7fb0"/>
+          <circle cx="360" cy="230" r="6" fill="#fff" stroke="#001017" stroke-width="1.3"/>
+        </g>
+        <text x="230" y="300" font-size="12" fill="#20343d" font-weight="600" text-anchor="middle">Even teams · weave the ball through cones ~15 yds and back</text>
+      </svg>
+    </div>
+    <div class="legend2"><span><i style="background:#2EC0F9"></i>Team A</span><span><i style="background:#FFCF30"></i>Team B</span><span><i class="cone"></i>Cone</span><span><i class="ball"></i>Ball</span></div>
+    <p class="dgnote">Split into even teams, one ball per team, first to finish wins. Keep the lines short so kids rest, then go hard. Control shouldn't fall apart in the rush.</p>
+  </div>
+
+  <div id="dg-tournament">
+    <h4>Tournament — Rotating 3v3, Winners Stay</h4>
+    <div class="diagram">
+      <svg viewBox="0 0 460 320" xmlns="http://www.w3.org/2000/svg">
+        <!-- field 1 -->
+        <rect x="50" y="60" width="170" height="150" rx="8" fill="#dff0e4" stroke="#86c79a" stroke-width="2"/>
+        <line x1="50" y1="120" x2="50" y2="150" stroke="#0a1d27" stroke-width="4"/><line x1="220" y1="120" x2="220" y2="150" stroke="#0a1d27" stroke-width="4"/>
+        <circle cx="90" cy="110" r="9" fill="#2EC0F9" stroke="#0a1d27"/><circle cx="110" cy="170" r="9" fill="#2EC0F9" stroke="#0a1d27"/><circle cx="130" cy="130" r="9" fill="#2EC0F9" stroke="#0a1d27"/>
+        <circle cx="160" cy="110" r="9" fill="#FFCF30" stroke="#0a1d27"/><circle cx="150" cy="170" r="9" fill="#FFCF30" stroke="#0a1d27"/><circle cx="185" cy="140" r="9" fill="#FFCF30" stroke="#0a1d27"/>
+        <circle cx="132" cy="130" r="5" fill="#fff" stroke="#001017" stroke-width="1.3"/>
+        <text x="135" y="230" font-size="11" fill="#20343d" text-anchor="middle">Field 1</text>
+        <!-- field 2 -->
+        <rect x="250" y="60" width="170" height="150" rx="8" fill="#dff0e4" stroke="#86c79a" stroke-width="2"/>
+        <line x1="250" y1="120" x2="250" y2="150" stroke="#0a1d27" stroke-width="4"/><line x1="420" y1="120" x2="420" y2="150" stroke="#0a1d27" stroke-width="4"/>
+        <circle cx="290" cy="110" r="9" fill="#2EC0F9" stroke="#0a1d27"/><circle cx="310" cy="170" r="9" fill="#2EC0F9" stroke="#0a1d27"/><circle cx="330" cy="130" r="9" fill="#2EC0F9" stroke="#0a1d27"/>
+        <circle cx="360" cy="110" r="9" fill="#FFCF30" stroke="#0a1d27"/><circle cx="350" cy="170" r="9" fill="#FFCF30" stroke="#0a1d27"/><circle cx="385" cy="140" r="9" fill="#FFCF30" stroke="#0a1d27"/>
+        <circle cx="332" cy="130" r="5" fill="#fff" stroke="#001017" stroke-width="1.3"/>
+        <text x="335" y="230" font-size="11" fill="#20343d" text-anchor="middle">Field 2</text>
+        <text x="230" y="285" font-size="12" fill="#20343d" font-weight="600" text-anchor="middle">4-min games · winners stay · next team rotates in</text>
+      </svg>
+    </div>
+    <div class="legend2"><span><i style="background:#2EC0F9"></i>Team A</span><span><i style="background:#FFCF30"></i>Team B</span><span><i class="goal"></i>Pop-up goal</span><span><i class="ball"></i>Ball</span></div>
+    <p class="dgnote">Two or three tiny fields, teams of 3. Short games with stakes; winners stay on, the next team rotates in. Everyone plays every round.</p>
+  </div>
+
+  <div id="dg-finishlines">
+    <h4>Finishing Lines</h4>
+    <div class="diagram">
+      <svg viewBox="0 0 460 340" xmlns="http://www.w3.org/2000/svg">
+        <rect x="60" y="30" width="340" height="270" rx="8" fill="#dff0e4" stroke="#86c79a" stroke-width="2"/>
+        <line x1="200" y1="30" x2="260" y2="30" stroke="#0a1d27" stroke-width="5"/>
+        <circle cx="230" cy="48" r="10" fill="#6E6E6E" stroke="#0a1d27"/><text x="230" y="52" font-size="9" text-anchor="middle" fill="#fff" font-weight="700">GK</text>
+        <!-- left line with balls -->
+        <circle cx="140" cy="250" r="10" fill="#2EC0F9" stroke="#0a1d27"/><circle cx="140" cy="278" r="10" fill="#2EC0F9" stroke="#0a1d27"/>
+        <circle cx="156" cy="250" r="5" fill="#fff" stroke="#001017" stroke-width="1.3"/><circle cx="156" cy="278" r="5" fill="#fff" stroke="#001017" stroke-width="1.3"/>
+        <!-- right line with balls -->
+        <circle cx="320" cy="250" r="10" fill="#2EC0F9" stroke="#0a1d27"/><circle cx="320" cy="278" r="10" fill="#2EC0F9" stroke="#0a1d27"/>
+        <circle cx="336" cy="250" r="5" fill="#fff" stroke="#001017" stroke-width="1.3"/><circle cx="336" cy="278" r="5" fill="#fff" stroke="#001017" stroke-width="1.3"/>
+        <!-- shot arrows -->
+        <line x1="146" y1="242" x2="212" y2="70" stroke="#0b7fb0" stroke-width="2" stroke-dasharray="5 4"/><polygon points="214,62 206,73 216,74" fill="#0b7fb0"/>
+        <line x1="314" y1="242" x2="248" y2="70" stroke="#0b7fb0" stroke-width="2" stroke-dasharray="5 4"/><polygon points="246,62 244,74 254,73" fill="#0b7fb0"/>
+        <line x1="415" y1="30" x2="415" y2="255" stroke="#6E6E6E" stroke-width="1" stroke-dasharray="3 3"/>
+        <text x="430" y="140" font-size="13" fill="#20343d" font-weight="600" transform="rotate(90 430 140)" text-anchor="middle">~16–18 yds out</text>
+      </svg>
+    </div>
+    <div class="legend2"><span><i style="background:#2EC0F9"></i>Shooters</span><span><i style="background:#6E6E6E"></i>Keeper</span><span><i class="ball"></i>Ball</span><span><i class="goal"></i>Full goal</span></div>
+    <p class="dgnote">Two lines, left and right, so nobody waits. Dribble in and finish — placement first, both feet — then retrieve a ball and switch lines.</p>
+  </div>
+
+  <div id="dg-passpattern">
+    <h4>Passing Patterns</h4>
+    <div class="diagram">
+      <svg viewBox="0 0 460 320" xmlns="http://www.w3.org/2000/svg">
+        <rect x="60" y="40" width="340" height="220" rx="8" fill="#dff0e4" stroke="#86c79a" stroke-width="2"/>
+        <!-- players at cones in a diamond/Y -->
+        <circle cx="230" cy="80" r="10" fill="#2EC0F9" stroke="#0a1d27"/>
+        <circle cx="120" cy="150" r="10" fill="#2EC0F9" stroke="#0a1d27"/>
+        <circle cx="340" cy="150" r="10" fill="#2EC0F9" stroke="#0a1d27"/>
+        <circle cx="230" cy="220" r="10" fill="#2EC0F9" stroke="#0a1d27"/>
+        <circle cx="230" cy="150" r="10" fill="#2EC0F9" stroke="#0a1d27"/>
+        <circle cx="222" cy="90" r="5" fill="#fff" stroke="#001017" stroke-width="1.3"/>
+        <!-- pass-and-follow arrows -->
+        <line x1="222" y1="90" x2="135" y2="142" stroke="#0b7fb0" stroke-width="2" stroke-dasharray="5 4"/><polygon points="128,146 139,144 135,134" fill="#0b7fb0"/>
+        <line x1="132" y1="158" x2="215" y2="150" stroke="#0b7fb0" stroke-width="1.5" stroke-dasharray="3 3"/>
+        <text x="230" y="292" font-size="12" fill="#20343d" font-weight="600" text-anchor="middle">Pass, then follow your pass to the next cone — both feet</text>
+      </svg>
+    </div>
+    <div class="legend2"><span><i style="background:#2EC0F9"></i>Player at a cone</span><span><i class="ball"></i>Ball</span><span style="color:#0b7fb0">— pass · &middot;&middot; run</span></div>
+    <p class="dgnote">Set 4–5 cones in a Y or diamond. Pass firmly to the back foot, then jog to the cone you passed to. Receive across your body and open up.</p>
+  </div>
+
+  <div id="dg-scrimmage">
+    <h4>Scrimmage</h4>
+    <div class="diagram">
+      <svg viewBox="0 0 460 320" xmlns="http://www.w3.org/2000/svg">
+        <rect x="50" y="40" width="360" height="230" rx="8" fill="#dff0e4" stroke="#86c79a" stroke-width="2"/>
+        <line x1="230" y1="40" x2="230" y2="270" stroke="#86c79a" stroke-width="1" stroke-dasharray="5 5"/>
+        <circle cx="230" cy="155" r="30" fill="none" stroke="#86c79a" stroke-width="1"/>
+        <!-- goals + keepers -->
+        <line x1="50" y1="130" x2="50" y2="180" stroke="#0a1d27" stroke-width="5"/><line x1="410" y1="130" x2="410" y2="180" stroke="#0a1d27" stroke-width="5"/>
+        <circle cx="68" cy="155" r="9" fill="#6E6E6E" stroke="#0a1d27"/><circle cx="392" cy="155" r="9" fill="#6E6E6E" stroke="#0a1d27"/>
+        <!-- team A -->
+        <circle cx="120" cy="110" r="10" fill="#2EC0F9" stroke="#0a1d27"/><circle cx="150" cy="210" r="10" fill="#2EC0F9" stroke="#0a1d27"/><circle cx="190" cy="150" r="10" fill="#2EC0F9" stroke="#0a1d27"/><circle cx="215" cy="90" r="10" fill="#2EC0F9" stroke="#0a1d27"/>
+        <!-- team B -->
+        <circle cx="245" cy="200" r="10" fill="#FFCF30" stroke="#0a1d27"/><circle cx="280" cy="120" r="10" fill="#FFCF30" stroke="#0a1d27"/><circle cx="320" cy="180" r="10" fill="#FFCF30" stroke="#0a1d27"/><circle cx="340" cy="110" r="10" fill="#FFCF30" stroke="#0a1d27"/>
+        <circle cx="228" cy="150" r="6" fill="#fff" stroke="#001017" stroke-width="1.5"/>
+        <text x="230" y="298" font-size="12" fill="#20343d" font-weight="600" text-anchor="middle">Even teams · biggest space you have · let them play</text>
+      </svg>
+    </div>
+    <div class="legend2"><span><i style="background:#2EC0F9"></i>Team A</span><span><i style="background:#FFCF30"></i>Team B</span><span><i style="background:#6E6E6E"></i>Keeper</span><span><i class="goal"></i>Goal</span><span><i class="ball"></i>Ball</span></div>
+    <p class="dgnote">The final "Play" phase — a regular game where the day's theme shows up on its own. Coach mostly watches; one quick question, not a running commentary.</p>
+  </div>
+
+        <div id="dg-setup-mon">
+    <h4>Monday — Field Setup (Dribbling &amp; 1v1)</h4>
+    <div class="diagram"><svg viewBox="0 0 760 520" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, sans-serif"><title>Monday setup</title><desc>Full-pitch session setup: two fixed goals plus pop-up goals.</desc>
+  <rect x="50" y="55" width="660" height="380" fill="#cbe4d1" stroke="#ffffff" stroke-width="3"/>
+  <line x1="380" y1="55" x2="380" y2="435" stroke="#ffffff" stroke-width="2"/>
+  <circle cx="380" cy="245" r="52" fill="none" stroke="#ffffff" stroke-width="2"/>
+  <circle cx="380" cy="245" r="3" fill="#ffffff"/>
+  <rect x="50" y="150" width="100" height="190" fill="none" stroke="#ffffff" stroke-width="2"/>
+  <rect x="50" y="200" width="42" height="90" fill="none" stroke="#ffffff" stroke-width="2"/>
+  <circle cx="120" cy="245" r="3" fill="#ffffff"/>
+  <path d="M150,214 A34 34 0 0 1 150,276" fill="none" stroke="#ffffff" stroke-width="2"/>
+  <rect x="610" y="150" width="100" height="190" fill="none" stroke="#ffffff" stroke-width="2"/>
+  <rect x="668" y="200" width="42" height="90" fill="none" stroke="#ffffff" stroke-width="2"/>
+  <circle cx="640" cy="245" r="3" fill="#ffffff"/>
+  <path d="M610,214 A34 34 0 0 0 610,276" fill="none" stroke="#ffffff" stroke-width="2"/>
+  <g stroke="#7f938c" stroke-width="1">
+    <rect x="32" y="205" width="18" height="80" fill="#eef6f0" fill-opacity="0.75" stroke="#0a1d27" stroke-width="2.5"/>
+    <line x1="38" y1="205" x2="38" y2="285"/><line x1="44" y1="205" x2="44" y2="285"/>
+    <line x1="32" y1="225" x2="50" y2="225"/><line x1="32" y1="245" x2="50" y2="245"/><line x1="32" y1="265" x2="50" y2="265"/>
+    <text x="41" y="200" font-size="10" fill="#12303d" text-anchor="middle" font-weight="700">GOAL</text>
+    <rect x="710" y="205" width="18" height="80" fill="#eef6f0" fill-opacity="0.75" stroke="#0a1d27" stroke-width="2.5"/>
+    <line x1="716" y1="205" x2="716" y2="285"/><line x1="722" y1="205" x2="722" y2="285"/>
+    <line x1="710" y1="225" x2="728" y2="225"/><line x1="710" y1="245" x2="728" y2="245"/><line x1="710" y1="265" x2="728" y2="265"/>
+    <text x="719" y="200" font-size="10" fill="#12303d" text-anchor="middle" font-weight="700">GOAL</text>
+  </g><rect x="175" y="82" width="150" height="105" fill="#ffffff" fill-opacity="0.22" stroke="#12303d" stroke-width="1.5" stroke-dasharray="6 5"/><circle cx="185" cy="92" r="4.2" fill="#FB8500"/><circle cx="315" cy="92" r="4.2" fill="#FB8500"/><circle cx="185" cy="177" r="4.2" fill="#FB8500"/><circle cx="315" cy="177" r="4.2" fill="#FB8500"/><circle cx="230" cy="135" r="4.5" fill="#fff" stroke="#001017" stroke-width="1.2"/><circle cx="270" cy="150" r="4.5" fill="#fff" stroke="#001017" stroke-width="1.2"/><g><rect x="175" y="60" width="192" height="19" rx="5" fill="#0a1d27"/><text x="184" y="74" font-size="12" fill="#fff" font-weight="700">1 &#183; Warm-up grid (20&#215;20)</text></g><rect x="435" y="82" width="150" height="105" fill="#ffffff" fill-opacity="0.22" stroke="#12303d" stroke-width="1.5" stroke-dasharray="6 5"/><line x1="485" y1="82" x2="485" y2="187" stroke="#12303d" stroke-width="1" stroke-dasharray="4 4"/><line x1="535" y1="82" x2="535" y2="187" stroke="#12303d" stroke-width="1" stroke-dasharray="4 4"/><circle cx="452" cy="90" r="3.8" fill="#FB8500"/><circle cx="468" cy="90" r="3.8" fill="#FB8500"/><circle cx="452" cy="179" r="3.8" fill="#FB8500"/><circle cx="468" cy="179" r="3.8" fill="#FB8500"/><circle cx="502" cy="90" r="3.8" fill="#FB8500"/><circle cx="518" cy="90" r="3.8" fill="#FB8500"/><circle cx="502" cy="179" r="3.8" fill="#FB8500"/><circle cx="518" cy="179" r="3.8" fill="#FB8500"/><circle cx="552" cy="90" r="3.8" fill="#FB8500"/><circle cx="568" cy="90" r="3.8" fill="#FB8500"/><circle cx="552" cy="179" r="3.8" fill="#FB8500"/><circle cx="568" cy="179" r="3.8" fill="#FB8500"/><g><rect x="435" y="60" width="182" height="19" rx="5" fill="#0a1d27"/><text x="444" y="74" font-size="12" fill="#fff" font-weight="700">2 &#183; 1v1 channels + gates</text></g><rect x="265" y="305" width="210" height="110" fill="#ffffff" fill-opacity="0.22" stroke="#12303d" stroke-width="1.5" stroke-dasharray="6 5"/><rect x="263" y="329" width="5" height="20" fill="#0a1d27"/><rect x="263" y="375" width="5" height="20" fill="#0a1d27"/><rect x="473" y="329" width="5" height="20" fill="#0a1d27"/><rect x="473" y="375" width="5" height="20" fill="#0a1d27"/><g><rect x="265" y="283" width="244" height="19" rx="5" fill="#0a1d27"/><text x="274" y="297" font-size="12" fill="#fff" font-weight="700">3 &#183; 3v3 zone (25&#215;20) &#8212; pop-up goals</text></g><g><rect x="520" y="322" width="176" height="44" rx="8" fill="#2EC0F9"/><text x="532" y="341" font-size="12.5" fill="#04202e" font-weight="800">4 &#183; Scrimmage</text><text x="532" y="358" font-size="11" fill="#04202e">the two fixed goals + whole pitch</text></g>
+  <text x="380" y="462" font-size="13" fill="#12303d" font-weight="600" text-anchor="middle">≈ 45 yds</text>
+  <text x="22" y="245" font-size="13" fill="#12303d" font-weight="600" transform="rotate(-90 22 245)" text-anchor="middle">≈ 30 yds</text>
+  <g font-size="12.5" fill="#12303d"><circle cx="60" cy="498" r="5" fill="#FB8500"/><text x="72" y="502">Cone / gate</text><rect x="192" y="491" width="6" height="14" fill="#0a1d27"/><text x="204" y="502">Pop-up goal</text><rect x="322" y="492" width="16" height="12" fill="#eef6f0" stroke="#0a1d27" stroke-width="2"/><text x="345" y="502">Fixed goal</text><circle cx="452" cy="498" r="5.5" fill="#fff" stroke="#001017" stroke-width="1.3"/><text x="464" y="502">Ball</text></g>
+</svg></div>
+    <ol class="dgsteps"><li><b>Warm-up grid</b> — 4 cones in a 20×20 square for dribbling &amp; tag.</li><li><b>1v1 channels</b> — 3–4 lanes about 10×8, with a 2-cone gate at each end.</li><li><b>3v3 zone</b> — a 25×20 area with two pop-up goals (6 ft) on each end line (all four pop-ups).</li><li><b>Scrimmage</b> — the whole pitch, playing to the two fixed goals.</li></ol>
+    <p class="dgbag"><b>Bag:</b> ~20 cones, all 4 pop-up goals (6 ft) for the 3v3, 2 sets of bibs, a ball per player. Scrimmage uses the two fixed goals.</p>
+  </div>
+
+  <div id="dg-setup-tue">
+    <h4>Tuesday — Field Setup (Passing &amp; Receiving)</h4>
+    <div class="diagram"><svg viewBox="0 0 760 520" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, sans-serif"><title>Tuesday setup</title><desc>Full-pitch session setup: two fixed goals plus pop-up goals.</desc>
+  <rect x="50" y="55" width="660" height="380" fill="#cbe4d1" stroke="#ffffff" stroke-width="3"/>
+  <line x1="380" y1="55" x2="380" y2="435" stroke="#ffffff" stroke-width="2"/>
+  <circle cx="380" cy="245" r="52" fill="none" stroke="#ffffff" stroke-width="2"/>
+  <circle cx="380" cy="245" r="3" fill="#ffffff"/>
+  <rect x="50" y="150" width="100" height="190" fill="none" stroke="#ffffff" stroke-width="2"/>
+  <rect x="50" y="200" width="42" height="90" fill="none" stroke="#ffffff" stroke-width="2"/>
+  <circle cx="120" cy="245" r="3" fill="#ffffff"/>
+  <path d="M150,214 A34 34 0 0 1 150,276" fill="none" stroke="#ffffff" stroke-width="2"/>
+  <rect x="610" y="150" width="100" height="190" fill="none" stroke="#ffffff" stroke-width="2"/>
+  <rect x="668" y="200" width="42" height="90" fill="none" stroke="#ffffff" stroke-width="2"/>
+  <circle cx="640" cy="245" r="3" fill="#ffffff"/>
+  <path d="M610,214 A34 34 0 0 0 610,276" fill="none" stroke="#ffffff" stroke-width="2"/>
+  <g stroke="#7f938c" stroke-width="1">
+    <rect x="32" y="205" width="18" height="80" fill="#eef6f0" fill-opacity="0.75" stroke="#0a1d27" stroke-width="2.5"/>
+    <line x1="38" y1="205" x2="38" y2="285"/><line x1="44" y1="205" x2="44" y2="285"/>
+    <line x1="32" y1="225" x2="50" y2="225"/><line x1="32" y1="245" x2="50" y2="245"/><line x1="32" y1="265" x2="50" y2="265"/>
+    <text x="41" y="200" font-size="10" fill="#12303d" text-anchor="middle" font-weight="700">GOAL</text>
+    <rect x="710" y="205" width="18" height="80" fill="#eef6f0" fill-opacity="0.75" stroke="#0a1d27" stroke-width="2.5"/>
+    <line x1="716" y1="205" x2="716" y2="285"/><line x1="722" y1="205" x2="722" y2="285"/>
+    <line x1="710" y1="225" x2="728" y2="225"/><line x1="710" y1="245" x2="728" y2="245"/><line x1="710" y1="265" x2="728" y2="265"/>
+    <text x="719" y="200" font-size="10" fill="#12303d" text-anchor="middle" font-weight="700">GOAL</text>
+  </g><rect x="175" y="82" width="68" height="105" fill="#ffffff" fill-opacity="0.22" stroke="#12303d" stroke-width="1.5" stroke-dasharray="6 5"/><circle cx="185" cy="92" r="4.2" fill="#FB8500"/><circle cx="233" cy="92" r="4.2" fill="#FB8500"/><circle cx="185" cy="177" r="4.2" fill="#FB8500"/><circle cx="233" cy="177" r="4.2" fill="#FB8500"/><rect x="257" y="82" width="68" height="105" fill="#ffffff" fill-opacity="0.22" stroke="#12303d" stroke-width="1.5" stroke-dasharray="6 5"/><circle cx="267" cy="92" r="4.2" fill="#FB8500"/><circle cx="315" cy="92" r="4.2" fill="#FB8500"/><circle cx="267" cy="177" r="4.2" fill="#FB8500"/><circle cx="315" cy="177" r="4.2" fill="#FB8500"/><g><rect x="175" y="60" width="168" height="19" rx="5" fill="#0a1d27"/><text x="184" y="74" font-size="12" fill="#fff" font-weight="700">1 &#183; Rondo squares (8&#215;8)</text></g><rect x="435" y="82" width="150" height="105" fill="#ffffff" fill-opacity="0.22" stroke="#12303d" stroke-width="1.5" stroke-dasharray="6 5"/><circle cx="510" cy="98" r="4.2" fill="#FB8500"/><circle cx="455" cy="127" r="4.2" fill="#FB8500"/><circle cx="565" cy="127" r="4.2" fill="#FB8500"/><circle cx="510" cy="132" r="4.2" fill="#FB8500"/><circle cx="510" cy="172" r="4.2" fill="#FB8500"/><g><rect x="435" y="60" width="196" height="19" rx="5" fill="#0a1d27"/><text x="444" y="74" font-size="12" fill="#fff" font-weight="700">2 &#183; Passing patterns (Y of cones)</text></g><rect x="265" y="305" width="210" height="110" fill="#ffffff" fill-opacity="0.22" stroke="#12303d" stroke-width="1.5" stroke-dasharray="6 5"/><rect x="265" y="305" width="20" height="110" fill="#b9dcc4" fill-opacity="0.7" stroke="#12303d" stroke-dasharray="4 4"/><rect x="455" y="305" width="20" height="110" fill="#b9dcc4" fill-opacity="0.7" stroke="#12303d" stroke-dasharray="4 4"/><g><rect x="265" y="283" width="214" height="19" rx="5" fill="#0a1d27"/><text x="274" y="297" font-size="12" fill="#fff" font-weight="700">3 &#183; 4v4 + end zones (30&#215;24)</text></g><g><rect x="520" y="322" width="176" height="44" rx="8" fill="#2EC0F9"/><text x="532" y="341" font-size="12.5" fill="#04202e" font-weight="800">4 &#183; Scrimmage</text><text x="532" y="358" font-size="11" fill="#04202e">the two fixed goals</text></g>
+  <text x="380" y="462" font-size="13" fill="#12303d" font-weight="600" text-anchor="middle">≈ 45 yds</text>
+  <text x="22" y="245" font-size="13" fill="#12303d" font-weight="600" transform="rotate(-90 22 245)" text-anchor="middle">≈ 30 yds</text>
+  <g font-size="12.5" fill="#12303d"><circle cx="60" cy="498" r="5" fill="#FB8500"/><text x="72" y="502">Cone / gate</text><rect x="192" y="491" width="6" height="14" fill="#0a1d27"/><text x="204" y="502">Pop-up goal</text><rect x="322" y="492" width="16" height="12" fill="#eef6f0" stroke="#0a1d27" stroke-width="2"/><text x="345" y="502">Fixed goal</text><circle cx="452" cy="498" r="5.5" fill="#fff" stroke="#001017" stroke-width="1.3"/><text x="464" y="502">Ball</text></g>
+</svg></div>
+    <ol class="dgsteps"><li><b>Rondo squares</b> — a couple of 8×8 squares (4 cones each) for keep-away.</li><li><b>Passing patterns</b> — 4–5 cones in a Y or diamond.</li><li><b>4v4 + end zones</b> — a 30×24 grid with a 3-yd end zone (cones) at each end.</li><li><b>Scrimmage</b> — the whole pitch to the two fixed goals.</li></ol>
+    <p class="dgbag"><b>Bag:</b> ~20 cones, 2 sets of bibs, a few pinnies for target players, a ball per player. Scrimmage uses the two fixed goals.</p>
+  </div>
+
+  <div id="dg-setup-thu">
+    <h4>Thursday — Field Setup (Finishing)</h4>
+    <div class="diagram"><svg viewBox="0 0 760 520" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, sans-serif"><title>Thursday setup</title><desc>Full-pitch session setup: two fixed goals plus pop-up goals.</desc>
+  <rect x="50" y="55" width="660" height="380" fill="#cbe4d1" stroke="#ffffff" stroke-width="3"/>
+  <line x1="380" y1="55" x2="380" y2="435" stroke="#ffffff" stroke-width="2"/>
+  <circle cx="380" cy="245" r="52" fill="none" stroke="#ffffff" stroke-width="2"/>
+  <circle cx="380" cy="245" r="3" fill="#ffffff"/>
+  <rect x="50" y="150" width="100" height="190" fill="none" stroke="#ffffff" stroke-width="2"/>
+  <rect x="50" y="200" width="42" height="90" fill="none" stroke="#ffffff" stroke-width="2"/>
+  <circle cx="120" cy="245" r="3" fill="#ffffff"/>
+  <path d="M150,214 A34 34 0 0 1 150,276" fill="none" stroke="#ffffff" stroke-width="2"/>
+  <rect x="610" y="150" width="100" height="190" fill="none" stroke="#ffffff" stroke-width="2"/>
+  <rect x="668" y="200" width="42" height="90" fill="none" stroke="#ffffff" stroke-width="2"/>
+  <circle cx="640" cy="245" r="3" fill="#ffffff"/>
+  <path d="M610,214 A34 34 0 0 0 610,276" fill="none" stroke="#ffffff" stroke-width="2"/>
+  <g stroke="#7f938c" stroke-width="1">
+    <rect x="32" y="205" width="18" height="80" fill="#eef6f0" fill-opacity="0.75" stroke="#0a1d27" stroke-width="2.5"/>
+    <line x1="38" y1="205" x2="38" y2="285"/><line x1="44" y1="205" x2="44" y2="285"/>
+    <line x1="32" y1="225" x2="50" y2="225"/><line x1="32" y1="245" x2="50" y2="245"/><line x1="32" y1="265" x2="50" y2="265"/>
+    <text x="41" y="200" font-size="10" fill="#12303d" text-anchor="middle" font-weight="700">GOAL</text>
+    <rect x="710" y="205" width="18" height="80" fill="#eef6f0" fill-opacity="0.75" stroke="#0a1d27" stroke-width="2.5"/>
+    <line x1="716" y1="205" x2="716" y2="285"/><line x1="722" y1="205" x2="722" y2="285"/>
+    <line x1="710" y1="225" x2="728" y2="225"/><line x1="710" y1="245" x2="728" y2="245"/><line x1="710" y1="265" x2="728" y2="265"/>
+    <text x="719" y="200" font-size="10" fill="#12303d" text-anchor="middle" font-weight="700">GOAL</text>
+  </g><rect x="95" y="150" width="150" height="185" fill="#ffffff" fill-opacity="0.22" stroke="#12303d" stroke-width="1.5" stroke-dasharray="6 5"/><circle cx="135" cy="305" r="4.5" fill="#fff" stroke="#001017" stroke-width="1.2"/><circle cx="175" cy="305" r="4.5" fill="#fff" stroke="#001017" stroke-width="1.2"/><circle cx="130" cy="280" r="4.2" fill="#FB8500"/><circle cx="190" cy="280" r="4.2" fill="#FB8500"/><g><rect x="95" y="128" width="196" height="19" rx="5" fill="#0a1d27"/><text x="104" y="142" font-size="12" fill="#fff" font-weight="700">1 &#183; Finishing lines (LEFT goal)</text></g><rect x="515" y="150" width="150" height="185" fill="#ffffff" fill-opacity="0.22" stroke="#12303d" stroke-width="1.5" stroke-dasharray="6 5"/><circle cx="560" cy="305" r="4.2" fill="#FB8500"/><circle cx="610" cy="305" r="4.2" fill="#FB8500"/><g><rect x="515" y="128" width="192" height="19" rx="5" fill="#0a1d27"/><text x="524" y="142" font-size="12" fill="#fff" font-weight="700">2 &#183; 2v1 &amp; 3v2 (RIGHT goal)</text></g><g><rect x="300" y="362" width="190" height="44" rx="8" fill="#2EC0F9"/><text x="312" y="381" font-size="12.5" fill="#04202e" font-weight="800">3 &#183; 4v4 &amp; scrimmage</text><text x="312" y="398" font-size="11" fill="#04202e">across the pitch, both fixed goals</text></g>
+  <text x="380" y="462" font-size="13" fill="#12303d" font-weight="600" text-anchor="middle">≈ 45 yds</text>
+  <text x="22" y="245" font-size="13" fill="#12303d" font-weight="600" transform="rotate(-90 22 245)" text-anchor="middle">≈ 30 yds</text>
+  <g font-size="12.5" fill="#12303d"><circle cx="60" cy="498" r="5" fill="#FB8500"/><text x="72" y="502">Cone / gate</text><rect x="192" y="491" width="6" height="14" fill="#0a1d27"/><text x="204" y="502">Pop-up goal</text><rect x="322" y="492" width="16" height="12" fill="#eef6f0" stroke="#0a1d27" stroke-width="2"/><text x="345" y="502">Fixed goal</text><circle cx="452" cy="498" r="5.5" fill="#fff" stroke="#001017" stroke-width="1.3"/><text x="464" y="502">Ball</text></g>
+</svg></div>
+    <ol class="dgsteps"><li><b>Finishing lines</b> — at the LEFT fixed goal; a shooting line ~16–18 yds out on each side.</li><li><b>2v1 &amp; 3v2</b> — at the RIGHT fixed goal; start cones ~25 yds out for attackers.</li><li><b>4v4 &amp; scrimmage</b> — play across the whole pitch to the two fixed goals.</li><li>Tip: rotate the two stations so both groups get reps at a real goal.</li></ol>
+    <p class="dgbag"><b>Bag:</b> ~16 cones, 2 sets of bibs, a ball per player. Finishing at one fixed goal, 2v1/3v2 at the other; 4v4 &amp; scrimmage across both.</p>
+  </div>
+
+  <div id="dg-setup-fri">
+    <h4>Friday — Field Setup (Defending &amp; Game Day)</h4>
+    <div class="diagram"><svg viewBox="0 0 760 520" xmlns="http://www.w3.org/2000/svg" role="img" font-family="system-ui, sans-serif"><title>Friday setup</title><desc>Full-pitch session setup: two fixed goals plus pop-up goals.</desc>
+  <rect x="50" y="55" width="660" height="380" fill="#cbe4d1" stroke="#ffffff" stroke-width="3"/>
+  <line x1="380" y1="55" x2="380" y2="435" stroke="#ffffff" stroke-width="2"/>
+  <circle cx="380" cy="245" r="52" fill="none" stroke="#ffffff" stroke-width="2"/>
+  <circle cx="380" cy="245" r="3" fill="#ffffff"/>
+  <rect x="50" y="150" width="100" height="190" fill="none" stroke="#ffffff" stroke-width="2"/>
+  <rect x="50" y="200" width="42" height="90" fill="none" stroke="#ffffff" stroke-width="2"/>
+  <circle cx="120" cy="245" r="3" fill="#ffffff"/>
+  <path d="M150,214 A34 34 0 0 1 150,276" fill="none" stroke="#ffffff" stroke-width="2"/>
+  <rect x="610" y="150" width="100" height="190" fill="none" stroke="#ffffff" stroke-width="2"/>
+  <rect x="668" y="200" width="42" height="90" fill="none" stroke="#ffffff" stroke-width="2"/>
+  <circle cx="640" cy="245" r="3" fill="#ffffff"/>
+  <path d="M610,214 A34 34 0 0 0 610,276" fill="none" stroke="#ffffff" stroke-width="2"/>
+  <g stroke="#7f938c" stroke-width="1">
+    <rect x="32" y="205" width="18" height="80" fill="#eef6f0" fill-opacity="0.75" stroke="#0a1d27" stroke-width="2.5"/>
+    <line x1="38" y1="205" x2="38" y2="285"/><line x1="44" y1="205" x2="44" y2="285"/>
+    <line x1="32" y1="225" x2="50" y2="225"/><line x1="32" y1="245" x2="50" y2="245"/><line x1="32" y1="265" x2="50" y2="265"/>
+    <text x="41" y="200" font-size="10" fill="#12303d" text-anchor="middle" font-weight="700">GOAL</text>
+    <rect x="710" y="205" width="18" height="80" fill="#eef6f0" fill-opacity="0.75" stroke="#0a1d27" stroke-width="2.5"/>
+    <line x1="716" y1="205" x2="716" y2="285"/><line x1="722" y1="205" x2="722" y2="285"/>
+    <line x1="710" y1="225" x2="728" y2="225"/><line x1="710" y1="245" x2="728" y2="245"/><line x1="710" y1="265" x2="728" y2="265"/>
+    <text x="719" y="200" font-size="10" fill="#12303d" text-anchor="middle" font-weight="700">GOAL</text>
+  </g><rect x="175" y="82" width="150" height="105" fill="#ffffff" fill-opacity="0.22" stroke="#12303d" stroke-width="1.5" stroke-dasharray="6 5"/><line x1="225" y1="82" x2="225" y2="187" stroke="#12303d" stroke-width="1" stroke-dasharray="4 4"/><line x1="275" y1="82" x2="275" y2="187" stroke="#12303d" stroke-width="1" stroke-dasharray="4 4"/><g><rect x="175" y="60" width="140" height="19" rx="5" fill="#0a1d27"/><text x="184" y="74" font-size="12" fill="#fff" font-weight="700">1 &#183; 1v1 channels</text></g><rect x="435" y="82" width="68" height="105" fill="#ffffff" fill-opacity="0.22" stroke="#12303d" stroke-width="1.5" stroke-dasharray="6 5"/><rect x="457" y="182" width="24" height="5" fill="#0a1d27"/><rect x="517" y="82" width="68" height="105" fill="#ffffff" fill-opacity="0.22" stroke="#12303d" stroke-width="1.5" stroke-dasharray="6 5"/><rect x="539" y="182" width="24" height="5" fill="#0a1d27"/><g><rect x="435" y="60" width="196" height="19" rx="5" fill="#0a1d27"/><text x="444" y="74" font-size="12" fill="#fff" font-weight="700">2 &#183; 2v2 grids + pop-up goals</text></g><g><rect x="255" y="305" width="210" height="44" rx="8" fill="#2EC0F9"/><text x="267" y="324" font-size="12.5" fill="#04202e" font-weight="800">3 &#183; Win-it-back &amp; Game Day</text><text x="267" y="341" font-size="11" fill="#04202e">across the pitch to the two fixed goals</text></g>
+  <text x="380" y="462" font-size="13" fill="#12303d" font-weight="600" text-anchor="middle">≈ 45 yds</text>
+  <text x="22" y="245" font-size="13" fill="#12303d" font-weight="600" transform="rotate(-90 22 245)" text-anchor="middle">≈ 30 yds</text>
+  <g font-size="12.5" fill="#12303d"><circle cx="60" cy="498" r="5" fill="#FB8500"/><text x="72" y="502">Cone / gate</text><rect x="192" y="491" width="6" height="14" fill="#0a1d27"/><text x="204" y="502">Pop-up goal</text><rect x="322" y="492" width="16" height="12" fill="#eef6f0" stroke="#0a1d27" stroke-width="2"/><text x="345" y="502">Fixed goal</text><circle cx="452" cy="498" r="5.5" fill="#fff" stroke="#001017" stroke-width="1.3"/><text x="464" y="502">Ball</text></g>
+</svg></div>
+    <ol class="dgsteps"><li><b>1v1 channels</b> — 3 lanes (cones) for pressuring and jockeying.</li><li><b>2v2 grids</b> — two small grids, each with a pop-up goal (6 ft) to defend.</li><li><b>Win-it-back &amp; Game Day</b> — play across the pitch to the two fixed goals.</li><li>Pop-up goals cover the small-goal games; the two fixed goals cover the full-goal games.</li></ol>
+    <p class="dgbag"><b>Bag:</b> ~20 cones, 2 pop-up goals (6 ft) for the 2v2 grids, 2 sets of bibs, a ball per player. Games use the two fixed goals.</p>
+  </div>
+
+</div>
+
+
+<script>
+(function(){
+  var tabs=document.querySelectorAll('.tab[data-day]');
+  var panels={mon:'day-mon',tue:'day-tue',thu:'day-thu',fri:'day-fri'};
+  tabs.forEach(function(t){
+    t.addEventListener('click',function(){
+      tabs.forEach(function(x){x.classList.remove('active');});
+      t.classList.add('active');
+      Object.keys(panels).forEach(function(k){var el=document.getElementById(panels[k]);if(el)el.classList.remove('active');});
+      var show=document.getElementById(panels[t.dataset.day]);
+      if(show)show.classList.add('active');
+    });
+  });
+})();
+</script>
+<script>
+(function(){
+  var tabs=document.querySelectorAll('.tabbar a[data-page]');
+  var links=document.querySelectorAll('[data-page]');
+  var pages=['philosophy','conditioning','practice','guide','parents'];
+  function go(name){
+    pages.forEach(function(p){var el=document.getElementById(p);if(el)el.classList.toggle('active',p===name);});
+    tabs.forEach(function(a){a.classList.toggle('active',a.dataset.page===name);});
+    var bar=document.querySelector('.tabbar'); if(bar) bar.scrollIntoView({behavior:'smooth',block:'start'});
+  }
+  links.forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();go(a.dataset.page);});});
+})();
+</script>
+<script>
+(function(){
+  var modal=document.getElementById('fieldModal');
+  if(!modal) return;
+  var body=modal.querySelector('.modal-body');
+  function open(id){var tpl=document.getElementById(id);if(!tpl)return;body.innerHTML=tpl.innerHTML;modal.classList.add('open');}
+  function close(){modal.classList.remove('open');body.innerHTML='';}
+  document.querySelectorAll('[data-dg]').forEach(function(b){b.addEventListener('click',function(){open(b.dataset.dg);});});
+  modal.addEventListener('click',function(e){if(e.target===modal)close();});
+  modal.querySelector('.modal-close').addEventListener('click',close);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+})();
+</script>
+</body></html>
